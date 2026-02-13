@@ -169,22 +169,22 @@ export default {
     },
     navClass() {
       return this.isLightHeader
-        ? "bg-black/10 text-heading border-white/70"
-        : "bg-black/80 text-white border-white/70 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_55%)]";
+        ? "bg-black/10 text-heading border-white/10"
+        : "bg-black/10 text-white border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_55%)]";
     },
     socialClass() {
       return this.isLightHeader
-        ? "bg-black/10 text-heading border-white/70"
-        : "bg-black/80 text-white border-white/70 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_55%)]";
+        ? "bg-black/10 text-heading border-white/10"
+        : "bg-black/10 text-white border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_55%)]";
     },
     linkClass() {
       return this.isLightHeader
-        ? "text-sm xl:text-base inline-flex items-center justify-center px-4 py-2.5 rounded-full whitespace-nowrap leading-none transition-colors border border-transparent text-heading hover:bg-white/70 hover:text-heading hover:border-white"
-        : "text-sm xl:text-base inline-flex items-center justify-center px-4 py-2.5 rounded-full whitespace-nowrap leading-none transition-colors border border-transparent text-white hover:bg-white/10 hover:text-white hover:border-white";
+        ? "text-sm xl:text-base inline-flex items-center justify-center px-4 py-2.5 rounded-full whitespace-nowrap leading-none transition-colors border border-transparent text-heading hover:bg-white/30 hover:text-heading hover:border-white/60"
+        : "text-sm xl:text-base inline-flex items-center justify-center px-4 py-2.5 rounded-full whitespace-nowrap leading-none transition-colors border border-transparent text-white hover:bg-white/5 hover:text-white hover:border-white/10";
     },
     activeClass() {
       return this.isLightHeader
-        ? "bg-white/70 text-heading border border-white"
+        ? "bg-white/60 text-heading border border-white"
         : "bg-white/10 text-white border border-white";
     },
     iconBaseClass() {

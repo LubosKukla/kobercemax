@@ -20,7 +20,7 @@
         </p>
         <div class="mt-6 flex flex-wrap justify-center gap-3">
           <BaseButton variant="primary" to="/kontakt">Dohodnite si meranie</BaseButton>
-          <BaseButton variant="glass" to="/produkty">Čo ponúkame</BaseButton>
+          <BaseButton variant="glass" to="/produkty">Ponúkame</BaseButton>
         </div>
       </div>
     </div>
