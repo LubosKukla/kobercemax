@@ -7,13 +7,24 @@
     :disabled="tag === 'button' ? disabled : null"
     :class="[baseClasses, variantClasses]"
   >
-    <slot />
+    <span class="flex items-center gap-2">
+      <slot />
+      <font-awesome-icon v-if="iconComponent" :icon="iconComponent" class="text-xs" />
+    </span>
   </component>
 </template>
 
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+const ICONS = {
+  "arrow-right": faArrowRight,
+};
+
 export default {
   name: "BaseButton",
+  components: { FontAwesomeIcon },
   props: {
     type: {
       type: String,
@@ -23,7 +34,9 @@ export default {
       type: String,
       default: "primary",
       validator: (value) =>
-        ["primary", "dark", "outline", "ghost", "glass", "soft"].includes(value),
+        ["primary", "dark", "outline", "ghost", "glass", "soft", "link"].includes(
+          value
+        ),
     },
     disabled: {
       type: Boolean,
@@ -37,12 +50,20 @@ export default {
       type: String,
       default: "",
     },
+    icon: {
+      type: String,
+      default: "",
+    },
   },
   computed: {
     tag() {
       if (this.to) return "router-link";
       if (this.href) return "a";
       return "button";
+    },
+    iconComponent() {
+      if (!this.icon) return null;
+      return ICONS[this.icon] || null;
     },
     baseClasses() {
       return [
@@ -77,9 +98,13 @@ export default {
           ? "bg-white/20 text-white/70 border border-white/10 backdrop-blur-sm"
           : "bg-white/25 text-white border border-white/20 backdrop-blur-sm hover:bg-white/35";
       }
+      if (this.variant === "link") {
+        return this.disabled
+          ? "bg-transparent text-dark/40"
+          : "bg-transparent text-dark/70 hover:text-brand";
+      }
       return this.disabled ? "bg-brand/70 text-white" : "bg-brand text-white hover:bg-brand/90";
     },
   },
 };
 </script>
-
