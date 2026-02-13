@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Clash Display", sans-serif;
   color: var(--c-dark);
   background-color: var(--c-white);
 }
@@ -26,7 +26,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Clash Display", sans-serif;
   color: var(--c-heading);
 }
 

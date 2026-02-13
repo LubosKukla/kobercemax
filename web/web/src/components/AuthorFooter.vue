@@ -1,5 +1,5 @@
-<template>
-  <div class="bg-light/75 text-center border-t border-black/5">
+﻿<template>
+  <div class="bg-light/75 text-center border-t border-black/5 font-sans">
     <div
       class="mx-auto max-w-6xl px-4 py-3 text-xs text-black/70 flex flex-row flex-wrap items-center justify-center gap-1 sm:gap-2"
     >
@@ -28,4 +28,3 @@ export default {
   },
 };
 </script>
-

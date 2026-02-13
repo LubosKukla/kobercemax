@@ -1,12 +1,14 @@
 <template>
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-3xl mb-4">Koberce Max</h1>
-    <p>Úvodná stránka.</p>
-  </section>
+  <HomeHero />
 </template>
 
 <script>
+import HomeHero from "@/features/web/home/HomeHero.vue";
+
 export default {
   name: "HomeView",
+  components: {
+    HomeHero,
+  },
 };
 </script>
