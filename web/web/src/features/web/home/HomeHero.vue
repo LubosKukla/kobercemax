@@ -4,8 +4,8 @@
       class="absolute inset-0 bg-center bg-cover"
       :style="{ backgroundImage: `url(${heroImage})` }"
     ></div>
-    <div class="absolute inset-0 bg-black/40"></div>
-    <div class="absolute inset-0 bg-linear-to-b from-black/80 via-black/50 to-black/00"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 bg-linear-to-b from-black/90 via-black/60 to-black/00"></div>
 
     <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 pt-32 sm:pt-48">
       <div class="mx-auto max-w-5xl text-center font-display">

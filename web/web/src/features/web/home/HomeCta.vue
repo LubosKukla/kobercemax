@@ -17,7 +17,7 @@ export default {
       image: ctaImage,
       actions: [
         { label: "Dohodnite si meranie", variant: "primary", to: "/kontakt" },
-        { label: "Zavolajte nám", variant: "glass", to: "/kontakt" },
+        { label: "Zavolajte nám", variant: "glass", href: "tel:0444323884" },
       ],
     };
   },

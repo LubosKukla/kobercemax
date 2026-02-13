@@ -1,6 +1,6 @@
 <template>
   <div :class="wrapperClass">
-    <h2 class="font-display font-bold text-4xl sm:text-5xl" :class="titleClass">
+    <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-5xl" :class="titleClass">
       {{ title }}
     </h2>
     <p v-if="description" class="mt-2 text-sm sm:text-base" :class="descClass">
@@ -45,3 +45,4 @@ export default {
   },
 };
 </script>
+

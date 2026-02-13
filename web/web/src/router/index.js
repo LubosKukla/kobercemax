@@ -9,6 +9,7 @@ import RealizationsView from "../views/RealizationsView.vue";
 import ShowroomView from "../views/ShowroomView.vue";
 import ContactView from "../views/ContactView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
+import RealizationDetailView from "../views/RealizationDetailView.vue";
 
 const routes = [
   {
@@ -45,6 +46,12 @@ const routes = [
         path: "realizacie",
         name: "realizations",
         component: RealizationsView,
+      },
+      {
+        path: "realizacie/:id/:slug",
+        name: "realization-detail",
+        component: RealizationDetailView,
+        props: true,
       },
       {
         path: "showroom",
