@@ -1,14 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../../tailwind.config.js";
+@import "tailwindcss";
 
 :root {
-  --c-brand: #EF554A;
-  --c-white: #FFFFFF;
+  --c-brand: #ef554a;
+  --c-white: #ffffff;
   --c-black: #000000;
   --c-heading: #333333;
-  --c-light: #F6F6F6;
+  --c-light: #f6f6f6;
   --c-dark: #272727;
+  --c-black-80: rgba(0, 0, 0, 0.8);
+  --c-black-10: rgba(0, 0, 0, 0.1);
+  --c-white-70: rgba(255, 255, 255, 0.7);
+  --c-white-85: rgba(255, 255, 255, 0.85);
 }
 
 body {
@@ -30,4 +33,10 @@ h6 {
 a,
 button {
   cursor: pointer;
+}
+
+.footer-text-links a:hover {
+  color: var(--c-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

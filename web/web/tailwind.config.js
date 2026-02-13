@@ -3,6 +3,10 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./public/index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      ...defaultTheme.screens,
+      xl2: "1240px",
+    },
     extend: {
       colors: {
         brand: "#EF554A",
