@@ -1,20 +1,67 @@
 import { createRouter, createWebHistory } from "vue-router";
+import MainLayout from "../layouts/MainLayout.vue";
 import HomeView from "../views/HomeView.vue";
+import AboutView from "../views/AboutView.vue";
+import ProductsView from "../views/ProductsView.vue";
+import ProductDetailView from "../views/ProductDetailView.vue";
+import ServicesView from "../views/ServicesView.vue";
+import RealizationsView from "../views/RealizationsView.vue";
+import ShowroomView from "../views/ShowroomView.vue";
+import ContactView from "../views/ContactView.vue";
+import NotFoundView from "../views/NotFoundView.vue";
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    component: MainLayout,
+    children: [
+      {
+        path: "",
+        name: "home",
+        component: HomeView,
+      },
+      {
+        path: "o-nas",
+        name: "about",
+        component: AboutView,
+      },
+      {
+        path: "produkty",
+        name: "products",
+        component: ProductsView,
+      },
+      {
+        path: "produkty/:id/:slug",
+        name: "product-detail",
+        component: ProductDetailView,
+        props: true,
+      },
+      {
+        path: "sluzby",
+        name: "services",
+        component: ServicesView,
+      },
+      {
+        path: "realizacie",
+        name: "realizations",
+        component: RealizationsView,
+      },
+      {
+        path: "showroom",
+        name: "showroom",
+        component: ShowroomView,
+      },
+      {
+        path: "kontakt",
+        name: "contact",
+        component: ContactView,
+      },
+      {
+        path: "/:pathMatch(.*)*",
+        name: "not-found",
+        component: NotFoundView,
+      },
+    ],
   },
 ];
 

@@ -1,12 +1,12 @@
 <template>
   <section class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-3xl mb-4">Koberce Max</h1>
-    <p>Úvodná stránka.</p>
+    <h1 class="text-3xl mb-4">Produkty</h1>
+    <p>Zoznam produktov.</p>
   </section>
 </template>
 
 <script>
 export default {
-  name: "HomeView",
+  name: "ProductsView",
 };
 </script>
