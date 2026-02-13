@@ -1,7 +1,9 @@
 <template>
   <div :class="wrapperClass">
-    <h2 class="font-display font-semibold text-3xl sm:text-4xl text-heading">{{ title }}</h2>
-    <p v-if="description" class="mt-2 text-sm sm:text-base text-dark/70">
+    <h2 class="font-display font-bold text-4xl sm:text-5xl" :class="titleClass">
+      {{ title }}
+    </h2>
+    <p v-if="description" class="mt-2 text-sm sm:text-base" :class="descClass">
       {{ description }}
     </p>
   </div>
@@ -24,12 +26,22 @@ export default {
       default: "center",
       validator: (value) => ["left", "center"].includes(value),
     },
+    tone: {
+      type: String,
+      default: "dark",
+      validator: (value) => ["dark", "light"].includes(value),
+    },
   },
   computed: {
     wrapperClass() {
       return this.align === "left" ? "text-left" : "text-center";
     },
+    titleClass() {
+      return this.tone === "light" ? "text-white" : "text-heading";
+    },
+    descClass() {
+      return this.tone === "light" ? "text-white/70" : "text-dark/70";
+    },
   },
 };
 </script>
-

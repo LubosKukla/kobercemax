@@ -23,7 +23,7 @@ export default {
       type: String,
       default: "primary",
       validator: (value) =>
-        ["primary", "dark", "outline", "ghost", "glass"].includes(value),
+        ["primary", "dark", "outline", "ghost", "glass", "soft"].includes(value),
     },
     disabled: {
       type: Boolean,
@@ -54,8 +54,8 @@ export default {
     variantClasses() {
       if (this.variant === "dark") {
         return this.disabled
-          ? "bg-black/30 text-white/70"
-          : "bg-black/40 text-white hover:bg-black/50";
+          ? "bg-black/60 text-white/70"
+          : "bg-black/85 text-white hover:bg-black";
       }
       if (this.variant === "outline") {
         return this.disabled
@@ -72,10 +72,14 @@ export default {
           ? "bg-white/10 text-white/70 border border-white/20 backdrop-blur-md"
           : "bg-white/10 text-white border border-white/40 backdrop-blur-md hover:bg-white/20";
       }
-      return this.disabled
-        ? "bg-brand/70 text-white"
-        : "bg-brand text-white hover:bg-brand/90";
+      if (this.variant === "soft") {
+        return this.disabled
+          ? "bg-white/20 text-white/70 border border-white/10 backdrop-blur-sm"
+          : "bg-white/25 text-white border border-white/20 backdrop-blur-sm hover:bg-white/35";
+      }
+      return this.disabled ? "bg-brand/70 text-white" : "bg-brand text-white hover:bg-brand/90";
     },
   },
 };
 </script>
+
