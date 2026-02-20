@@ -1,5 +1,7 @@
 <template>
-  <div class="rounded-3xl bg-white p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-black/10">
+  <div
+    class="rounded-3xl bg-white p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.08)] max-w-2xl border border-black/10"
+  >
     <h2 class="font-display text-3xl sm:text-4xl font-bold text-heading">NAPÍŠTE NÁM</h2>
     <p class="mt-2 text-sm text-dark/60">Môžete nás kedykoľvek kontaktovať</p>
 
@@ -8,8 +10,18 @@
         <BaseInput v-model="form.firstName" label="Meno" placeholder="Jan" />
         <BaseInput v-model="form.lastName" label="Priezvisko" placeholder="Novák" />
       </div>
-      <BaseInput v-model="form.email" type="email" label="Email" placeholder="jan.novak@gmail.com" />
-      <BaseInput v-model="form.phone" type="tel" label="Tel. číslo" placeholder="+421 900 000 000" />
+      <BaseInput
+        v-model="form.email"
+        type="email"
+        label="Email"
+        placeholder="jan.novak@gmail.com"
+      />
+      <BaseInput
+        v-model="form.phone"
+        type="tel"
+        label="Tel. číslo"
+        placeholder="+421 900 000 000"
+      />
       <BaseTextarea v-model="form.message" label="Správa" placeholder="Napíšte nám" rows="5" />
 
       <div class="pt-2">
@@ -53,3 +65,4 @@ export default {
   },
 };
 </script>
+
