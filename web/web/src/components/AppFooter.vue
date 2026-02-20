@@ -20,7 +20,6 @@
           <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm footer-text-links">
             <router-link to="/o-nas">O nás</router-link>
             <router-link to="/produkty">Produkty</router-link>
-            <router-link to="/sluzby">Služby</router-link>
             <router-link to="/realizacie">Realizácie</router-link>
             <router-link to="/showroom">Showroom</router-link>
             <router-link to="/kontakt">Kontakt</router-link>

@@ -1,12 +1,16 @@
 <template>
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-3xl mb-4">Realizácie</h1>
-    <p>Ukážky realizácií.</p>
-  </section>
+  <div>
+    <RealizationsPage />
+  </div>
 </template>
 
 <script>
+import RealizationsPage from "@/features/web/realizations/RealizationsPage.vue";
+
 export default {
   name: "RealizationsView",
+  components: {
+    RealizationsPage,
+  },
 };
 </script>

@@ -19,9 +19,6 @@
         <router-link :active-class="activeClass" :class="linkClass" to="/produkty"
           >Produkty</router-link
         >
-        <router-link :active-class="activeClass" :class="linkClass" to="/sluzby"
-          >Služby</router-link
-        >
         <router-link :active-class="activeClass" :class="linkClass" to="/realizacie"
           >Realizácie</router-link
         >
@@ -93,14 +90,6 @@
             to="/produkty"
             @click="closeMenu"
             >Produkty</router-link
-          >
-          <router-link
-            class="px-3 py-2 rounded-full"
-            :active-class="activeClass"
-            :class="linkClass"
-            to="/sluzby"
-            @click="closeMenu"
-            >Služby</router-link
           >
           <router-link
             class="px-3 py-2 rounded-full"
@@ -206,4 +195,3 @@ export default {
   },
 };
 </script>
-

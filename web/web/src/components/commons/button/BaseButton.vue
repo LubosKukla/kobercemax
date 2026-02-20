@@ -34,9 +34,16 @@ export default {
       type: String,
       default: "primary",
       validator: (value) =>
-        ["primary", "dark", "outline", "ghost", "glass", "soft", "link"].includes(
-          value
-        ),
+        [
+          "primary",
+          "dark",
+          "darkSolid",
+          "outline",
+          "ghost",
+          "glass",
+          "soft",
+          "link",
+        ].includes(value),
     },
     disabled: {
       type: Boolean,
@@ -77,6 +84,11 @@ export default {
         return this.disabled
           ? "bg-black/60 text-white/70"
           : "bg-black/85 text-white hover:bg-black";
+      }
+      if (this.variant === "darkSolid") {
+        return this.disabled
+          ? "bg-dark/60 text-white/70"
+          : "bg-dark text-white hover:bg-black";
       }
       if (this.variant === "outline") {
         return this.disabled

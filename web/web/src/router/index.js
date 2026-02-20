@@ -4,7 +4,6 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import ProductsView from "../views/ProductsView.vue";
 import ProductDetailView from "../views/ProductDetailView.vue";
-import ServicesView from "../views/ServicesView.vue";
 import RealizationsView from "../views/RealizationsView.vue";
 import ShowroomView from "../views/ShowroomView.vue";
 import ContactView from "../views/ContactView.vue";
@@ -36,11 +35,6 @@ const routes = [
         name: "product-detail",
         component: ProductDetailView,
         props: true,
-      },
-      {
-        path: "sluzby",
-        name: "services",
-        component: ServicesView,
       },
       {
         path: "realizacie",

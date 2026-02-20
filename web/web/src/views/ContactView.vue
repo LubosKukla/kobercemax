@@ -1,12 +1,16 @@
 <template>
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-3xl mb-4">Kontakt</h1>
-    <p>Kontaktné informácie.</p>
-  </section>
+  <div>
+    <ContactPage />
+  </div>
 </template>
 
 <script>
+import ContactPage from "@/features/web/contact/ContactPage.vue";
+
 export default {
   name: "ContactView",
+  components: {
+    ContactPage,
+  },
 };
 </script>

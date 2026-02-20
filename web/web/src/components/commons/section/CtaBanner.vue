@@ -9,6 +9,7 @@
     <div
       class="relative min-h-[360px] sm:min-h-[420px] lg:min-h-[500px] flex flex-col justify-center z-10 h-max m-auto max-w-6xl px-4 sm:px-6 py-24 text-center"
     >
+      <img v-if="logo" class="mx-auto mb-6 h-8 sm:h-10 w-auto" :src="logo" alt="Logo" />
       <h2 class="font-display font-semibold text-3xl sm:text-4xl lg:text-5xl text-white!">
         {{ title }}
       </h2>
@@ -48,7 +49,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    logo: {
+      type: String,
+      default: "",
+    },
   },
 };
 </script>
-
