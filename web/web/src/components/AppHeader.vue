@@ -154,9 +154,11 @@ export default {
   },
   computed: {
     isLightHeader() {
+      const isRealizationsList = this.$route.path === "/realizacie";
+      const isProductsSection = this.$route.path.startsWith("/produkty");
       return (
-        this.$route.path.startsWith("/realizacie") ||
-        this.$route.path.startsWith("/produkty") ||
+        isRealizationsList ||
+        isProductsSection ||
         this.$route.path === "/kontakt" ||
         this.$route.name === "not-found"
       );
