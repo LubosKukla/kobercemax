@@ -1,6 +1,6 @@
-﻿<template>
+<template>
   <div class="space-y-1">
-    <label class="inline-flex items-start gap-3 text-sm text-deep select-none cursor-pointer">
+    <label class="inline-flex items-start gap-3 text-sm text-dark select-none cursor-pointer">
       <input
         type="checkbox"
         :checked="modelValue"
@@ -23,13 +23,13 @@
         <slot />
       </span>
     </label>
-    <p v-if="hasError" class="text-xs font-semibold text-danger px-2">{{ error }}</p>
+    <p v-if="hasError" class="text-xs font-semibold text-brand px-2">{{ error }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'BaseCheckbox',
+  name: "BaseCheckbox",
   props: {
     modelValue: {
       type: Boolean,
@@ -41,7 +41,7 @@ export default {
     },
     error: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   computed: {
@@ -50,11 +50,11 @@ export default {
     },
     boxClasses() {
       if (this.hasError) {
-        return 'border-danger bg-white';
+        return "border-brand bg-white";
       }
       return this.modelValue
-        ? 'border-brand bg-brand'
-        : 'border-deep/20 bg-light peer-disabled:opacity-50';
+        ? "border-brand bg-brand"
+        : "border-black/20 bg-light peer-disabled:opacity-50";
     },
   },
   methods: {

@@ -232,9 +232,11 @@ function applySeoMeta(to) {
   const title = cleanText(seo.title || "Web");
   const description = cleanText(seo.description || DEFAULT_DESCRIPTION);
   const fullTitle = `${title} | ${SITE_NAME}`;
+  const robotsValue = to.name === "not-found" ? "noindex, nofollow" : "index, follow";
 
   document.title = fullTitle;
   upsertMetaTag("description", description);
+  upsertMetaTag("robots", robotsValue);
   upsertPropertyMetaTag("og:title", fullTitle);
   upsertPropertyMetaTag("og:description", description);
 }

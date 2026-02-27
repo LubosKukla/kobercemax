@@ -5,7 +5,7 @@
     <h2 class="font-display text-3xl sm:text-4xl font-bold text-heading">NAPÍŠTE NÁM</h2>
     <p class="mt-2 text-sm text-dark/60">Môžete nás kedykoľvek kontaktovať</p>
 
-    <form class="mt-6 grid gap-4" @submit.prevent="handleSubmit">
+    <form class="mt-6 grid gap-4" novalidate @submit.prevent="handleSubmit">
       <div class="grid gap-4 sm:grid-cols-2">
         <BaseInput
           v-model="form.firstName"
@@ -45,6 +45,25 @@
         required
         :error="errors.message"
       />
+      <div class="px-2">
+        <BaseCheckbox
+          v-model="form.privacyConsent"
+          :error="errors.privacy_consent"
+          @change="onPrivacyConsentChange"
+        >
+          Súhlasím so spracovaním osobných údajov.
+        </BaseCheckbox>
+        <p class="mt-1 pl-8 text-xs text-dark/70">
+          Viac informácií nájdete v
+          <router-link
+            to="/zasady-ochrany-sukromia"
+            class="text-dark underline underline-offset-2 hover:text-brand"
+          >
+            Zásadách ochrany osobných údajov
+          </router-link>
+          .
+        </p>
+      </div>
 
       <p v-if="submitError" class="px-2 text-sm font-semibold text-brand">
         {{ submitError }}
@@ -64,22 +83,13 @@
         </BaseButton>
       </div>
     </form>
-
-    <p class="mt-4 text-xs text-dark/60 text-center">
-      Tým, že nás kontaktujete, súhlasíte so spracovaním osobných údajov podľa
-      <router-link
-        to="/zasady-ochrany-sukromia"
-        class="text-dark underline underline-offset-2"
-      >
-        Zásad ochrany osobných údajov
-      </router-link>
-    </p>
   </div>
 </template>
 
 <script>
 import BaseInput from "@/components/commons/inputs/BaseInput.vue";
 import BaseTextarea from "@/components/commons/inputs/BaseTextarea.vue";
+import BaseCheckbox from "@/components/commons/inputs/BaseCheckbox.vue";
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import { sendContactForm } from "@/services/contactApi";
 
@@ -88,6 +98,7 @@ export default {
   components: {
     BaseInput,
     BaseTextarea,
+    BaseCheckbox,
     BaseButton,
   },
   data() {
@@ -98,6 +109,7 @@ export default {
         email: "",
         phone: "",
         message: "",
+        privacyConsent: false,
       },
       errors: {
         first_name: "",
@@ -105,6 +117,7 @@ export default {
         email: "",
         phone: "",
         message: "",
+        privacy_consent: "",
       },
       isSubmitting: false,
       submitError: "",
@@ -119,6 +132,7 @@ export default {
         email: "",
         phone: "",
         message: "",
+        privacy_consent: "",
       };
     },
     mapApiValidationErrors(apiErrors) {
@@ -139,14 +153,85 @@ export default {
         email: "",
         phone: "",
         message: "",
+        privacyConsent: false,
       };
+    },
+    onPrivacyConsentChange(checked) {
+      if (checked) {
+        this.errors.privacy_consent = "";
+        if (this.submitError === "Prosím, skontrolujte vyznačené polia vo formulári.") {
+          this.submitError = "";
+        }
+      }
+    },
+    validateForm() {
+      this.clearErrors();
+
+      const firstName = this.form.firstName.trim();
+      const lastName = this.form.lastName.trim();
+      const email = this.form.email.trim();
+      const phone = this.form.phone.trim();
+      const message = this.form.message.trim();
+      const privacyConsent = Boolean(this.form.privacyConsent);
+
+      if (!firstName) {
+        this.errors.first_name = "Prosím, zadajte meno.";
+      }
+
+      if (!lastName) {
+        this.errors.last_name = "Prosím, zadajte priezvisko.";
+      }
+
+      if (!email) {
+        this.errors.email = "Prosím, zadajte email.";
+      } else {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        if (!emailPattern.test(email)) {
+          this.errors.email = "Zadajte email v správnom formáte.";
+        }
+      }
+
+      if (phone) {
+        const phonePattern = /^[+0-9()\s-]+$/;
+        const phoneDigitsCount = phone.replace(/\D/g, "").length;
+        if (!phonePattern.test(phone) || phoneDigitsCount < 9) {
+          this.errors.phone = "Zadajte platné telefónne číslo.";
+        }
+      }
+
+      if (!message) {
+        this.errors.message = "Prosím, napíšte správu.";
+      } else if (message.length < 10) {
+        this.errors.message = "Správa musí mať aspoň 10 znakov.";
+      }
+
+      if (!privacyConsent) {
+        this.errors.privacy_consent =
+          "Pre odoslanie formulára je potrebný súhlas so zásadami ochrany osobných údajov.";
+      }
+
+      this.form = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        message,
+        privacyConsent,
+      };
+
+      return !Object.values(this.errors).some(Boolean);
     },
     async handleSubmit() {
       if (this.isSubmitting) return;
 
       this.submitError = "";
       this.submitSuccess = "";
-      this.clearErrors();
+      const isValid = this.validateForm();
+      if (!isValid) {
+        this.submitError = "Prosím, skontrolujte vyznačené polia vo formulári.";
+        return;
+      }
+
       this.isSubmitting = true;
 
       try {
