@@ -3,12 +3,10 @@
     <div class="max-w-6xl mx-auto px-6 py-10">
       <div class="grid gap-8 md:grid-cols-3 text-sm text-dark">
         <div class="space-y-1 footer-text-links">
-          <a class="block" href="#">Podmienky používania</a>
           <router-link class="block" to="/zasady-ochrany-sukromia"
             >Podmienky ochrany súkromia</router-link
           >
           <router-link class="block" to="/cookies">Pravidlá používania súborov Cookies</router-link>
-          <a class="block" href="#">Nastavenia cookies</a>
         </div>
         <div class="space-y-1 text-heading/80">
           <p class="font-medium text-heading">KOBERCE MAX, s.r.o.</p>

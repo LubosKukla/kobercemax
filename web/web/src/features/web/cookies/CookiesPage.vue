@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white py-16">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <BaseHeaderOnlyTitle title="INFORMAČNÁ POVINNOSŤ KU COOKIES" />
+      <BaseHeaderOnlyTitle title="COOKIES" />
     </div>
 
     <div class="mx-auto max-w-4xl px-4 sm:px-6 mt-10 space-y-8 text-sm sm:text-base text-dark/80">
