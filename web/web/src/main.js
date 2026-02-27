@@ -6,7 +6,6 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import App from "./App.vue";
 import "./assets/tailwind.css";
-import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 

@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionRef" class="pt-14">
+  <section ref="sectionRef" class="">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <div
         class="rounded-3xl px-6 py-8 sm:px-10 sm:py-10"

@@ -38,7 +38,14 @@
       </section>
 
       <section v-if="product.intro" class="bg-white py-16">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <div
+          class="mx-auto max-w-6xl px-4 sm:px-6"
+          :class="
+            product.intro.image
+              ? 'grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start'
+              : ''
+          "
+        >
           <article class="rounded-2xl border border-black/10 bg-light p-6 sm:p-8">
             <p
               v-for="(paragraph, index) in product.intro.paragraphs"
@@ -50,7 +57,10 @@
             </p>
           </article>
 
-          <div class="rounded-2xl border border-black/10 bg-white p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+          <div
+            v-if="product.intro.image"
+            class="rounded-2xl border border-black/10 bg-white p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
+          >
             <img
               class="w-full rounded-xl object-cover max-h-[520px]"
               :src="product.intro.image"
@@ -101,7 +111,10 @@
         </div>
       </section>
 
-      <section v-if="product.installation" class="bg-white py-16">
+      <section
+        v-if="product.installation?.image && product.installation?.steps?.length"
+        class="bg-white py-16"
+      >
         <div class="mx-auto max-w-6xl px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-10 lg:items-stretch">
           <div class="h-full rounded-2xl border border-black/10 bg-white p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
             <img

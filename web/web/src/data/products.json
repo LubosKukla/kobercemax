@@ -5,10 +5,12 @@
       "slug": "parkety",
       "title": "PARKETY",
       "description": "Predaj a profesionálna montáž drevených parkiet pre domácnosti aj komerčné priestory.",
-      "categoryTags": ["Parkety"],
+      "categoryTags": [
+        "Parkety"
+      ],
       "hero": {
         "title": "PARKETY",
-        "description": "Prémiové drevené podlahy s dlhou životnosťou, prirodzenou krásou a profesionálnou montážou. Vyberte si parkety, ktoré ladia s vaším štýlom od klasickej rybiny až po moderné veľkoformátové dosky.",
+        "description": "Drevené parkety riešime od prvého návrhu až po finálne lišty. Pomôžeme vám vybrať dekor, typ skladby aj správny spôsob pokládky pre dlhú životnosť.",
         "image": "/img/products/parkety/gallery-2.jpg",
         "actions": [
           {
@@ -24,75 +26,115 @@
         ]
       },
       "intro": {
-        "image": "/img/products/parkety/intro.jpg",
+        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
         "paragraphs": [
-          "Drevené parkety sú nadčasovou voľbou pre každý interiér. Ponúkajú výnimočnú estetiku, prirodzenosť a odolnosť, ktorá dokáže prežiť celé generácie. V Kobercemax sa špecializujeme na predaj aj profesionálnu montáž drevených parkiet do domácností, kancelárií aj komerčných priestorov.",
-          "Naša ponuka zahŕňa široký výber masívnych aj viacvrstvových parkiet, moderné aj tradičné dekory, rôzne spôsoby pokládky a kompletné príslušenstvo vrátane líšt, podložiek a podlahárskej chémie."
+          "Pri parketách je rozhodujúci detail. Sledujeme stav podkladu, vlhkosť aj orientáciu miestnosti, aby podlaha pôsobila prirodzene a zároveň bola stabilná.",
+          "Klienti sa na nás obracajú najmä vtedy, keď chcú kombinovať dizajn s istotou kvalitnej montáže. Presne to je náš štandard v bytoch, domoch aj v reprezentatívnych priestoroch."
         ]
       },
       "benefits": {
-        "title": "PREČO DREVENÉ PARKETY?",
+        "title": "PREČO SI VYBRAŤ PARKETY?",
         "items": [
           {
-            "title": "100 % prírodný materiál",
-            "description": "Každá doska je originál s jedinečnou kresbou dreva."
+            "title": "Prirodzený materiál",
+            "description": "Drevo prináša autentický vzhľad, ktorý sa časom nestráca."
           },
           {
-            "title": "Výnimočná životnosť",
-            "description": "Správne položené parkety vydržia roky a možno ich opakovane renovovať."
+            "title": "Dlhá životnosť",
+            "description": "Správne zvolená a položená parketa vydrží roky intenzívneho používania."
           },
           {
-            "title": "Nadčasová estetika",
-            "description": "Vhodné do moderných aj klasických interiérov."
+            "title": "Možnosť renovácie",
+            "description": "Pri viacerých typoch parkiet je možné povrch po rokoch obnoviť."
           },
           {
-            "title": "Príjemné na dotyk a teplé na chodidlo",
-            "description": "Drevo prináša komfort pri každodennom používaní."
+            "title": "Vizuál na mieru interiéru",
+            "description": "Spolu nastavíme formát dosiek, vzor aj farebnosť podľa priestoru."
           },
           {
-            "title": "Výborné pre podlahové kúrenie",
-            "description": "Najmä viacvrstvové parkety poskytujú stabilitu a efektívny prestup tepla."
+            "title": "Profesionálne detaily",
+            "description": "Napojenia pri dverách, schodoch či stenách robíme čisto a presne."
           }
         ]
       },
       "gallery": {
-        "title": "UKÁŽKY PARKIET",
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
         "images": [
-          "/img/realizations/instagram/CZMh9ARqBVt/gallery/01.jpg",
-          "/img/realizations/instagram/CZMh9ARqBVt/gallery/02.jpg",
-          "/img/realizations/instagram/CZMh9ARqBVt/gallery/03.jpg"
+          "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
+          "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
+          "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg"
         ]
       },
       "installation": {
-        "title": "AKO PREBIEHA MONTÁŽ PARKIET",
-        "image": "/img/products/parkety/installation2.png",
+        "title": "AKO PREBIEHA REALIZÁCIA PARKIET",
+        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
         "steps": [
           {
-            "title": "Bezplatná konzultácia",
-            "description": "Pomôžeme vám vybrať typ, dekor a vhodné riešenie podľa vášho priestoru."
+            "title": "Obhliadka a návrh",
+            "description": "Prejdeme si priestor, štýl interiéru aj technické možnosti podkladu."
           },
           {
             "title": "Príprava podkladu",
-            "description": "Nivelizácia, brúsenie a penetrácia tak, aby podlaha vydržala roky."
+            "description": "Podklad vyrovnáme, spevníme a pripravíme na stabilnú pokládku parkiet."
           },
           {
-            "title": "Profesionálna pokládka",
-            "description": "Montáž certifikovanými podlahármi s dôrazom na detail a čisté napojenia."
+            "title": "Pokládka parkiet",
+            "description": "Montáž robíme presne podľa zvoleného systému a typu drevenej podlahy."
           },
           {
-            "title": "Dokončovacie práce",
-            "description": "Montáž soklových líšt, prechodových profilov a finálne doladenie."
+            "title": "Detaily a lišty",
+            "description": "Doriešime sokle, prechody a ukončenia tak, aby podlaha pôsobila čisto."
           },
           {
-            "title": "Odovzdanie a odporúčania na údržbu",
-            "description": "Odporučíme správnu starostlivosť, aby si parkety zachovali svoju krásu čo najdlhšie."
+            "title": "Odovzdanie",
+            "description": "Vysvetlíme údržbu a odporučíme vhodnú chémiu pre dlhodobý výsledok."
           }
         ]
       },
       "cta": {
-        "title": "OD PODKLADU AŽ PO POSLEDNÚ LIŠTU — VŠETKO NA JEDNOM MIESTE.",
-        "text": "Pri parketách zabezpečíme poradenstvo, prípravu podkladu, odbornú montáž aj finálne detaily.",
-        "image": "/img/products/parkety/gallery-1.jpg",
+        "title": "PARKETY, KTORÉ MAJÚ ŠTÝL AJ VÝDRŽ",
+        "text": "Ozvite sa nám a pripravíme vám riešenie, ktoré bude fungovať vizuálne aj technicky dlhé roky.",
+        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
+      },
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": [
+          "Parkety"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      }
+    },
+    {
+      "id": 2,
+      "slug": "plavajuce-podlahy",
+      "title": "PLÁVAJÚCE PODLAHY",
+      "description": "Plávajúce systémy podláh pre domácnosti aj komerčné priestory.",
+      "categoryTags": [
+        "Podlahy"
+      ],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": [
+          "Podlahy"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "PLÁVAJÚCE PODLAHY",
+        "description": "Plávajúce podlahy navrhujeme tak, aby ste získali rýchlu realizáciu, čistý výsledok a materiál, ktorý zvládne bežný rodinný aj kancelársky režim.",
+        "image": "/img/products/base/plavajucePodlahy.jpg",
         "actions": [
           {
             "label": "Dohodnite si meranie",
@@ -101,27 +143,93 @@
           },
           {
             "label": "Zavolajte nám",
-            "variant": "soft",
+            "variant": "glass",
             "href": "tel:0444323884"
           }
         ]
       },
-      "relatedRealizations": {
-        "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Parkety"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
-      }
-    },
-    {
-      "id": 2,
-      "slug": "plavajuce-podlahy",
-      "title": "PLÁVAJÚCE PODLAHY",
-      "description": "Plávajúce systémy podláh pre domácnosti aj komerčné priestory.",
-      "categoryTags": ["Podlahy"],
-      "relatedRealizations": {
-        "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Podlahy"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      "intro": {
+        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
+        "paragraphs": [
+          "Pri plávajúcej podlahe je dôležité správne zvoliť kombináciu podložky, zámkového systému a triedy odolnosti. To výrazne ovplyvní komfort pri chôdzi aj hlučnosť.",
+          "Na projekte riešime všetko naraz: výber dekoru, technický návrh skladby, montáž aj ukončovacie prvky. Vďaka tomu máte jeden zodpovedný tím a jasný výsledok."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ PLÁVAJÚCE PODLAHY?",
+        "items": [
+          {
+            "title": "Rýchla montáž bez zbytočných prestojov",
+            "description": "Plávajúci systém je efektívny pri rekonštrukciách aj novostavbách."
+          },
+          {
+            "title": "Čistý proces realizácie",
+            "description": "Montáž prebieha organizovane, s dôrazom na poriadok v priestore."
+          },
+          {
+            "title": "Veľký výber dekorov",
+            "description": "Dostanete moderné aj klasické dekory pre rôzne štýly interiéru."
+          },
+          {
+            "title": "Praktická údržba",
+            "description": "Podlahu ľahko udržíte aj v každodenne zaťažovaných miestnostiach."
+          },
+          {
+            "title": "Dobré napojenie na interiér",
+            "description": "Lišty a prechody doladíme tak, aby celok pôsobil jednotne."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
+        "images": [
+          "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
+          "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
+          "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA MONTÁŽ PLÁVAJÚCEJ PODLAHY",
+        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
+        "steps": [
+          {
+            "title": "Konzultácia a výber dekoru",
+            "description": "Pomôžeme vám vybrať materiál podľa používania miestnosti a štýlu interiéru."
+          },
+          {
+            "title": "Technická príprava",
+            "description": "Overíme podklad, rovinnosť a navrhneme vhodnú podložku."
+          },
+          {
+            "title": "Pokládka systému",
+            "description": "Podlahu kladieme presne podľa výrobcu a dilatačných pravidiel."
+          },
+          {
+            "title": "Montáž líšt a prechodov",
+            "description": "Ukončenia riešime tak, aby boli pevné, čisté a vizuálne nenápadné."
+          },
+          {
+            "title": "Kontrola a odovzdanie",
+            "description": "Skontrolujeme detaily a dáme vám jasné odporúčania na údržbu."
+          }
+        ]
+      },
+      "cta": {
+        "title": "PLÁVAJÚCA PODLAHA BEZ KOMPROMISOV",
+        "text": "Radi vám pripravíme návrh, dodanie aj profesionálnu montáž v jednom balíku.",
+        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -129,11 +237,80 @@
       "slug": "dlazby",
       "title": "DLAŽBY",
       "description": "Interiérové a exteriérové dlažby s odbornou montážou.",
-      "categoryTags": ["Podlahy"],
+      "categoryTags": [
+        "Podlahy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Podlahy"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Dlazby"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "DLAŽBY",
+        "description": "Dlažbové riešenia navrhujeme pre priestory, kde je dôležitá odolnosť, ľahká údržba a dlhodobá stabilita povrchu.",
+        "image": "/img/products/base/dlazby.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Pri dlažbe sledujeme nielen dizajn, ale aj technické detaily: formát, škáru, protišmyk a spôsob pokládky podľa typu priestoru.",
+          "Náš cieľ je výsledok, ktorý vyzerá dobre hneď po realizácii a funguje rovnako spoľahlivo aj po rokoch intenzívnej prevádzky."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ DLAŽBY?",
+        "items": [
+          {
+            "title": "Vysoká odolnosť",
+            "description": "Dlažba je vhodná pre priestory s pravidelnou záťažou."
+          },
+          {
+            "title": "Jednoduchá údržba",
+            "description": "Povrch sa ľahko čistí a je praktický na každodenné používanie."
+          },
+          {
+            "title": "Stabilný vzhľad v čase",
+            "description": "Materiál drží farebnosť a tvar aj pri dlhšej prevádzke."
+          },
+          {
+            "title": "Široký dizajnový výber",
+            "description": "Od jemných neutrálnych povrchov až po výrazné dekory."
+          },
+          {
+            "title": "Presná pokládka",
+            "description": "Dbáme na rovné línie, napojenia a čisté ukončenia."
+          }
+        ]
+      },
+      "cta": {
+        "title": "ODOLNÁ DLAŽBA, KTORÁ VYDRŽÍ",
+        "text": "Napíšte nám a navrhneme dlažbu, ktorá bude praktická aj vizuálne čistá.",
+        "image": "/img/products/base/dlazby.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -141,11 +318,80 @@
       "slug": "terasove-dosky",
       "title": "TERASOVÉ DOSKY",
       "description": "Terasové riešenia pre exteriér s dôrazom na odolnosť.",
-      "categoryTags": ["Terasove podlahy"],
+      "categoryTags": [
+        "Terasove podlahy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Terasove podlahy"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Terasove podlahy"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "TERASOVÉ DOSKY",
+        "description": "Terasové dosky navrhujeme pre dlhodobé exteriérové používanie s dôrazom na stabilnú konštrukciu, bezpečný povrch a čisté detaily.",
+        "image": "/img/products/base/terasoveDosky.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Pri terase rozhoduje kvalita podkladu, odvodnenie a správne uloženie nosnej konštrukcie. Práve tieto kroky určujú, ako bude terasa fungovať po sezónach.",
+          "Pomáhame s výberom materiálu podľa orientácie, slnečného zaťaženia a štýlu domu, aby terasa nebola len pekná, ale aj praktická na každodenné používanie."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ TERASOVÉ DOSKY?",
+        "items": [
+          {
+            "title": "Stabilita v exteriéri",
+            "description": "Konštrukciu navrhujeme tak, aby odolávala počasiu aj bežnému zaťaženiu."
+          },
+          {
+            "title": "Bezpečný povrch",
+            "description": "Riešime správnu povrchovú úpravu a vhodný typ dosiek."
+          },
+          {
+            "title": "Čisté napojenia",
+            "description": "Detaily pri fasáde, schodoch a okrajoch realizujeme precízne."
+          },
+          {
+            "title": "Dizajnové zladenie",
+            "description": "Terasu vieme zladiť s podlahou, dverami aj celým exteriérom."
+          },
+          {
+            "title": "Servisný prístup",
+            "description": "Poradíme s údržbou, aby terasa vyzerala dobre aj po rokoch."
+          }
+        ]
+      },
+      "cta": {
+        "title": "TERASA, KTORÁ FUNGUJE KAŽDÚ SEZÓNU",
+        "text": "Ozvite sa nám a navrhneme vám terasu s dlhou životnosťou a čistým vzhľadom.",
+        "image": "/img/products/base/terasoveDosky.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -153,11 +399,115 @@
       "slug": "koberce",
       "title": "KOBERCE",
       "description": "Bytové aj komerčné koberce s montážou.",
-      "categoryTags": ["Koberce"],
+      "categoryTags": [
+        "Koberce"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Koberce"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Koberce"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "KOBERCE",
+        "description": "Koberce riešime od výberu materiálu po presnú pokládku. Navrhujeme riešenia, ktoré zlepšia komfort, akustiku aj celkovú atmosféru priestoru.",
+        "image": "/img/products/base/koberce.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "image": "/img/realizations/instagram/DJqoxRxKG5f/gallery/01.jpg",
+        "paragraphs": [
+          "Každý priestor má iný režim používania, preto volíme rozdielne typy vlákna, hustotu aj podklad. Dôležité je, aby koberec fungoval prakticky aj vizuálne.",
+          "Montáž robíme tak, aby boli spoje, napojenia a obšívanie čisté. Vďaka tomu výsledok pôsobí profesionálne v domácnostiach aj v komerčných projektoch."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ KOBERCE?",
+        "items": [
+          {
+            "title": "Komfort pri chôdzi",
+            "description": "Koberec prináša mäkší došľap a príjemnejší pocit v interiéri."
+          },
+          {
+            "title": "Lepšia akustika",
+            "description": "Výrazne znižuje kročajový hluk a tlmí ozvenu v miestnosti."
+          },
+          {
+            "title": "Teplejší charakter priestoru",
+            "description": "Interiér pôsobí útulnejšie a vyváženejšie."
+          },
+          {
+            "title": "Široký výber štýlov",
+            "description": "Bytové, komerčné, kusové aj schodiskové riešenia."
+          },
+          {
+            "title": "Precízna montáž",
+            "description": "Dbáme na rovnosť, napojenia a dlhodobú stabilitu pokládky."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
+        "images": [
+          "/img/realizations/instagram/DJqoxRxKG5f/gallery/01.jpg",
+          "/img/realizations/instagram/DJqoxRxKG5f/gallery/02.jpg",
+          "/img/realizations/instagram/DJqoxRxKG5f/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA REALIZÁCIA KOBERCA",
+        "image": "/img/realizations/instagram/DJqoxRxKG5f/gallery/02.jpg",
+        "steps": [
+          {
+            "title": "Výber typu koberca",
+            "description": "Odporučíme materiál podľa záťaže, údržby a vzhľadu priestoru."
+          },
+          {
+            "title": "Zameranie a príprava",
+            "description": "Priestor zameriame, pripravíme podklad a naplánujeme spoje."
+          },
+          {
+            "title": "Pokládka",
+            "description": "Koberec osadíme presne, s dôrazom na čisté napojenia."
+          },
+          {
+            "title": "Obšívanie a detaily",
+            "description": "Vyriešime ukončenia, schody a exponované hrany."
+          },
+          {
+            "title": "Finálne odovzdanie",
+            "description": "Priestor odovzdáme pripravený na okamžité používanie."
+          }
+        ]
+      },
+      "cta": {
+        "title": "KOBERCE, KTORÉ VYZERAJÚ A FUNGUJÚ",
+        "text": "Pomôžeme vám vybrať koberec, ktorý bude sedieť priestoru aj reálnemu používaniu.",
+        "image": "/img/realizations/instagram/DJqoxRxKG5f/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -165,11 +515,80 @@
       "slug": "dvere",
       "title": "DVERE",
       "description": "Interiérové aj vchodové dvere vrátane montáže.",
-      "categoryTags": ["Dvere"],
+      "categoryTags": [
+        "Dvere"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Dvere"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Dvere"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "DVERE",
+        "description": "Dvere a dverové riešenia navrhujeme ako súčasť celého interiéru, aby ladili s podlahou, stenami aj funkciou jednotlivých miestností.",
+        "image": "/img/products/base/dvere.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Pri výbere dverí riešime viac než len dekor. Dôležité sú rozmery, smer otvárania, kovanie, akustika aj spôsob osadenia zárubní.",
+          "V praxi to znamená menej kompromisov pri montáži a výsledok, ktorý pôsobí čisto. Zabezpečíme dodanie, montáž aj finálne doladenie detailov."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ DVERE?",
+        "items": [
+          {
+            "title": "Zladenie s interiérom",
+            "description": "Dvere navrhneme tak, aby prirodzene nadväzovali na podlahy a štýl priestoru."
+          },
+          {
+            "title": "Funkčné kovanie",
+            "description": "Kľučky a kovanie volíme podľa intenzity používania."
+          },
+          {
+            "title": "Presné osadenie",
+            "description": "Roviny, škáry a napojenia realizujeme s dôrazom na detail."
+          },
+          {
+            "title": "Široká ponuka systémov",
+            "description": "Interiérové, posuvné aj klasické riešenia."
+          },
+          {
+            "title": "Montáž bez improvizácie",
+            "description": "Pracujeme podľa overeného postupu a jasného plánu."
+          }
+        ]
+      },
+      "cta": {
+        "title": "DVERE, KTORÉ SADNÚ NA PRVÝKRÁT",
+        "text": "Radi vám pripravíme dverové riešenie, ktoré bude praktické, pevné a dizajnovo čisté.",
+        "image": "/img/products/base/dvere.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -177,11 +596,116 @@
       "slug": "vinylove-podlahy",
       "title": "VINYLOVÉ PODLAHY",
       "description": "Lepené aj click vinylové podlahy pre domácnosti aj komerčné priestory.",
-      "categoryTags": ["Vinyl", "Podlahy"],
+      "categoryTags": [
+        "Vinyl",
+        "Podlahy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Vinyl"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Vinyl"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "VINYLOVÉ PODLAHY",
+        "description": "Vinylové podlahy dodávame a montujeme tak, aby zvládli každodennú prevádzku a zároveň vizuálne dotvorili priestor moderným, čistým štýlom.",
+        "image": "/img/products/base/vinylovePodlahy.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "image": "/img/realizations/instagram/C8Yxg5jqSnG/gallery/01.jpg",
+        "paragraphs": [
+          "Pri vinylových podlahách riešime najmä správnu skladbu a prípravu podkladu. Práve tu sa rozhoduje o tom, či bude výsledok stabilný a dlhodobo bez problémov.",
+          "Vyberieme s vami vhodný systém (lepený alebo click), nastavíme detaily napojenia a postaráme sa o profesionálnu realizáciu od začiatku do konca."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ VINYLOVÉ PODLAHY?",
+        "items": [
+          {
+            "title": "Odolnosť pre každodenný režim",
+            "description": "Vinyl zvláda vysoké zaťaženie v domácnostiach aj komercii."
+          },
+          {
+            "title": "Praktická údržba",
+            "description": "Povrch je nenáročný na bežné čistenie a servis."
+          },
+          {
+            "title": "Široká škála dekorov",
+            "description": "Od drevodekorov po moderné minimalistické povrchy."
+          },
+          {
+            "title": "Príjemný došľap",
+            "description": "Podlaha je komfortná pri chôdzi aj dlhšom používaní."
+          },
+          {
+            "title": "Presná montáž s detailmi",
+            "description": "Dbáme na prechody, lišty a čisté ukončenia."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
+        "images": [
+          "/img/realizations/instagram/C8Yxg5jqSnG/gallery/01.jpg",
+          "/img/realizations/instagram/C8Yxg5jqSnG/gallery/02.jpg",
+          "/img/realizations/instagram/C8Yxg5jqSnG/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA REALIZÁCIA VINYLU",
+        "image": "/img/realizations/instagram/C8Yxg5jqSnG/gallery/02.jpg",
+        "steps": [
+          {
+            "title": "Konzultácia a výber systému",
+            "description": "Odporučíme vhodný typ vinylu podľa priestoru a záťaže."
+          },
+          {
+            "title": "Kontrola podkladu",
+            "description": "Skontrolujeme rovinnosť a navrhneme potrebné úpravy podkladu."
+          },
+          {
+            "title": "Príprava povrchu",
+            "description": "Podklad upravíme tak, aby bol pripravený na presnú montáž."
+          },
+          {
+            "title": "Pokládka vinylu",
+            "description": "Podlahu kladieme technicky správnym postupom podľa typu systému."
+          },
+          {
+            "title": "Finálne detaily",
+            "description": "Montujeme lišty, prechody a odovzdáme hotový priestor."
+          }
+        ]
+      },
+      "cta": {
+        "title": "VINYL, KTORÝ VYDRŽÍ AJ V PREVÁDZKE",
+        "text": "Ozvite sa nám a pripravíme vám vinylové riešenie presne podľa priestoru.",
+        "image": "/img/realizations/instagram/C8Yxg5jqSnG/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -189,11 +713,116 @@
       "slug": "komercne-podlahy",
       "title": "KOMERČNÉ PODLAHY",
       "description": "Podlahy pre sklady, garáže, prevádzky, fitká a športové priestory.",
-      "categoryTags": ["Komercne priestory", "Podlahy"],
+      "categoryTags": [
+        "Komercne priestory",
+        "Podlahy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Komercne priestory"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Komercne priestory"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "KOMERČNÉ PODLAHY",
+        "description": "Komerčné podlahy navrhujeme pre dlhodobú záťaž. Riešime funkčný výber materiálu, logistiku montáže aj minimalizovanie výpadku prevádzky.",
+        "image": "/img/products/base/komercnePodlahy.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "image": "/img/realizations/kobercove-stvorce-a-pvc-homogen/gallery/01.jpg",
+        "paragraphs": [
+          "V komerčných projektoch je kľúčová spoľahlivosť. Podlahu navrhujeme podľa reálneho zaťaženia, údržby a typu prevádzky, nie len podľa vzhľadu.",
+          "Koordinujeme celý priebeh realizácie tak, aby bol harmonogram jasný, montáž efektívna a výsledok pripravený na okamžité používanie."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ KOMERČNÉ PODLAHY?",
+        "items": [
+          {
+            "title": "Materiály pre vysokú záťaž",
+            "description": "Vyberáme riešenia s overenou odolnosťou pre komerčné použitie."
+          },
+          {
+            "title": "Kontrola termínov",
+            "description": "Práce plánujeme tak, aby sa minimalizovali prevádzkové obmedzenia."
+          },
+          {
+            "title": "Jednoduchý servis",
+            "description": "Povrchy volíme s ohľadom na rýchlu údržbu a dlhú životnosť."
+          },
+          {
+            "title": "Bezpečnosť používania",
+            "description": "Riešime protišmyk, prechody a funkčné detaily."
+          },
+          {
+            "title": "Skúsenosť s väčšími objektmi",
+            "description": "Hotelové, kancelárske aj verejné priestory realizujeme systematicky."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
+        "images": [
+          "/img/realizations/kobercove-stvorce-a-pvc-homogen/gallery/01.jpg",
+          "/img/realizations/kobercove-stvorce-a-pvc-homogen/gallery/02.jpg",
+          "/img/realizations/kobercove-stvorce-a-pvc-homogen/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA KOMERČNÁ REALIZÁCIA",
+        "image": "/img/realizations/kobercove-stvorce-a-pvc-homogen/gallery/02.jpg",
+        "steps": [
+          {
+            "title": "Technická konzultácia",
+            "description": "Stanovíme požiadavky prevádzky a vhodné parametre podlahy."
+          },
+          {
+            "title": "Plán realizácie",
+            "description": "Pripravíme harmonogram prác podľa fungovania objektu."
+          },
+          {
+            "title": "Príprava podkladu",
+            "description": "Zabezpečíme podklad tak, aby bol pripravený na dlhodobú záťaž."
+          },
+          {
+            "title": "Montáž materiálu",
+            "description": "Realizáciu robíme efektívne, s dôrazom na kvalitu detailov."
+          },
+          {
+            "title": "Odovzdanie prevádzke",
+            "description": "Hotovú podlahu odovzdáme s jasnými pokynmi pre údržbu."
+          }
+        ]
+      },
+      "cta": {
+        "title": "KOMERČNÉ PODLAHY BEZ ZBYTOČNÝCH KOMPROMISOV",
+        "text": "Poďme spolu nastaviť riešenie, ktoré bude fungovať v každodennej prevádzke.",
+        "image": "/img/realizations/kobercove-stvorce-a-pvc-homogen/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -201,11 +830,80 @@
       "slug": "rohoze-vstupne-zony",
       "title": "ROHOŽE A VSTUPNÉ ZÓNY",
       "description": "Exteriérové aj interiérové rohože vrátane výroby komerčných vstupných zón na mieru.",
-      "categoryTags": ["Rohoze"],
+      "categoryTags": [
+        "Rohoze"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Rohoze"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Rohoze"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "ROHOŽE A VSTUPNÉ ZÓNY",
+        "description": "Rohože a vstupné zóny navrhujeme tak, aby reálne chránili interiér pred nečistotami a zároveň pôsobili reprezentatívne hneď pri vstupe.",
+        "image": "/img/products/base/rohozeVstupneZony.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Dobrá vstupná zóna šetrí podlahu, znižuje náklady na údržbu a zvyšuje bezpečnosť pri pohybe ľudí. Preto riešime materiál aj spôsob osadenia podľa typu objektu.",
+          "Od menších vstupov až po komerčné zóny na mieru pripravíme systém, ktorý je funkčný, estetický a jednoducho servisovateľný."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ ROHOŽE A VSTUPNÉ ZÓNY?",
+        "items": [
+          {
+            "title": "Menej nečistôt v interiéri",
+            "description": "Vstupná zóna zachytí vlhkosť aj hrubé nečistoty ešte pred vstupom."
+          },
+          {
+            "title": "Vyššia bezpečnosť",
+            "description": "Znižuje riziko pošmyknutia vo frekventovaných priestoroch."
+          },
+          {
+            "title": "Ochrana podláh",
+            "description": "Predlžuje životnosť povrchov za vstupom do budovy."
+          },
+          {
+            "title": "Riešenie na mieru",
+            "description": "Prispôsobíme rozmery aj typ rohože konkrétnemu vstupu."
+          },
+          {
+            "title": "Čistý dizajn vstupu",
+            "description": "Funkčný prvok vie byť zároveň vizuálne reprezentatívny."
+          }
+        ]
+      },
+      "cta": {
+        "title": "VSTUPNÁ ZÓNA, KTORÁ NAOZAJ FUNGUJE",
+        "text": "Kontaktujte nás a navrhneme vám riešenie podľa typu objektu a prevádzky.",
+        "image": "/img/products/base/rohozeVstupneZony.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -213,11 +911,80 @@
       "slug": "akusticke-panely",
       "title": "AKUSTICKÉ PANELY",
       "description": "Dizajnové akustické a obkladové panely pre moderné interiéry.",
-      "categoryTags": ["Panely"],
+      "categoryTags": [
+        "Panely"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Panely"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Akusticke panely"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "AKUSTICKÉ PANELY",
+        "description": "Akustické panely používame tam, kde treba zlepšiť zrozumiteľnosť hovoru, znížiť ozvenu a pritom zachovať moderný interiérový vzhľad.",
+        "image": "/img/products/base/akustickePanelySlat.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Akustiku riešime prakticky: podľa veľkosti miestnosti, povrchov a spôsobu používania navrhneme umiestnenie aj typ panelov.",
+          "Výsledkom je príjemnejší zvukový komfort v domácnostiach, kanceláriách aj rokovacích priestoroch bez kompromisu v dizajne."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ AKUSTICKÉ PANELY?",
+        "items": [
+          {
+            "title": "Menej ozveny",
+            "description": "Panely znižujú odrazy zvuku a spríjemňujú komunikáciu."
+          },
+          {
+            "title": "Lepšia zrozumiteľnosť",
+            "description": "Pri rozhovoroch je menší hluk a menej rušenia."
+          },
+          {
+            "title": "Dizajnový prvok interiéru",
+            "description": "Akustika a vzhľad môžu fungovať súčasne."
+          },
+          {
+            "title": "Riešenie pre domácnosti aj firmy",
+            "description": "Panely vieme navrhnúť pre obytné aj komerčné priestory."
+          },
+          {
+            "title": "Profesionálna montáž",
+            "description": "Dbáme na geometriu, napojenia a čisté osadenie."
+          }
+        ]
+      },
+      "cta": {
+        "title": "TICHŠÍ A PRÍJEMNEJŠÍ INTERIÉR",
+        "text": "Radi vám navrhneme akustické panely, ktoré budú fungovať aj vyzerať profesionálne.",
+        "image": "/img/products/base/akustickePanelySlat.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -225,11 +992,119 @@
       "slug": "montaz-realizacia",
       "title": "MONTÁŽ A REALIZÁCIA",
       "description": "Nivelizácia, brúsenie, penetrácia a profesionálna montáž podláh.",
-      "categoryTags": ["Pokladka", "Montaz", "Priprava podkladu"],
+      "categoryTags": [
+        "Pokladka",
+        "Montaz",
+        "Priprava podkladu"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Pokladka"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Pokladka",
+          "Priprava podkladu",
+          "Nivelizacia"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "MONTÁŽ A REALIZÁCIA",
+        "description": "Montáž a realizácie riešime na kľúč. Od prípravy podkladu až po finálne detaily máte jeden tím, ktorý nesie zodpovednosť za výsledok.",
+        "image": "/img/products/base/montazRealizacia.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "image": "/img/realizations/instagram/ChJctSOKTAc/gallery/01.jpg",
+        "paragraphs": [
+          "Najväčší rozdiel medzi priemernou a kvalitnou podlahou je v príprave podkladu a v precíznosti montáže. Práve na tom staviame každý projekt.",
+          "Koordinujeme materiál, harmonogram aj remeselné kroky tak, aby realizácia prebehla plynulo a výsledok bol pripravený na dlhodobé používanie."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ MONTÁŽ A REALIZÁCIA?",
+        "items": [
+          {
+            "title": "Jedna zodpovedná firma",
+            "description": "Nemusíte koordinovať viac dodávateľov a hľadať vinníka problému."
+          },
+          {
+            "title": "Kontrola kvality v každom kroku",
+            "description": "Sledujeme podklad, montáž aj finálne ukončenia."
+          },
+          {
+            "title": "Jasný harmonogram",
+            "description": "Termíny nastavujeme realisticky a držíme ich počas realizácie."
+          },
+          {
+            "title": "Technicky správny postup",
+            "description": "Používame overené postupy podľa typu materiálu."
+          },
+          {
+            "title": "Čisté odovzdanie",
+            "description": "Po dokončení je priestor pripravený na používanie bez ďalších zásahov."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
+        "images": [
+          "/img/realizations/instagram/ChJctSOKTAc/gallery/01.jpg",
+          "/img/realizations/instagram/ChJctSOKTAc/gallery/02.jpg",
+          "/img/realizations/instagram/ChJctSOKTAc/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA KOMPLETNÁ REALIZÁCIA",
+        "image": "/img/realizations/instagram/ChJctSOKTAc/gallery/02.jpg",
+        "steps": [
+          {
+            "title": "Úvodná konzultácia",
+            "description": "Zosúladíme očakávania, rozsah prác a termín realizácie."
+          },
+          {
+            "title": "Technická príprava",
+            "description": "Skontrolujeme podklad a pripravíme správnu skladbu."
+          },
+          {
+            "title": "Logistika materiálu",
+            "description": "Zabezpečíme dodávku materiálu v správnom čase."
+          },
+          {
+            "title": "Montáž a kontrola",
+            "description": "Realizáciu vykonáme precízne, s priebežnou kontrolou detailov."
+          },
+          {
+            "title": "Odovzdanie projektu",
+            "description": "Priestor odovzdáme hotový aj s odporúčaniami pre údržbu."
+          }
+        ]
+      },
+      "cta": {
+        "title": "REALIZÁCIA NA KĽÚČ OD JEDNÉHO TÍMU",
+        "text": "Poďme nastaviť projekt tak, aby bol výsledok kvalitný, čistý a bez stresu.",
+        "image": "/img/realizations/instagram/ChJctSOKTAc/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -237,11 +1112,80 @@
       "slug": "koberce-na-mieru",
       "title": "KOBERCE NA MIERU",
       "description": "Výroba kobercov na mieru s vlastným dizajnom.",
-      "categoryTags": ["Koberce"],
+      "categoryTags": [
+        "Koberce"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Koberce"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Koberce na mieru"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "KOBERCE NA MIERU",
+        "description": "Koberce na mieru pripravujeme presne podľa rozmerov, typu priestoru a požadovaného vzhľadu. Výsledok je čistý, funkčný a profesionálne spracovaný.",
+        "image": "/img/products/base/koberceNaMieru.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Pri riešení na mieru je dôležitá presnosť zamerania a vhodná voľba materiálu. Každý detail od vlákna po obšívanie ovplyvní výsledný dojem aj životnosť.",
+          "Či ide o domácnosť, hotel alebo komerčný interiér, navrhneme koberec tak, aby zapadol do priestoru a zároveň vydržal jeho každodenné používanie."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ KOBERCE NA MIERU?",
+        "items": [
+          {
+            "title": "Presné rozmery",
+            "description": "Koberec pripravíme podľa konkrétnej miestnosti alebo zóny."
+          },
+          {
+            "title": "Výber materiálov",
+            "description": "Od odolných komerčných riešení po luxusné bytové vlákna."
+          },
+          {
+            "title": "Profesionálne obšívanie",
+            "description": "Hrany sú pevné, čisté a vizuálne jednotné."
+          },
+          {
+            "title": "Lepšie zladenie interiéru",
+            "description": "Dekor a farebnosť nastavíme podľa existujúceho priestoru."
+          },
+          {
+            "title": "Komplexná služba",
+            "description": "Zameranie, výroba, dodanie aj pokládka pod jednou strechou."
+          }
+        ]
+      },
+      "cta": {
+        "title": "KOBERCE NA MIERU, KTORÉ SEDIA PRESNE",
+        "text": "Napíšte nám, pripravíme vám návrh a realizáciu presne podľa vášho priestoru.",
+        "image": "/img/products/base/koberceNaMieru.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -249,11 +1193,116 @@
       "slug": "pvc-podlahy",
       "title": "PVC PODLAHY",
       "description": "PVC podlahy pre bytové aj komerčné priestory.",
-      "categoryTags": ["PVC", "Podlahy"],
+      "categoryTags": [
+        "PVC",
+        "Podlahy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["PVC"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "PVC"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "PVC PODLAHY",
+        "description": "PVC podlahy dodávame pre bytové aj komerčné priestory, kde je dôležitá odolnosť, hygienický povrch a jednoduchá údržba.",
+        "image": "/img/products/base/pvcPodlahy.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "image": "/img/realizations/instagram/CSzwrt-qNpq/gallery/01.jpg",
+        "paragraphs": [
+          "Pri PVC podlahách rozhoduje správna príprava podkladu a kvalita montáže. Vďaka tomu má podlaha rovný vzhľad, dlhú životnosť a stabilnú funkciu.",
+          "Pomôžeme vám vybrať vhodný typ PVC podľa záťaže, požiadaviek na údržbu a celkového dizajnu priestoru."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ PVC PODLAHY?",
+        "items": [
+          {
+            "title": "Hygienický povrch",
+            "description": "PVC je vhodné tam, kde je potrebné časté a jednoduché čistenie."
+          },
+          {
+            "title": "Odolnosť voči záťaži",
+            "description": "Správny typ PVC zvládne aj náročnú dennú prevádzku."
+          },
+          {
+            "title": "Praktický servis",
+            "description": "Povrch je nenáročný na dlhodobú údržbu."
+          },
+          {
+            "title": "Široké využitie",
+            "description": "Byty, ambulancie, kancelárie aj prevádzky."
+          },
+          {
+            "title": "Precízna pokládka",
+            "description": "Dbáme na spoje, napojenia a detaily pri stenách."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
+        "images": [
+          "/img/realizations/instagram/CSzwrt-qNpq/gallery/01.jpg",
+          "/img/realizations/instagram/CSzwrt-qNpq/gallery/02.jpg",
+          "/img/realizations/instagram/CSzwrt-qNpq/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA REALIZÁCIA PVC PODLAHY",
+        "image": "/img/realizations/instagram/CSzwrt-qNpq/gallery/02.jpg",
+        "steps": [
+          {
+            "title": "Výber materiálu",
+            "description": "Odporučíme vhodný typ PVC podľa priestoru a záťaže."
+          },
+          {
+            "title": "Príprava podkladu",
+            "description": "Podklad vyrovnáme a pripravíme pre kvalitné lepenie."
+          },
+          {
+            "title": "Pokládka PVC",
+            "description": "Montáž robíme presne podľa technológie výrobcu."
+          },
+          {
+            "title": "Detailné ukončenia",
+            "description": "Riešime sokle, prechody a čisté napojenia."
+          },
+          {
+            "title": "Odovzdanie",
+            "description": "Podlahu odovzdáme pripravenú na okamžité používanie."
+          }
+        ]
+      },
+      "cta": {
+        "title": "PVC PODLAHA, KTORÁ ZVLÁDNE PREVÁDZKU",
+        "text": "Radi vám navrhneme a zrealizujeme PVC riešenie podľa typu priestoru.",
+        "image": "/img/realizations/instagram/CSzwrt-qNpq/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -261,11 +1310,80 @@
       "slug": "listy-a-podlozky",
       "title": "LIŠTY A PODLOŽKY",
       "description": "Prechodové, soklové aj kobercové lišty a podložky pod podlahy.",
-      "categoryTags": ["Doplnky"],
+      "categoryTags": [
+        "Doplnky"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Doplnky"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Listy"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "LIŠTY A PODLOŽKY",
+        "description": "Lišty a podložky sú kľúčové detaily každej kvalitnej podlahy. Správna voľba zlepší komfort, akustiku aj celkovú životnosť realizácie.",
+        "image": "/img/products/base/listyAPodlozky.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Podložka ovplyvňuje kročajový komfort, stabilitu aj správanie podlahy pri bežnom používaní. Lišty zas rozhodujú o tom, či bude výsledok pôsobiť profesionálne.",
+          "Pomôžeme vám zvoliť správnu kombináciu prechodu, sokla aj podložky podľa typu podlahy a technických požiadaviek priestoru."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ LIŠTY A PODLOŽKY?",
+        "items": [
+          {
+            "title": "Čisté ukončenie podlahy",
+            "description": "Lišty prekryjú dilatácie a vizuálne uzatvoria celý priestor."
+          },
+          {
+            "title": "Lepší komfort chôdze",
+            "description": "Správna podložka zlepšuje akustiku aj došľap."
+          },
+          {
+            "title": "Ochrana podlahovej skladby",
+            "description": "Detaily znižujú riziko poškodenia exponovaných miest."
+          },
+          {
+            "title": "Kompatibilita materiálov",
+            "description": "Volíme prvky, ktoré spolu fungujú technicky aj vizuálne."
+          },
+          {
+            "title": "Dlhšia životnosť podlahy",
+            "description": "Kvalitné doplnky pomáhajú udržať stabilitu systému."
+          }
+        ]
+      },
+      "cta": {
+        "title": "DETAILY, KTORÉ ROBIA VÝSLEDOK",
+        "text": "Pomôžeme vám správne vybrať aj osadiť lišty a podložky pre vašu podlahu.",
+        "image": "/img/products/base/listyAPodlozky.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -273,11 +1391,80 @@
       "slug": "podlaharska-chemia",
       "title": "PODLAHÁRSKA CHÉMIA",
       "description": "Profesionálna chémia pre montáž a údržbu podláh.",
-      "categoryTags": ["Doplnky"],
+      "categoryTags": [
+        "Doplnky"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Doplnky"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Podlaharska chemia"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "PODLAHÁRSKA CHÉMIA",
+        "description": "Podlahárska chémia je základ kvalitnej montáže. Od penetrácie po lepidlá volíme systém, ktorý je kompatibilný s konkrétnym materiálom aj podkladom.",
+        "image": "/img/products/base/podlaharskaChemia.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Aj najlepší materiál môže zlyhať, ak sa podcení príprava a správna chémia. Preto pracujeme so systémovým prístupom a overenými postupmi.",
+          "V praxi to znamená stabilnejší výsledok, menej reklamácií a podlahu, ktorá si drží parametre aj pri vyššej záťaži."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ PODLAHÁRSKA CHÉMIA?",
+        "items": [
+          {
+            "title": "Správna priľnavosť",
+            "description": "Kvalitná chémia zabezpečí pevné spojenie podlahy s podkladom."
+          },
+          {
+            "title": "Dlhšia životnosť realizácie",
+            "description": "Systémové riešenie znižuje riziko porúch a odlepovania."
+          },
+          {
+            "title": "Kompatibilné produkty",
+            "description": "Používame kombinácie odporúčané pre konkrétne materiály."
+          },
+          {
+            "title": "Bezpečný postup aplikácie",
+            "description": "Dodržiavame technologické časy aj podmienky montáže."
+          },
+          {
+            "title": "Stabilný výsledok v prevádzke",
+            "description": "Podlaha si drží parametre aj pri bežnom zaťažení."
+          }
+        ]
+      },
+      "cta": {
+        "title": "SPRÁVNA CHÉMIA = SPOĽAHLIVÁ PODLAHA",
+        "text": "Ozvite sa nám, nastavíme vám správny systém prípravy a montáže podlahy.",
+        "image": "/img/products/base/podlaharskaChemia.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -285,11 +1472,80 @@
       "slug": "obkladove-panely",
       "title": "OBKLADOVÉ PANELY",
       "description": "Dekoratívne obkladové panely do moderných interiérov.",
-      "categoryTags": ["Panely"],
+      "categoryTags": [
+        "Panely"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Panely"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Obkladove panely"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "OBKLADOVÉ PANELY",
+        "description": "Obkladové panely používame na rýchlu a estetickú premenu stien. Navrhneme riešenie, ktoré ladí s podlahou aj celkovým štýlom interiéru.",
+        "image": "/img/products/base/obkladovePanely.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Panely sú praktická cesta, ako priestoru dodať charakter bez náročných stavebných zásahov. Dôležitý je správny výber formátu, dekoru a spôsobu osadenia.",
+          "Riešime to komplexne: od návrhu cez prípravu podkladu až po finálnu montáž, aby výsledok pôsobil čisto a profesionálne."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ OBKLADOVÉ PANELY?",
+        "items": [
+          {
+            "title": "Rýchla vizuálna premena",
+            "description": "Stena získa nový charakter bez zdĺhavej rekonštrukcie."
+          },
+          {
+            "title": "Dizajnová variabilita",
+            "description": "Rôzne dekory a štruktúry vieme zladiť s podlahami aj dverami."
+          },
+          {
+            "title": "Čistá montáž",
+            "description": "Panely osadzujeme presne, s dôrazom na roviny a spoje."
+          },
+          {
+            "title": "Vhodné pre domácnosti aj komerciu",
+            "description": "Riešenie funguje v bytoch, kanceláriách aj hoteloch."
+          },
+          {
+            "title": "Jednotný výsledok",
+            "description": "Detaily a ukončenia doladíme tak, aby pôsobili kompaktne."
+          }
+        ]
+      },
+      "cta": {
+        "title": "STENY, KTORÉ POSUNÚ INTERIÉR",
+        "text": "Radi vám pripravíme obkladové panely, ktoré budú funkčné aj dizajnovo výrazné.",
+        "image": "/img/products/base/obkladovePanely.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -297,11 +1553,80 @@
       "slug": "umele-travy",
       "title": "UMELÉ TRÁVY",
       "description": "Umelé trávniky pre exteriér aj športové využitie.",
-      "categoryTags": ["Umele travy"],
+      "categoryTags": [
+        "Umele travy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Umele travy"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Umele travy"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "UMELÉ TRÁVY",
+        "description": "Umelé trávy navrhujeme pre priestory, kde chcete celoročný zelený vzhľad bez náročnej údržby a s dlhou životnosťou povrchu.",
+        "image": "/img/products/base/umeleTravy.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Pri umelej tráve je dôležitý správny typ vlákna, hustota a podkladová skladba. To rozhoduje o komforte aj odolnosti pri používaní.",
+          "Riešenie pripravíme podľa konkrétnej plochy, či ide o terasu, záhradu alebo komerčný exteriér, aby výsledok pôsobil prirodzene a čisto."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ UMELÉ TRÁVY?",
+        "items": [
+          {
+            "title": "Celoročný vzhľad",
+            "description": "Tráva vyzerá upravene bez sezónnych výkyvov."
+          },
+          {
+            "title": "Minimálna údržba",
+            "description": "Bez kosenia, dosievania a intenzívneho polievania."
+          },
+          {
+            "title": "Praktické riešenie pre záťaž",
+            "description": "Vhodné pre plochy s pravidelným používaním."
+          },
+          {
+            "title": "Rýchla realizácia",
+            "description": "Montáž vieme zvládnuť efektívne a bez veľkých zásahov."
+          },
+          {
+            "title": "Čistý finálny detail",
+            "description": "Okraje a napojenia riešime tak, aby pôsobili prirodzene."
+          }
+        ]
+      },
+      "cta": {
+        "title": "ZELENÝ VZHĽAD BEZ STAROSTÍ",
+        "text": "Ozvite sa nám a navrhneme vám umelý trávnik podľa typu plochy a používania.",
+        "image": "/img/products/base/umeleTravy.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -309,11 +1634,81 @@
       "slug": "sportove-podlahy",
       "title": "ŠPORTOVÉ PODLAHY",
       "description": "Povrchy pre športové a záťažové priestory.",
-      "categoryTags": ["Sportove podlahy", "Podlahy"],
+      "categoryTags": [
+        "Sportove podlahy",
+        "Podlahy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Sportove podlahy"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Sportove podlahy"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "ŠPORTOVÉ PODLAHY",
+        "description": "Športové podlahy realizujeme pre priestory, kde je dôležitá bezpečnosť pohybu, odolnosť povrchu a jednoduchá údržba v pravidelnej prevádzke.",
+        "image": "/img/products/base/sportovePodlahy.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Športový povrch musí fungovať technicky aj pri vyššej záťaži. Sledujeme vhodnú skladbu, tlmenie a stabilitu podľa typu aktivity.",
+          "Riešime školy, tréningové zóny aj multifunkčné priestory. Cieľom je povrch, ktorý je bezpečný, trvácny a prevádzkovo praktický."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ ŠPORTOVÉ PODLAHY?",
+        "items": [
+          {
+            "title": "Bezpečný došľap",
+            "description": "Povrch navrhujeme s ohľadom na stabilitu a komfort pri pohybe."
+          },
+          {
+            "title": "Odolnosť voči záťaži",
+            "description": "Podlahy sú určené na pravidelné a intenzívne používanie."
+          },
+          {
+            "title": "Jednoduchá údržba",
+            "description": "Materiály volíme tak, aby boli praktické pre denný servis."
+          },
+          {
+            "title": "Vhodné pre rôzne typy priestorov",
+            "description": "Školy, sály aj komerčné tréningové zóny."
+          },
+          {
+            "title": "Profesionálna realizácia",
+            "description": "Dbáme na geometriu, prechody a dlhodobú funkčnosť."
+          }
+        ]
+      },
+      "cta": {
+        "title": "ŠPORTOVÝ POVRCH, KTORÝ VYDRŽÍ ZÁŤAŽ",
+        "text": "Kontaktujte nás a pripravíme riešenie pre školu, fitko alebo multifunkčný priestor.",
+        "image": "/img/products/base/sportovePodlahy.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -321,11 +1716,83 @@
       "slug": "podlahy-pre-fitka-a-sklady",
       "title": "FITKÁ, SKLADY A GARÁŽE",
       "description": "Odolné podlahy pre fitká, sklady, garáže a prevádzky.",
-      "categoryTags": ["Komercne priestory", "Podlahy"],
+      "categoryTags": [
+        "Komercne priestory",
+        "Podlahy"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Komercne priestory"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Fitka",
+          "Sklady",
+          "Garaze"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "FITKÁ, SKLADY A GARÁŽE",
+        "description": "Podlahy pre fitká, sklady a garáže navrhujeme pre náročnú prevádzku, kde je rozhodujúca odolnosť, bezpečnosť a dlhodobá stabilita povrchu.",
+        "image": "/img/products/base/fitkaSkladyGaraze.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "V technicky náročných priestoroch musí podlaha zvládať vyššie bodové aj plošné zaťaženie. Preto volíme materiály podľa konkrétneho prevádzkového režimu.",
+          "Riešime celý proces vrátane prípravy podkladu, aby povrch fungoval spoľahlivo a bez zbytočných servisných zásahov."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ FITKÁ, SKLADY A GARÁŽE?",
+        "items": [
+          {
+            "title": "Vysoká odolnosť",
+            "description": "Povrchy vyberáme pre náročné prevádzkové podmienky."
+          },
+          {
+            "title": "Bezpečnosť pohybu",
+            "description": "Riešime protišmyk a prechody podľa typu priestoru."
+          },
+          {
+            "title": "Praktická údržba",
+            "description": "Podlahy sú navrhnuté na rýchly a efektívny servis."
+          },
+          {
+            "title": "Stabilita pri zaťažení",
+            "description": "Skladba podlahy je navrhnutá pre dlhodobý výkon."
+          },
+          {
+            "title": "Profesionálna montáž",
+            "description": "Dbáme na detaily, ktoré rozhodujú pri intenzívnom používaní."
+          }
+        ]
+      },
+      "cta": {
+        "title": "PODLAHY PRE NÁROČNÚ PREVÁDZKU",
+        "text": "Radi pripravíme riešenie pre fitko, sklad, garáž alebo prevádzkový priestor.",
+        "image": "/img/products/base/fitkaSkladyGaraze.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -333,11 +1800,80 @@
       "slug": "dverove-systemy-a-klucky",
       "title": "DVEROVÉ SYSTÉMY A KĽUČKY",
       "description": "Dvere, puzdrá a kľučky s profesionálnou montážou.",
-      "categoryTags": ["Dvere"],
+      "categoryTags": [
+        "Dvere"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Dvere"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Dvere"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "DVEROVÉ SYSTÉMY A KĽUČKY",
+        "description": "Dverové systémy a kľučky navrhujeme ako funkčný detail interiéru. Zladíme techniku otvárania, vzhľad a komfort každodenného používania.",
+        "image": "/img/products/base/dveroveSystemyKlucky.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Pri dverových systémoch je dôležitá presnosť už v návrhu. Každý milimeter rozhoduje o tom, ako bude dvere fungovať po montáži.",
+          "Vyberieme s vami vhodné puzdro, kovanie aj kľučky tak, aby výsledok pôsobil jednotne s podlahou a ostatnými prvkami interiéru."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ DVEROVÉ SYSTÉMY A KĽUČKY?",
+        "items": [
+          {
+            "title": "Funkčný systém podľa priestoru",
+            "description": "Klasické aj posuvné riešenia navrhujeme podľa dispozície."
+          },
+          {
+            "title": "Zladený dizajn",
+            "description": "Kľučky a kovanie ladíme s dverami a podlahou."
+          },
+          {
+            "title": "Presné osadenie puzdier",
+            "description": "Dôraz kladieme na geometriu a čistý chod dverí."
+          },
+          {
+            "title": "Spoľahlivosť v prevádzke",
+            "description": "Používame komponenty s overenou kvalitou."
+          },
+          {
+            "title": "Kompletná montáž",
+            "description": "Od zamerania po finálne nastavenie všetkých detailov."
+          }
+        ]
+      },
+      "cta": {
+        "title": "DVERE A KĽUČKY V JEDNOM FUNKČNOM CELKU",
+        "text": "Ozvite sa nám a pripravíme riešenie, ktoré bude praktické aj dizajnovo zladené.",
+        "image": "/img/products/base/dveroveSystemyKlucky.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -345,11 +1881,117 @@
       "slug": "priprava-podkladu",
       "title": "PRÍPRAVA PODKLADU",
       "description": "Nivelizácia, brúsenie a penetrovanie pred montážou podláh.",
-      "categoryTags": ["Priprava podkladu", "Nivelizacia"],
+      "categoryTags": [
+        "Priprava podkladu",
+        "Nivelizacia"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Priprava podkladu", "Nivelizacia"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Priprava podkladu",
+          "Nivelizacia"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "PRÍPRAVA PODKLADU",
+        "description": "Príprava podkladu je základ celej realizácie. Bez kvalitného podkladu nemôže dobre fungovať žiadna podlaha, bez ohľadu na materiál.",
+        "image": "/img/products/base/pripravaPodkladu.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "image": "/img/realizations/nivelizacia-pred-lepenim-vinylu/gallery/01.jpg",
+        "paragraphs": [
+          "Pred pokládkou riešime rovinnosť, pevnosť a stav podkladu. Tento krok priamo ovplyvňuje vzhľad, komfort aj životnosť finálnej podlahy.",
+          "Robíme nivelizáciu, brúsenie, penetráciu aj technické úpravy tak, aby montáž prebehla bez komplikácií a výsledok bol dlhodobo stabilný."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ PRÍPRAVA PODKLADU?",
+        "items": [
+          {
+            "title": "Rovný a stabilný podklad",
+            "description": "Základ pre presnú montáž a bezproblémové používanie podlahy."
+          },
+          {
+            "title": "Menej budúcich porúch",
+            "description": "Správna príprava znižuje riziko reklamácií a opráv."
+          },
+          {
+            "title": "Lepší vizuálny výsledok",
+            "description": "Podlaha pôsobí čisto, bez nerovností a prepadov."
+          },
+          {
+            "title": "Kompatibilita so systémom",
+            "description": "Prípravu nastavujeme podľa typu materiálu a technológie."
+          },
+          {
+            "title": "Profesionálny postup",
+            "description": "Každý krok robíme podľa overených remeselných pravidiel."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY Z REALIZÁCIÍ",
+        "images": [
+          "/img/realizations/nivelizacia-pred-lepenim-vinylu/gallery/01.jpg",
+          "/img/realizations/nivelizacia-pred-lepenim-vinylu/gallery/02.jpg",
+          "/img/realizations/nivelizacia-pred-lepenim-vinylu/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA PRÍPRAVA PODKLADU",
+        "image": "/img/realizations/nivelizacia-pred-lepenim-vinylu/gallery/02.jpg",
+        "steps": [
+          {
+            "title": "Technické posúdenie",
+            "description": "Skontrolujeme stav podkladu a zvolíme vhodný postup."
+          },
+          {
+            "title": "Brúsenie a čistenie",
+            "description": "Odstránime slabé vrstvy a pripravíme povrch na ďalšie kroky."
+          },
+          {
+            "title": "Penetrácia a nivelizácia",
+            "description": "Podklad zjednotíme a vyrovnáme podľa požiadaviek systému."
+          },
+          {
+            "title": "Kontrola rovinnosti",
+            "description": "Overíme, či je podklad pripravený na finálnu montáž."
+          },
+          {
+            "title": "Odovzdanie pre pokládku",
+            "description": "Pripravený podklad odovzdáme na ďalšiu realizačnú fázu."
+          }
+        ]
+      },
+      "cta": {
+        "title": "KVALITNÁ PODLAHA ZAČÍNA PODKLADOM",
+        "text": "Poďme najprv správne pripraviť podklad, aby finálny výsledok vydržal roky.",
+        "image": "/img/realizations/nivelizacia-pred-lepenim-vinylu/gallery/03.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     },
     {
@@ -357,11 +1999,80 @@
       "slug": "navrh-interieru",
       "title": "NÁVRH INTERIÉRU",
       "description": "Návrh funkčných a estetických riešení v spolupráci s architektmi.",
-      "categoryTags": ["Navrh interieru"],
+      "categoryTags": [
+        "Navrh interieru"
+      ],
       "relatedRealizations": {
         "title": "SÚVISIACE REALIZÁCIE",
-        "tags": ["Navrh interieru"],
-        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+        "tags": [
+          "Navrh interieru"
+        ],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie z tejto kategórie."
+      },
+      "hero": {
+        "title": "NÁVRH INTERIÉRU",
+        "description": "Návrh interiéru riešime prakticky: aby priestor vyzeral dobre, fungoval v každodennom živote a bol pripravený na kvalitnú realizáciu.",
+        "image": "/img/products/base/navrhInterieruDigital.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "paragraphs": [
+          "Pri návrhu nepozeráme len na vizuál. Dôležité je, ako sa v priestore žije, koľko má úložných možností a ako na seba nadväzujú materiály.",
+          "Spájame pohľad dizajnu a realizácie. Vďaka tomu dostanete návrh, ktorý je nielen pekný na obrázku, ale aj reálne realizovateľný v praxi."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO SI VYBRAŤ NÁVRH INTERIÉRU?",
+        "items": [
+          {
+            "title": "Návrh podľa vášho štýlu života",
+            "description": "Priestor navrhujeme podľa toho, ako ho naozaj používate."
+          },
+          {
+            "title": "Materiály, ktoré dávajú zmysel",
+            "description": "Odporúčame riešenia vhodné vizuálne aj technicky."
+          },
+          {
+            "title": "Prepojenie s realizáciou",
+            "description": "Návrh pripravujeme tak, aby sa dal presne zrealizovať."
+          },
+          {
+            "title": "Jasná koordinácia prvkov",
+            "description": "Podlahy, dvere, steny aj doplnky tvoria jeden celok."
+          },
+          {
+            "title": "Menej improvizácie počas stavby",
+            "description": "Dobre pripravený návrh šetrí čas aj rozpočet v realizácii."
+          }
+        ]
+      },
+      "cta": {
+        "title": "INTERIÉR, KTORÝ FUNGUJE AJ VYZERÁ DOBRE",
+        "text": "Ozvite sa nám a pripravíme návrh, ktorý plynulo prejde do kvalitnej realizácie.",
+        "image": "/img/products/base/navrhInterieruDigital.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Pozrite showroom",
+            "variant": "soft",
+            "to": "/showroom"
+          }
+        ]
       }
     }
   ]

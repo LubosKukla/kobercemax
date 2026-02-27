@@ -1,5 +1,5 @@
 <template>
-  <BaseStatsCounter class="-mt-24 relative z-10" :items="stats" theme="dark" />
+  <BaseStatsCounter class="-mt-10 relative z-10" :items="stats" theme="dark" />
 </template>
 
 <script>
