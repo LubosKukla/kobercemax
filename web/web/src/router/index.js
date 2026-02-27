@@ -9,6 +9,8 @@ import ShowroomView from "../views/ShowroomView.vue";
 import ContactView from "../views/ContactView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 import RealizationDetailView from "../views/RealizationDetailView.vue";
+import PrivacyView from "../views/PrivacyView.vue";
+import CookiesView from "../views/CookiesView.vue";
 
 const routes = [
   {
@@ -58,6 +60,16 @@ const routes = [
         component: ContactView,
       },
       {
+        path: "zasady-ochrany-sukromia",
+        name: "privacy",
+        component: PrivacyView,
+      },
+      {
+        path: "cookies",
+        name: "cookies",
+        component: CookiesView,
+      },
+      {
         path: "/:pathMatch(.*)*",
         name: "not-found",
         component: NotFoundView,
@@ -69,6 +81,9 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 export default router;

@@ -5,7 +5,9 @@
     </div>
 
     <div class="mx-auto max-w-6xl px-4 sm:px-6 mt-10 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-      <div class="relative overflow-hidden rounded-3xl border border-black/10 shadow-[0_16px_36px_rgba(0,0,0,0.1)]">
+      <div
+        class="relative overflow-hidden rounded-3xl border border-black/10 shadow-[0_16px_36px_rgba(0,0,0,0.1)]"
+      >
         <iframe
           class="h-[360px] w-full md:h-[520px]"
           :src="mapSrc"
@@ -28,7 +30,7 @@
       </div>
 
       <div class="flex flex-col gap-4">
-        <div class="rounded-2xl bg-brand p-5 sm:p-6 text-white ">
+        <div class="rounded-2xl bg-brand p-5 sm:p-6 text-white">
           <div class="flex items-center gap-3 text-sm font-semibold">
             <font-awesome-icon :icon="['fas', 'envelope']" />
             <span>Email</span>
@@ -50,6 +52,16 @@
             <span>Adresa</span>
           </div>
           <p class="mt-2 text-sm sm:text-base">Plavisko 7, 034 01 Ružomberok</p>
+        </div>
+
+        <div class="rounded-2xl bg-light p-5 sm:p-6 text-dark">
+          <div class="flex items-center gap-3 text-sm font-semibold">
+            <font-awesome-icon :icon="['fas', 'location-dot']" />
+            <span>Firma</span>
+          </div>
+          <p class="mt-2 text-sm sm:text-base">KOBERCE MAX, s.r.o.</p>
+          <p class="mt-2 text-sm sm:text-base">IČO: 31636632</p>
+          <p class="mt-2 text-sm sm:text-base">IČ DPH: SK 2020431105</p>
         </div>
 
         <div class="rounded-2xl bg-light p-5 sm:p-6 text-dark">
@@ -85,3 +97,4 @@ export default {
   },
 };
 </script>
+
