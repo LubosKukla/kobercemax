@@ -14,8 +14,12 @@
           v-if="realization"
           class="grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-8 lg:gap-10 items-start"
         >
-          <article class="rounded-2xl border border-black/10 bg-light p-6 sm:p-8">
-            <h2 class="font-display font-light text-2xl sm:text-3xl text-heading">
+          <article
+            class="rounded-2xl border border-black/10 bg-light p-6 sm:p-8"
+          >
+            <h2
+              class="font-display font-light text-2xl sm:text-3xl text-heading"
+            >
               Detail realizacie
             </h2>
 
@@ -29,36 +33,60 @@
               </span>
             </div>
 
-            <p class="mt-4 text-sm text-dark/60">Galeria: {{ galleryCountLabel }}</p>
+            <p class="mt-4 text-sm text-dark/60">
+              Galeria: {{ galleryCountLabel }}
+            </p>
 
             <p class="mt-5 text-base leading-relaxed text-dark/75">
               {{ detailText }}
             </p>
 
             <div class="mt-7 flex flex-wrap gap-3">
-              <BaseButton to="/realizacie" variant="darkSolid">Spat na realizacie</BaseButton>
-              <BaseButton to="/kontakt" variant="primary">Kontaktujte nas</BaseButton>
+              <BaseButton to="/realizacie" variant="darkSolid"
+                >Spat na realizacie</BaseButton
+              >
+              <BaseButton to="/kontakt" variant="primary"
+                >Kontaktujte nas</BaseButton
+              >
             </div>
           </article>
 
-          <div class="rounded-2xl border border-black/10 bg-white p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
-            <img class="w-full rounded-xl object-cover max-h-[560px]" :src="headerImage" :alt="realization.title" />
+          <div
+            class="rounded-2xl border border-black/10 bg-white p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
+          >
+            <img
+              class="w-full rounded-xl object-cover max-h-[560px]"
+              :src="headerImage"
+              :alt="realization.title"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
 
-        <div v-else class="rounded-2xl border border-black/10 bg-light p-8 text-center">
-          <h2 class="font-display text-2xl font-semibold text-heading">Realizacia nebola najdena</h2>
+        <div
+          v-else
+          class="rounded-2xl border border-black/10 bg-light p-8 text-center"
+        >
+          <h2 class="font-display text-2xl font-semibold text-heading">
+            Realizacia nebola najdena
+          </h2>
           <p class="mt-3 text-dark/70">
             Pozadovany zaznam sa nenasiel. Skuste zoznam realizacii.
           </p>
           <div class="mt-6">
-            <BaseButton to="/realizacie" variant="darkSolid">Zobrazit realizacie</BaseButton>
+            <BaseButton to="/realizacie" variant="darkSolid"
+              >Zobrazit realizacie</BaseButton
+            >
           </div>
         </div>
       </div>
     </section>
 
-    <section v-if="realization && galleryImages.length" class="bg-white pb-16">
+    <BaseDeferredSection
+      v-if="realization && galleryImages.length"
+      wrapper-class="bg-white pb-16 min-h-[420px]"
+    >
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <BaseSectionTitle title="GALERIA REALIZACIE" align="left" />
 
@@ -75,11 +103,41 @@
               :src="img"
               :alt="`${realization.title} - ${index + 1}`"
               loading="lazy"
+              decoding="async"
             />
           </button>
         </div>
       </div>
-    </section>
+    </BaseDeferredSection>
+
+    <!-- <section
+      v-if="realization && relatedProducts.length"
+      class="bg-white pb-16"
+    >
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <BaseSectionTitle title="SÚVISIACE PRODUKTY" align="left" />
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <article
+            v-for="item in relatedProducts"
+            :key="`related-product-${item.id}`"
+            class="rounded-2xl border border-black/10 bg-light p-5"
+          >
+            <h3 class="font-display text-xl font-semibold text-heading">
+              {{ item.title }}
+            </h3>
+            <p class="mt-2 text-sm sm:text-base text-dark/75 leading-relaxed">
+              {{ item.description }}
+            </p>
+            <div class="mt-4">
+              <BaseButton :to="item.to" variant="darkSolid"
+                >Pozrieť detail produktu</BaseButton
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section> -->
 
     <BaseCTA
       v-if="realization"
@@ -100,18 +158,25 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from "vue";
+import BaseDeferredSection from "@/components/commons/base/BaseDeferredSection.vue";
 import BaseHeader from "@/components/commons/section/BaseHeader.vue";
 import BaseSectionTitle from "@/components/commons/section/BaseSectionTitle.vue";
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import BaseCTA from "@/components/commons/base/BaseCTA.vue";
-import ImageOverlay from "@/components/commons/overlay/ImageOverlay.vue";
+import productsData from "@/data/products.json";
 import realizationsData from "@/data/realizations.json";
 import fallbackCover from "@/assets/img/realization/podlahy.png";
 import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
 
+const ImageOverlay = defineAsyncComponent(() =>
+  import("@/components/commons/overlay/ImageOverlay.vue"),
+);
+
 export default {
   name: "RealizationDetailPage",
   components: {
+    BaseDeferredSection,
     BaseHeader,
     BaseSectionTitle,
     BaseButton,
@@ -149,7 +214,9 @@ export default {
       return this.realization.excerpt || "Fotodokumentacia realizacie.";
     },
     headerImage() {
-      return resolvePublicAssetPath(this.realization?.coverImage) || fallbackCover;
+      return (
+        resolvePublicAssetPath(this.realization?.coverImage) || fallbackCover
+      );
     },
     headerActions() {
       return [
@@ -159,10 +226,17 @@ export default {
     },
     galleryImages() {
       if (!this.realization) return [];
-      if (Array.isArray(this.realization.gallery) && this.realization.gallery.length) {
-        return this.realization.gallery.map((img) => resolvePublicAssetPath(img));
+      if (
+        Array.isArray(this.realization.gallery) &&
+        this.realization.gallery.length
+      ) {
+        return this.realization.gallery.map((img) =>
+          resolvePublicAssetPath(img),
+        );
       }
-      return this.realization.coverImage ? [resolvePublicAssetPath(this.realization.coverImage)] : [];
+      return this.realization.coverImage
+        ? [resolvePublicAssetPath(this.realization.coverImage)]
+        : [];
     },
     formattedDate() {
       if (!this.realization) return "";
@@ -178,11 +252,15 @@ export default {
     },
     galleryCountLabel() {
       const count = this.galleryImages.length;
-      return `${count} ${count === 1 ? "fotka" : count >= 2 && count <= 4 ? "fotky" : "fotiek"}`;
+      return `${count} ${
+        count === 1 ? "fotka" : count >= 2 && count <= 4 ? "fotky" : "fotiek"
+      }`;
     },
     displayTags() {
       if (!this.realization) return [];
-      const tags = Array.isArray(this.realization.tags) ? [...this.realization.tags] : [];
+      const tags = Array.isArray(this.realization.tags)
+        ? [...this.realization.tags]
+        : [];
       if (!tags.includes(this.formattedDate) && this.formattedDate) {
         tags.push(this.formattedDate);
       }
@@ -194,8 +272,46 @@ export default {
         { label: "Pozriet v showroome", variant: "dark", to: "/showroom" },
       ];
     },
+    relatedProducts() {
+      if (!this.realization) return [];
+
+      const realizationTags = (this.realization.tags || []).map((tag) =>
+        this.normalizeText(tag),
+      );
+      if (!realizationTags.length) return [];
+
+      return (productsData.products || [])
+        .filter((product) => {
+          const productTags = [
+            ...(Array.isArray(product.categoryTags)
+              ? product.categoryTags
+              : []),
+            product.title,
+            product.slug,
+          ].map((value) => this.normalizeText(value));
+
+          return productTags.some((tag) => realizationTags.includes(tag));
+        })
+        .slice(0, 4)
+        .map((product) => ({
+          id: product.id,
+          title: product.title,
+          description:
+            product.description ||
+            "Detail produktu doplnime coskoro. Radi vam poradime s vhodnym riesenim.",
+          to: `/produkty/${product.id}/${product.slug}`,
+        }));
+    },
   },
   methods: {
+    normalizeText(value) {
+      return (value || "")
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    },
     formatDate(dateValue) {
       if (!dateValue) return "";
       const parsed = new Date(dateValue);
@@ -217,7 +333,9 @@ export default {
       this.currentIndex = (this.currentIndex + 1) % this.galleryImages.length;
     },
     prev() {
-      this.currentIndex = (this.currentIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
+      this.currentIndex =
+        (this.currentIndex - 1 + this.galleryImages.length) %
+        this.galleryImages.length;
     },
   },
 };

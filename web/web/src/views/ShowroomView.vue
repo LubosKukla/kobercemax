@@ -2,24 +2,36 @@
   <div>
     <BaseHeader title="SHOWROOM" :description="description" :image="image" :actions="actions" />
     <ShowroomWhy />
-    <ShowroomGallery />
-    <ShowroomWhatYouFind />
+    <BaseDeferredSection wrapper-class="min-h-[460px]">
+      <ShowroomGallery />
+    </BaseDeferredSection>
+    <BaseDeferredSection wrapper-class="min-h-[460px]">
+      <ShowroomWhatYouFind />
+    </BaseDeferredSection>
     <ShowroomCta />
   </div>
 </template>
 
 <script>
+import { defineAsyncComponent } from "vue";
 import BaseHeader from "@/components/commons/section/BaseHeader.vue";
+import BaseDeferredSection from "@/components/commons/base/BaseDeferredSection.vue";
 import ShowroomWhy from "@/features/web/showroom/ShowroomWhy.vue";
-import ShowroomGallery from "@/features/web/showroom/ShowroomGallery.vue";
-import ShowroomWhatYouFind from "@/features/web/showroom/ShowroomWhatYouFind.vue";
-import ShowroomCta from "@/features/web/showroom/ShowroomCta.vue";
 import image from "@/assets/img/showroom-gallery/title-bg-showroom.png";
+
+const ShowroomGallery = defineAsyncComponent(() =>
+  import("@/features/web/showroom/ShowroomGallery.vue")
+);
+const ShowroomWhatYouFind = defineAsyncComponent(() =>
+  import("@/features/web/showroom/ShowroomWhatYouFind.vue")
+);
+const ShowroomCta = defineAsyncComponent(() => import("@/features/web/showroom/ShowroomCta.vue"));
 
 export default {
   name: "ShowroomView",
   components: {
     BaseHeader,
+    BaseDeferredSection,
     ShowroomWhy,
     ShowroomGallery,
     ShowroomWhatYouFind,

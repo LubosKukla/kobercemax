@@ -1,20 +1,26 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainLayout from "../layouts/MainLayout.vue";
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
-import ProductsView from "../views/ProductsView.vue";
-import ProductDetailView from "../views/ProductDetailView.vue";
-import RealizationsView from "../views/RealizationsView.vue";
-import ShowroomView from "../views/ShowroomView.vue";
-import ContactView from "../views/ContactView.vue";
-import NotFoundView from "../views/NotFoundView.vue";
-import RealizationDetailView from "../views/RealizationDetailView.vue";
-import PrivacyView from "../views/PrivacyView.vue";
-import CookiesView from "../views/CookiesView.vue";
 import productsData from "../data/products.json";
 import realizationsData from "../data/realizations.json";
 import { trackPageView } from "@/services/analytics";
 import defaultShareImage from "@/assets/img/logo.png";
+
+const MainLayout = () => import(/* webpackChunkName: "layout-main" */ "../layouts/MainLayout.vue");
+const HomeView = () => import(/* webpackChunkName: "page-home" */ "../views/HomeView.vue");
+const AboutView = () => import(/* webpackChunkName: "page-about" */ "../views/AboutView.vue");
+const ProductsView = () => import(/* webpackChunkName: "page-products" */ "../views/ProductsView.vue");
+const ProductDetailView = () =>
+  import(/* webpackChunkName: "page-product-detail" */ "../views/ProductDetailView.vue");
+const RealizationsView = () =>
+  import(/* webpackChunkName: "page-realizations" */ "../views/RealizationsView.vue");
+const ShowroomView = () =>
+  import(/* webpackChunkName: "page-showroom" */ "../views/ShowroomView.vue");
+const ContactView = () => import(/* webpackChunkName: "page-contact" */ "../views/ContactView.vue");
+const NotFoundView = () =>
+  import(/* webpackChunkName: "page-not-found" */ "../views/NotFoundView.vue");
+const RealizationDetailView = () =>
+  import(/* webpackChunkName: "page-realization-detail" */ "../views/RealizationDetailView.vue");
+const PrivacyView = () => import(/* webpackChunkName: "page-privacy" */ "../views/PrivacyView.vue");
+const CookiesView = () => import(/* webpackChunkName: "page-cookies" */ "../views/CookiesView.vue");
 
 const routes = [
   {

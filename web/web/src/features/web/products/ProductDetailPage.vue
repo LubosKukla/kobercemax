@@ -65,6 +65,8 @@
               class="w-full rounded-xl object-cover max-h-[520px]"
               :src="product.intro.image"
               :alt="`${product.title} - úvod`"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -91,7 +93,10 @@
         </div>
       </section>
 
-      <section v-if="product.gallery?.images?.length" class="bg-light py-16">
+      <BaseDeferredSection
+        v-if="product.gallery?.images?.length"
+        wrapper-class="bg-light py-16 min-h-[420px]"
+      >
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
           <BaseSectionTitle :title="product.gallery.title" align="left" />
 
@@ -105,11 +110,13 @@
                 class="h-56 sm:h-64 md:h-72 w-full object-cover"
                 :src="image"
                 :alt="`${product.title} - galéria ${index + 1}`"
+                loading="lazy"
+                decoding="async"
               />
             </article>
           </div>
         </div>
-      </section>
+      </BaseDeferredSection>
 
       <section
         v-if="product.installation?.image && product.installation?.steps?.length"
@@ -121,6 +128,8 @@
               class="h-full min-h-[320px] w-full rounded-xl object-cover"
               :src="product.installation.image"
               :alt="`${product.title} - montáž`"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -181,6 +190,16 @@
       <section class="bg-white py-16">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
           <BaseSectionTitle :title="relatedTitle" align="left" />
+          <div v-if="relatedRealizationLinks.length" class="mt-4 flex flex-wrap gap-2">
+            <router-link
+              v-for="item in relatedRealizationLinks"
+              :key="`related-link-${item.id}`"
+              :to="item.to"
+              class="inline-flex rounded-full border border-black/10 bg-light px-3 py-1 text-sm text-dark/80 hover:border-brand/40 hover:text-brand transition-colors"
+            >
+              {{ item.title }}
+            </router-link>
+          </div>
 
           <div v-if="relatedRealizations.length" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             <RealizationCard
@@ -206,6 +225,7 @@
 </template>
 
 <script>
+import BaseDeferredSection from "@/components/commons/base/BaseDeferredSection.vue";
 import BaseHeader from "@/components/commons/section/BaseHeader.vue";
 import BaseSectionTitle from "@/components/commons/section/BaseSectionTitle.vue";
 import BaseButton from "@/components/commons/button/BaseButton.vue";
@@ -217,6 +237,7 @@ import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
 export default {
   name: "ProductDetailPage",
   components: {
+    BaseDeferredSection,
     BaseHeader,
     BaseSectionTitle,
     BaseButton,
@@ -278,6 +299,13 @@ export default {
           coverImage: resolvePublicAssetPath(item.coverImage),
         }))
         .slice(0, 6);
+    },
+    relatedRealizationLinks() {
+      return this.relatedRealizations.slice(0, 4).map((item) => ({
+        id: item.id,
+        title: item.title,
+        to: `/realizacie/${item.id}/${item.slug}`,
+      }));
     },
     hasDetailContent() {
       if (!this.product) return false;
