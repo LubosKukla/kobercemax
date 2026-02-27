@@ -74,6 +74,10 @@
             "description": "Prejdeme si priestor, štýl interiéru aj technické možnosti podkladu."
           },
           {
+            "title": "Meranie a aklimatizácia materiálu",
+            "description": "Zameriame priestor a parkety necháme prispôsobiť teplote a vlhkosti miestnosti."
+          },
+          {
             "title": "Príprava podkladu",
             "description": "Podklad vyrovnáme, spevníme a pripravíme na stabilnú pokládku parkiet."
           },
@@ -86,8 +90,8 @@
             "description": "Doriešime sokle, prechody a ukončenia tak, aby podlaha pôsobila čisto."
           },
           {
-            "title": "Odovzdanie",
-            "description": "Vysvetlíme údržbu a odporučíme vhodnú chémiu pre dlhodobý výsledok."
+            "title": "Odovzdanie a údržba",
+            "description": "Skontrolujeme výsledok a odporučíme vhodnú údržbu pre dlhodobý vzhľad."
           }
         ]
       },
@@ -205,12 +209,8 @@
             "description": "Podlahu kladieme presne podľa výrobcu a dilatačných pravidiel."
           },
           {
-            "title": "Montáž líšt a prechodov",
-            "description": "Ukončenia riešime tak, aby boli pevné, čisté a vizuálne nenápadné."
-          },
-          {
-            "title": "Kontrola a odovzdanie",
-            "description": "Skontrolujeme detaily a dáme vám jasné odporúčania na údržbu."
+            "title": "Lišty, prechody a odovzdanie",
+            "description": "Ukončenia osadíme čisto, skontrolujeme detaily a dáme odporúčania na údržbu."
           }
         ]
       },
@@ -479,16 +479,12 @@
             "description": "Priestor zameriame, pripravíme podklad a naplánujeme spoje."
           },
           {
-            "title": "Pokládka",
-            "description": "Koberec osadíme presne, s dôrazom na čisté napojenia."
-          },
-          {
-            "title": "Obšívanie a detaily",
-            "description": "Vyriešime ukončenia, schody a exponované hrany."
+            "title": "Pokládka a obšívanie",
+            "description": "Koberec osadíme presne, spoje zarovnáme a obšijeme exponované hrany."
           },
           {
             "title": "Finálne odovzdanie",
-            "description": "Priestor odovzdáme pripravený na okamžité používanie."
+            "description": "Skontrolujeme výsledok a vysvetlíme odporúčania na údržbu."
           }
         ]
       },
@@ -673,6 +669,10 @@
             "description": "Odporučíme vhodný typ vinylu podľa priestoru a záťaže."
           },
           {
+            "title": "Obhliadka a zameranie",
+            "description": "Zameriame priestor, overíme detaily a nastavíme skladbu systému."
+          },
+          {
             "title": "Kontrola podkladu",
             "description": "Skontrolujeme rovinnosť a navrhneme potrebné úpravy podkladu."
           },
@@ -685,8 +685,8 @@
             "description": "Podlahu kladieme technicky správnym postupom podľa typu systému."
           },
           {
-            "title": "Finálne detaily",
-            "description": "Montujeme lišty, prechody a odovzdáme hotový priestor."
+            "title": "Finálne detaily a údržba",
+            "description": "Osadíme lišty, prechody a odporučíme správnu údržbu."
           }
         ]
       },
@@ -790,6 +790,10 @@
             "description": "Stanovíme požiadavky prevádzky a vhodné parametre podlahy."
           },
           {
+            "title": "Koordinácia prevádzky",
+            "description": "Zladíme termíny, logistiku a režim prevádzky, aby práce prebehli bez výpadkov."
+          },
+          {
             "title": "Plán realizácie",
             "description": "Pripravíme harmonogram prác podľa fungovania objektu."
           },
@@ -802,7 +806,7 @@
             "description": "Realizáciu robíme efektívne, s dôrazom na kvalitu detailov."
           },
           {
-            "title": "Odovzdanie prevádzke",
+            "title": "Odovzdanie a servisné odporúčania",
             "description": "Hotovú podlahu odovzdáme s jasnými pokynmi pre údržbu."
           }
         ]
@@ -1076,16 +1080,12 @@
             "description": "Skontrolujeme podklad a pripravíme správnu skladbu."
           },
           {
-            "title": "Logistika materiálu",
-            "description": "Zabezpečíme dodávku materiálu v správnom čase."
-          },
-          {
-            "title": "Montáž a kontrola",
-            "description": "Realizáciu vykonáme precízne, s priebežnou kontrolou detailov."
+            "title": "Logistika a montáž",
+            "description": "Zabezpečíme materiál a realizáciu vykonáme s priebežnou kontrolou detailov."
           },
           {
             "title": "Odovzdanie projektu",
-            "description": "Priestor odovzdáme hotový aj s odporúčaniami pre údržbu."
+            "description": "Priestor odovzdáme hotový aj s odporučaniami pre údržbu."
           }
         ]
       },
@@ -1274,12 +1274,8 @@
             "description": "Podklad vyrovnáme a pripravíme pre kvalitné lepenie."
           },
           {
-            "title": "Pokládka PVC",
-            "description": "Montáž robíme presne podľa technológie výrobcu."
-          },
-          {
-            "title": "Detailné ukončenia",
-            "description": "Riešime sokle, prechody a čisté napojenia."
+            "title": "Pokládka PVC a detaily",
+            "description": "Montáž robíme presne podľa technológie výrobcu a doladíme ukončenia."
           },
           {
             "title": "Odovzdanie",
@@ -1967,12 +1963,8 @@
             "description": "Podklad zjednotíme a vyrovnáme podľa požiadaviek systému."
           },
           {
-            "title": "Kontrola rovinnosti",
-            "description": "Overíme, či je podklad pripravený na finálnu montáž."
-          },
-          {
-            "title": "Odovzdanie pre pokládku",
-            "description": "Pripravený podklad odovzdáme na ďalšiu realizačnú fázu."
+            "title": "Kontrola a odovzdanie",
+            "description": "Overíme rovinnosť a odovzdáme pripravený podklad pre montáž."
           }
         ]
       },
