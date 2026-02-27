@@ -13,6 +13,7 @@ import PrivacyView from "../views/PrivacyView.vue";
 import CookiesView from "../views/CookiesView.vue";
 import productsData from "../data/products.json";
 import realizationsData from "../data/realizations.json";
+import { trackPageView } from "@/services/analytics";
 
 const routes = [
   {
@@ -243,6 +244,10 @@ function applySeoMeta(to) {
 
 router.afterEach((to) => {
   applySeoMeta(to);
+  trackPageView({
+    path: to.fullPath,
+    title: typeof document !== "undefined" ? document.title : "",
+  });
 });
 
 export default router;

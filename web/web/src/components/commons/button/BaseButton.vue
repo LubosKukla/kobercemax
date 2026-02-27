@@ -6,6 +6,7 @@
     :type="tag === 'button' ? type : null"
     :disabled="tag === 'button' ? disabled : null"
     :class="[baseClasses, variantClasses]"
+    @click="handleClick"
   >
     <span class="flex items-center gap-2">
       <slot />
@@ -17,6 +18,7 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { trackCtaClick, trackPhoneClick } from "@/services/analytics";
 
 const ICONS = {
   "arrow-right": faArrowRight,
@@ -25,6 +27,7 @@ const ICONS = {
 export default {
   name: "BaseButton",
   components: { FontAwesomeIcon },
+  emits: ["click"],
   props: {
     type: {
       type: String,
@@ -60,6 +63,49 @@ export default {
     icon: {
       type: String,
       default: "",
+    },
+  },
+  methods: {
+    normalizeLabel(value) {
+      return String(value || "")
+        .replace(/\s+/g, " ")
+        .trim();
+    },
+    resolveClickLabel(event) {
+      const explicitLabel = this.$attrs["data-track-label"] || this.$attrs["aria-label"];
+      if (explicitLabel) return this.normalizeLabel(explicitLabel);
+      return this.normalizeLabel(event?.currentTarget?.textContent);
+    },
+    resolveDestinationType() {
+      if (this.to) return "internal_route";
+      if (this.href.startsWith("tel:")) return "phone";
+      if (this.href.startsWith("mailto:")) return "email";
+      if (this.href.startsWith("http://") || this.href.startsWith("https://")) return "external_link";
+      return "link";
+    },
+    handleClick(event) {
+      this.$emit("click", event);
+
+      if (!this.to && !this.href) return;
+
+      const label = this.resolveClickLabel(event);
+      const destination = this.href || this.to || "";
+      const destinationType = this.resolveDestinationType();
+
+      if (destinationType === "phone") {
+        trackPhoneClick({
+          label,
+          destination,
+          phone: destination.replace(/^tel:/i, ""),
+        });
+        return;
+      }
+
+      trackCtaClick({
+        label,
+        destination,
+        destinationType,
+      });
     },
   },
   computed: {

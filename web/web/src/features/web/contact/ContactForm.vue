@@ -92,6 +92,7 @@ import BaseTextarea from "@/components/commons/inputs/BaseTextarea.vue";
 import BaseCheckbox from "@/components/commons/inputs/BaseCheckbox.vue";
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import { sendContactForm } from "@/services/contactApi";
+import { trackContactFormError, trackContactLead } from "@/services/analytics";
 
 export default {
   name: "ContactForm",
@@ -246,9 +247,11 @@ export default {
         const response = await sendContactForm(payload);
         this.submitSuccess =
           response?.message || "Ďakujeme, správu sme prijali. Čoskoro sa vám ozveme.";
+        trackContactLead();
         this.resetForm();
       } catch (error) {
         this.mapApiValidationErrors(error.errors);
+        trackContactFormError();
         this.submitError =
           error.message || "Správu sa nepodarilo odoslať. Skúste to prosím neskôr.";
       } finally {
