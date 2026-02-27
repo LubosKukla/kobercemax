@@ -42,6 +42,12 @@ export default {
         require("@/assets/img/showroom-gallery/1.png"),
         require("@/assets/img/showroom-gallery/2.png"),
         require("@/assets/img/showroom-gallery/3.png"),
+        require("@/assets/img/showroom-gallery/showroom-4.jpg"),
+        require("@/assets/img/showroom-gallery/showroom-5.jpg"),
+        require("@/assets/img/showroom-gallery/showroom-6.jpg"),
+        require("@/assets/img/showroom-gallery/showroom-7.jpg"),
+        require("@/assets/img/showroom-gallery/showroom-8.jpg"),
+        require("@/assets/img/showroom-gallery/showroom-9.jpg"),
       ],
       isOpen: false,
       currentIndex: 0,
@@ -64,4 +70,3 @@ export default {
   },
 };
 </script>
-

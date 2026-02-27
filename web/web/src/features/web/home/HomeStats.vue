@@ -14,7 +14,7 @@ export default {
     return {
       stats: [
         {
-          value: 1000,
+          value: 2000,
           suffix: "+",
           label: "produktov skladom",
           text: "široký výber pripravený ihneď",
@@ -26,13 +26,13 @@ export default {
           text: "pre domácnosti aj firmy",
         },
         {
-          value: 25,
+          value: 30,
           suffix: "+",
           label: "rokov skúseností",
           text: "od návrhu po montáž",
         },
         {
-          value: 100,
+          value: 260,
           suffix: "+",
           label: "realizácií ročne",
           text: "po celom Slovensku",

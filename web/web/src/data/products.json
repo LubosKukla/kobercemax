@@ -1,0 +1,368 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "slug": "parkety",
+      "title": "PARKETY",
+      "description": "Predaj a profesionálna montáž drevených parkiet pre domácnosti aj komerčné priestory.",
+      "categoryTags": ["Parkety"],
+      "hero": {
+        "title": "PARKETY",
+        "description": "Prémiové drevené podlahy s dlhou životnosťou, prirodzenou krásou a profesionálnou montážou. Vyberte si parkety, ktoré ladia s vaším štýlom od klasickej rybiny až po moderné veľkoformátové dosky.",
+        "image": "/img/products/parkety/gallery-2.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "glass",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "intro": {
+        "image": "/img/products/parkety/intro.jpg",
+        "paragraphs": [
+          "Drevené parkety sú nadčasovou voľbou pre každý interiér. Ponúkajú výnimočnú estetiku, prirodzenosť a odolnosť, ktorá dokáže prežiť celé generácie. V Kobercemax sa špecializujeme na predaj aj profesionálnu montáž drevených parkiet do domácností, kancelárií aj komerčných priestorov.",
+          "Naša ponuka zahŕňa široký výber masívnych aj viacvrstvových parkiet, moderné aj tradičné dekory, rôzne spôsoby pokládky a kompletné príslušenstvo vrátane líšt, podložiek a podlahárskej chémie."
+        ]
+      },
+      "benefits": {
+        "title": "PREČO DREVENÉ PARKETY?",
+        "items": [
+          {
+            "title": "100 % prírodný materiál",
+            "description": "Každá doska je originál s jedinečnou kresbou dreva."
+          },
+          {
+            "title": "Výnimočná životnosť",
+            "description": "Správne položené parkety vydržia roky a možno ich opakovane renovovať."
+          },
+          {
+            "title": "Nadčasová estetika",
+            "description": "Vhodné do moderných aj klasických interiérov."
+          },
+          {
+            "title": "Príjemné na dotyk a teplé na chodidlo",
+            "description": "Drevo prináša komfort pri každodennom používaní."
+          },
+          {
+            "title": "Výborné pre podlahové kúrenie",
+            "description": "Najmä viacvrstvové parkety poskytujú stabilitu a efektívny prestup tepla."
+          }
+        ]
+      },
+      "gallery": {
+        "title": "UKÁŽKY PARKIET",
+        "images": [
+          "/img/realizations/instagram/CZMh9ARqBVt/gallery/01.jpg",
+          "/img/realizations/instagram/CZMh9ARqBVt/gallery/02.jpg",
+          "/img/realizations/instagram/CZMh9ARqBVt/gallery/03.jpg"
+        ]
+      },
+      "installation": {
+        "title": "AKO PREBIEHA MONTÁŽ PARKIET",
+        "image": "/img/products/parkety/installation2.png",
+        "steps": [
+          {
+            "title": "Bezplatná konzultácia",
+            "description": "Pomôžeme vám vybrať typ, dekor a vhodné riešenie podľa vášho priestoru."
+          },
+          {
+            "title": "Príprava podkladu",
+            "description": "Nivelizácia, brúsenie a penetrácia tak, aby podlaha vydržala roky."
+          },
+          {
+            "title": "Profesionálna pokládka",
+            "description": "Montáž certifikovanými podlahármi s dôrazom na detail a čisté napojenia."
+          },
+          {
+            "title": "Dokončovacie práce",
+            "description": "Montáž soklových líšt, prechodových profilov a finálne doladenie."
+          },
+          {
+            "title": "Odovzdanie a odporúčania na údržbu",
+            "description": "Odporučíme správnu starostlivosť, aby si parkety zachovali svoju krásu čo najdlhšie."
+          }
+        ]
+      },
+      "cta": {
+        "title": "OD PODKLADU AŽ PO POSLEDNÚ LIŠTU — VŠETKO NA JEDNOM MIESTE.",
+        "text": "Pri parketách zabezpečíme poradenstvo, prípravu podkladu, odbornú montáž aj finálne detaily.",
+        "image": "/img/products/parkety/gallery-1.jpg",
+        "actions": [
+          {
+            "label": "Dohodnite si meranie",
+            "variant": "primary",
+            "to": "/kontakt"
+          },
+          {
+            "label": "Zavolajte nám",
+            "variant": "soft",
+            "href": "tel:0444323884"
+          }
+        ]
+      },
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Parkety"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 2,
+      "slug": "plavajuce-podlahy",
+      "title": "PLÁVAJÚCE PODLAHY",
+      "description": "Plávajúce systémy podláh pre domácnosti aj komerčné priestory.",
+      "categoryTags": ["Podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Podlahy"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 3,
+      "slug": "dlazby",
+      "title": "DLAŽBY",
+      "description": "Interiérové a exteriérové dlažby s odbornou montážou.",
+      "categoryTags": ["Podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Podlahy"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 4,
+      "slug": "terasove-dosky",
+      "title": "TERASOVÉ DOSKY",
+      "description": "Terasové riešenia pre exteriér s dôrazom na odolnosť.",
+      "categoryTags": ["Terasove podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Terasove podlahy"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 5,
+      "slug": "koberce",
+      "title": "KOBERCE",
+      "description": "Bytové aj komerčné koberce s montážou.",
+      "categoryTags": ["Koberce"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Koberce"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 6,
+      "slug": "dvere",
+      "title": "DVERE",
+      "description": "Interiérové aj vchodové dvere vrátane montáže.",
+      "categoryTags": ["Dvere"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Dvere"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 7,
+      "slug": "vinylove-podlahy",
+      "title": "VINYLOVÉ PODLAHY",
+      "description": "Lepené aj click vinylové podlahy pre domácnosti aj komerčné priestory.",
+      "categoryTags": ["Vinyl", "Podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Vinyl"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 8,
+      "slug": "komercne-podlahy",
+      "title": "KOMERČNÉ PODLAHY",
+      "description": "Podlahy pre sklady, garáže, prevádzky, fitká a športové priestory.",
+      "categoryTags": ["Komercne priestory", "Podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Komercne priestory"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 9,
+      "slug": "rohoze-vstupne-zony",
+      "title": "ROHOŽE A VSTUPNÉ ZÓNY",
+      "description": "Exteriérové aj interiérové rohože vrátane výroby komerčných vstupných zón na mieru.",
+      "categoryTags": ["Rohoze"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Rohoze"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 10,
+      "slug": "akusticke-panely",
+      "title": "AKUSTICKÉ PANELY",
+      "description": "Dizajnové akustické a obkladové panely pre moderné interiéry.",
+      "categoryTags": ["Panely"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Panely"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 11,
+      "slug": "montaz-realizacia",
+      "title": "MONTÁŽ A REALIZÁCIA",
+      "description": "Nivelizácia, brúsenie, penetrácia a profesionálna montáž podláh.",
+      "categoryTags": ["Pokladka", "Montaz", "Priprava podkladu"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Pokladka"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 12,
+      "slug": "koberce-na-mieru",
+      "title": "KOBERCE NA MIERU",
+      "description": "Výroba kobercov na mieru s vlastným dizajnom.",
+      "categoryTags": ["Koberce"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Koberce"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 13,
+      "slug": "pvc-podlahy",
+      "title": "PVC PODLAHY",
+      "description": "PVC podlahy pre bytové aj komerčné priestory.",
+      "categoryTags": ["PVC", "Podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["PVC"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 14,
+      "slug": "listy-a-podlozky",
+      "title": "LIŠTY A PODLOŽKY",
+      "description": "Prechodové, soklové aj kobercové lišty a podložky pod podlahy.",
+      "categoryTags": ["Doplnky"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Doplnky"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 15,
+      "slug": "podlaharska-chemia",
+      "title": "PODLAHÁRSKA CHÉMIA",
+      "description": "Profesionálna chémia pre montáž a údržbu podláh.",
+      "categoryTags": ["Doplnky"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Doplnky"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 16,
+      "slug": "obkladove-panely",
+      "title": "OBKLADOVÉ PANELY",
+      "description": "Dekoratívne obkladové panely do moderných interiérov.",
+      "categoryTags": ["Panely"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Panely"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 17,
+      "slug": "umele-travy",
+      "title": "UMELÉ TRÁVY",
+      "description": "Umelé trávniky pre exteriér aj športové využitie.",
+      "categoryTags": ["Umele travy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Umele travy"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 18,
+      "slug": "sportove-podlahy",
+      "title": "ŠPORTOVÉ PODLAHY",
+      "description": "Povrchy pre športové a záťažové priestory.",
+      "categoryTags": ["Sportove podlahy", "Podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Sportove podlahy"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 19,
+      "slug": "podlahy-pre-fitka-a-sklady",
+      "title": "FITKÁ, SKLADY A GARÁŽE",
+      "description": "Odolné podlahy pre fitká, sklady, garáže a prevádzky.",
+      "categoryTags": ["Komercne priestory", "Podlahy"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Komercne priestory"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 20,
+      "slug": "dverove-systemy-a-klucky",
+      "title": "DVEROVÉ SYSTÉMY A KĽUČKY",
+      "description": "Dvere, puzdrá a kľučky s profesionálnou montážou.",
+      "categoryTags": ["Dvere"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Dvere"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 21,
+      "slug": "priprava-podkladu",
+      "title": "PRÍPRAVA PODKLADU",
+      "description": "Nivelizácia, brúsenie a penetrovanie pred montážou podláh.",
+      "categoryTags": ["Priprava podkladu", "Nivelizacia"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Priprava podkladu", "Nivelizacia"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    },
+    {
+      "id": 22,
+      "slug": "navrh-interieru",
+      "title": "NÁVRH INTERIÉRU",
+      "description": "Návrh funkčných a estetických riešení v spolupráci s architektmi.",
+      "categoryTags": ["Navrh interieru"],
+      "relatedRealizations": {
+        "title": "SÚVISIACE REALIZÁCIE",
+        "tags": ["Navrh interieru"],
+        "emptyText": "Zatiaľ neboli zverejnené žiadne realizácie tohto produktu."
+      }
+    }
+  ]
+}

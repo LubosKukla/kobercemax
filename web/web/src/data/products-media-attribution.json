@@ -1,0 +1,46 @@
+{
+  "parkety": {
+    "hero.jpg": {
+      "id": "Kq8uV6tZM20",
+      "alt": "Wooden floor with herringbone pattern",
+      "author": "Alex Cooper",
+      "page": "https://unsplash.com/photos/wooden-floor-with-herringbone-pattern-Kq8uV6tZM20"
+    },
+    "intro.jpg": {
+      "id": "DcSCynDnihA",
+      "alt": "a pile of wood pieces on a black surface",
+      "author": "lantai kayu indonesia",
+      "page": "https://unsplash.com/photos/a-pile-of-wood-pieces-on-a-black-surface-DcSCynDnihA"
+    },
+    "gallery-1.jpg": {
+      "id": "CSMNjqJvRw8",
+      "alt": "A brown leather chair sitting on top of a wooden floor",
+      "author": "Technical Works SRL",
+      "page": "https://unsplash.com/photos/a-brown-leather-chair-sitting-on-top-of-a-wooden-floor-CSMNjqJvRw8"
+    },
+    "gallery-2.jpg": {
+      "id": "HD7QBx2Yfa4",
+      "alt": "tufted white upholstered bed",
+      "author": "Francesca Tosolini",
+      "page": "https://unsplash.com/photos/tufted-white-upholstered-bed-HD7QBx2Yfa4"
+    },
+    "gallery-3.jpg": {
+      "id": "K6vkTjYciX8",
+      "alt": "Close-up of a wooden parquet floor pattern.",
+      "author": "Alex Cooper",
+      "page": "https://unsplash.com/photos/close-up-of-a-wooden-parquet-floor-pattern-K6vkTjYciX8"
+    },
+    "installation.jpg": {
+      "id": "rALa-LXCy6o",
+      "alt": "Floor installation with a drill and cord.",
+      "author": "Nguyễn Hiệp",
+      "page": "https://unsplash.com/photos/floor-installation-with-a-drill-and-cord-rALa-LXCy6o"
+    },
+    "cta.jpg": {
+      "id": "VPcrHS7TTCs",
+      "alt": "Sunlight streaming across a wooden floor.",
+      "author": "My Nguyen",
+      "page": "https://unsplash.com/photos/sunlight-streaming-across-a-wooden-floor-VPcrHS7TTCs"
+    }
+  }
+}
