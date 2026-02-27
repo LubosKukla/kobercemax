@@ -107,6 +107,7 @@ import BaseCTA from "@/components/commons/base/BaseCTA.vue";
 import ImageOverlay from "@/components/commons/overlay/ImageOverlay.vue";
 import realizationsData from "@/data/realizations.json";
 import fallbackCover from "@/assets/img/realization/podlahy.png";
+import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
 
 export default {
   name: "RealizationDetailPage",
@@ -148,7 +149,7 @@ export default {
       return this.realization.excerpt || "Fotodokumentacia realizacie.";
     },
     headerImage() {
-      return this.realization?.coverImage || fallbackCover;
+      return resolvePublicAssetPath(this.realization?.coverImage) || fallbackCover;
     },
     headerActions() {
       return [
@@ -159,9 +160,9 @@ export default {
     galleryImages() {
       if (!this.realization) return [];
       if (Array.isArray(this.realization.gallery) && this.realization.gallery.length) {
-        return this.realization.gallery;
+        return this.realization.gallery.map((img) => resolvePublicAssetPath(img));
       }
-      return this.realization.coverImage ? [this.realization.coverImage] : [];
+      return this.realization.coverImage ? [resolvePublicAssetPath(this.realization.coverImage)] : [];
     },
     formattedDate() {
       if (!this.realization) return "";

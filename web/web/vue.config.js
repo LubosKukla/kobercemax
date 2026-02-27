@@ -3,20 +3,11 @@ const productsData = require("./src/data/products.json");
 const realizationsData = require("./src/data/realizations.json");
 
 let PrerenderPlugin = null;
-const APP_PUBLIC_PATH = normalizePublicPath(process.env.VUE_APP_PUBLIC_PATH || "/");
 
 try {
   PrerenderPlugin = require("@prerenderer/webpack-plugin");
 } catch (error) {
   // Packages are optional in dev. Install them to enable production prerender.
-}
-
-function normalizePublicPath(value) {
-  if (!value) return "/";
-  let normalized = value.trim();
-  if (!normalized.startsWith("/")) normalized = `/${normalized}`;
-  if (!normalized.endsWith("/")) normalized = `${normalized}/`;
-  return normalized;
 }
 
 function getPrerenderRoutes() {
@@ -62,7 +53,7 @@ const prerenderPlugin = createPrerenderPlugin();
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: APP_PUBLIC_PATH,
+  publicPath: "/",
   configureWebpack: {
     plugins: prerenderPlugin ? [prerenderPlugin] : [],
   },

@@ -212,6 +212,7 @@ import BaseButton from "@/components/commons/button/BaseButton.vue";
 import RealizationCard from "@/features/web/home/RealizationCard.vue";
 import productsData from "@/data/products.json";
 import realizationsData from "@/data/realizations.json";
+import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
 
 export default {
   name: "ProductDetailPage",
@@ -272,6 +273,10 @@ export default {
           const itemTags = (item.tags || []).map((tag) => this.normalizeText(tag));
           return normalizedTags.some((tag) => itemTags.includes(tag));
         })
+        .map((item) => ({
+          ...item,
+          coverImage: resolvePublicAssetPath(item.coverImage),
+        }))
         .slice(0, 6);
     },
     hasDetailContent() {

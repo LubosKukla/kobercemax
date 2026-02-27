@@ -22,6 +22,7 @@
 import BaseHeaderOnlyTitle from "@/components/commons/section/BaseHeaderOnlyTitle.vue";
 import RealizationCard from "@/features/web/home/RealizationCard.vue";
 import realizationsData from "@/data/realizations.json";
+import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
 
 export default {
   name: "RealizationsPage",
@@ -36,7 +37,7 @@ export default {
         slug: item.slug,
         title: item.title,
         date: item.dateLabel || this.formatDate(item.date),
-        image: item.coverImage,
+        image: resolvePublicAssetPath(item.coverImage),
       }));
     },
   },
