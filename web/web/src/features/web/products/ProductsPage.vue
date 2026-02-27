@@ -6,7 +6,7 @@
 
     <div class="mx-auto max-w-6xl px-4 sm:px-6 mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
       <ProductCardLarge
-        v-for="item in items"
+        v-for="item in visibleItems"
         :key="item.id"
         :id="item.id"
         :slug="item.slug"
@@ -14,11 +14,18 @@
         :image="item.image"
       />
     </div>
+
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 mt-8 flex justify-center">
+      <BaseButton v-if="hasMore" variant="darkSolid" @click="loadMore">Načítať ďalšie produkty</BaseButton>
+    </div>
+
+    <div v-if="hasMore" ref="sentinelRef" class="h-1 w-full"></div>
   </section>
 </template>
 
 <script>
 import BaseHeaderOnlyTitle from "@/components/commons/section/BaseHeaderOnlyTitle.vue";
+import BaseButton from "@/components/commons/button/BaseButton.vue";
 import ProductCardLarge from "@/features/web/products/ProductCardLarge.vue";
 
 const images = {
@@ -46,15 +53,19 @@ const images = {
   navrh: require("@/assets/img/products/navrhInterieruDigital.jpg"),
 };
 
+const INITIAL_VISIBLE_COUNT = 8;
+const BATCH_SIZE = 8;
+
 export default {
   name: "ProductsPage",
   components: {
     BaseHeaderOnlyTitle,
+    BaseButton,
     ProductCardLarge,
   },
   data() {
     return {
-      items: [
+      allItems: [
         {
           id: 1,
           slug: "parkety",
@@ -188,7 +199,82 @@ export default {
           image: images.navrh,
         },
       ],
+      visibleCount: INITIAL_VISIBLE_COUNT,
+      observer: null,
     };
+  },
+  computed: {
+    visibleItems() {
+      return this.allItems.slice(0, this.visibleCount);
+    },
+    hasMore() {
+      return this.visibleCount < this.allItems.length;
+    },
+  },
+  mounted() {
+    this.setupObserver();
+    this.ensureViewportFilled();
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    window.addEventListener("resize", this.onScroll, { passive: true });
+  },
+  beforeUnmount() {
+    this.disconnectObserver();
+    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener("resize", this.onScroll);
+  },
+  methods: {
+    getVisibleCount() {
+      return this.visibleCount;
+    },
+    restoreVisibleCount(count) {
+      const parsed = Number(count);
+      if (!Number.isFinite(parsed) || parsed <= 0) return;
+      this.visibleCount = Math.min(this.allItems.length, Math.max(INITIAL_VISIBLE_COUNT, parsed));
+      this.$nextTick(() => {
+        this.setupObserver();
+        this.ensureViewportFilled();
+      });
+    },
+    loadMore() {
+      if (!this.hasMore) return;
+      this.visibleCount = Math.min(this.allItems.length, this.visibleCount + BATCH_SIZE);
+      this.$nextTick(() => {
+        this.setupObserver();
+        this.ensureViewportFilled();
+      });
+    },
+    onScroll() {
+      this.ensureViewportFilled();
+    },
+    ensureViewportFilled() {
+      if (!this.hasMore || typeof window === "undefined") return;
+      const doc = document.documentElement;
+      if (window.innerHeight + window.scrollY + 240 >= doc.scrollHeight) {
+        this.loadMore();
+      }
+    },
+    setupObserver() {
+      if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") return;
+      if (!this.$refs.sentinelRef) return;
+      this.disconnectObserver();
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (!entry?.isIntersecting) return;
+          this.loadMore();
+        },
+        {
+          rootMargin: "260px 0px",
+          threshold: 0.01,
+        }
+      );
+      this.observer.observe(this.$refs.sentinelRef);
+    },
+    disconnectObserver() {
+      if (!this.observer) return;
+      this.observer.disconnect();
+      this.observer = null;
+    },
   },
 };
 </script>

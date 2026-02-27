@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ProductsPage />
+    <ProductsPage ref="productsPageRef" />
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
       const payload = {
         y: window.scrollY || 0,
         detailId: String(to.params?.id || ""),
+        visibleCount: this.$refs.productsPageRef?.getVisibleCount?.() || null,
       };
       sessionStorage.setItem(PRODUCTS_SCROLL_KEY, JSON.stringify(payload));
     }
@@ -50,6 +51,7 @@ export default {
       }
 
       const targetY = Number(parsed.y || 0);
+      this.$refs.productsPageRef?.restoreVisibleCount?.(parsed.visibleCount);
       sessionStorage.removeItem(PRODUCTS_SCROLL_KEY);
       requestAnimationFrame(() => {
         window.scrollTo({ top: targetY, left: 0, behavior: "auto" });

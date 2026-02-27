@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RealizationsPage />
+    <RealizationsPage ref="realizationsPageRef" />
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
       const payload = {
         y: window.scrollY || 0,
         detailId: String(to.params?.id || ""),
+        visibleCount: this.$refs.realizationsPageRef?.getVisibleCount?.() || null,
       };
       sessionStorage.setItem(REALIZATIONS_SCROLL_KEY, JSON.stringify(payload));
     }
@@ -50,6 +51,7 @@ export default {
       }
 
       const targetY = Number(parsed.y || 0);
+      this.$refs.realizationsPageRef?.restoreVisibleCount?.(parsed.visibleCount);
       sessionStorage.removeItem(REALIZATIONS_SCROLL_KEY);
       requestAnimationFrame(() => {
         window.scrollTo({ top: targetY, left: 0, behavior: "auto" });

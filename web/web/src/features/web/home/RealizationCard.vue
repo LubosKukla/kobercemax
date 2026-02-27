@@ -5,6 +5,8 @@
         class="w-full h-[260px] sm:h-[480px] object-cover transition-transform duration-500 group-hover:scale-105"
         :src="image"
         :alt="title"
+        loading="lazy"
+        decoding="async"
       />
     </div>
     <div class="mt-3 flex items-center justify-between gap-3">
@@ -48,4 +50,3 @@ export default {
   },
 };
 </script>
-

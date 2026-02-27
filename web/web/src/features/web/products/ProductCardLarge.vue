@@ -7,6 +7,8 @@
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
       :src="image"
       :alt="title"
+      loading="lazy"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-black/30 transition-opacity group-hover:bg-black/40"></div>
     <div class="absolute inset-0 flex flex-col items-center text-center p-4">
