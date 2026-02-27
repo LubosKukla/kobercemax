@@ -5,7 +5,7 @@
     <AboutPhilosophy />
     <AboutServices />
     <AboutRealizations />
-    <CTA />
+    <BaseCTA :title="cta.title" :text="cta.text" :actions="cta.actions" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import AboutIntro from "@/features/web/aboutus/AboutIntro.vue";
 import AboutPhilosophy from "@/features/web/aboutus/AboutPhilosophy.vue";
 import AboutServices from "@/features/web/aboutus/AboutServices.vue";
 import AboutRealizations from "@/features/web/aboutus/AboutRealizations.vue";
-import CTA from "@/components/commons/section/CTA.vue";
+import BaseCTA from "@/components/commons/base/BaseCTA.vue";
 
 export default {
   name: "AboutView",
@@ -25,7 +25,19 @@ export default {
     AboutPhilosophy,
     AboutServices,
     AboutRealizations,
-    CTA,
+    BaseCTA,
+  },
+  data() {
+    return {
+      cta: {
+        title: "Potrebujete novú podlahu alebo koberec?",
+        text: "Kontaktujte nás a radi vám pomôžeme s výberom aj realizáciou. Dohodnite si zameranie alebo nás kontaktujte v showroome.",
+        actions: [
+          { label: "Kontaktovať", to: "/kontakt", variant: "primary" },
+          { label: "Do showroomu", to: "/showroom", variant: "dark" },
+        ],
+      },
+    };
   },
 };
 </script>

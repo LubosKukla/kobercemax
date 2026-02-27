@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeHero />
+    <HomeStats />
     <HomePartners />
     <HomeProducts />
     <HomeServices />
@@ -11,6 +12,7 @@
 
 <script>
 import HomeHero from "@/features/web/home/HomeHero.vue";
+import HomeStats from "@/features/web/home/HomeStats.vue";
 import HomePartners from "@/features/web/home/HomePartners.vue";
 import HomeProducts from "@/features/web/home/HomeProducts.vue";
 import HomeServices from "@/features/web/home/HomeServices.vue";
@@ -21,6 +23,7 @@ export default {
   name: "HomeView",
   components: {
     HomeHero,
+    HomeStats,
     HomePartners,
     HomeProducts,
     HomeServices,
@@ -29,4 +32,3 @@ export default {
   },
 };
 </script>
-

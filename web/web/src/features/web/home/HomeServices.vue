@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <div class="text-2xl text-dark/90">Služby</div>
       <BaseSectionTitle
-        title="VYLEPŠITE SVOJ PRIESTOR S PROFESIONÁLNYMI PODLAHOVÝMI SLUŽBAMI A MNOHO INÉHO"
+        title="KOMPLETNÉ RIEŠENIA PRE PODLAHY A INTERIÉR"
         align="left"
       />
 
@@ -47,104 +47,112 @@ export default {
   },
   data() {
     return {
-      chips: ["Všetko", "Montáž", "Podlahy", "Koberce", "Interiér", "Exteriér", "Doplnky"],
+      chips: ["Všetko", "Podlahy", "Koberce", "Montáž", "Dvere", "Panely", "Doplnky", "Návrh"],
       activeChip: "Všetko",
       services: [
         {
           id: 1,
-          title: "Predaj a Montáž Kobercov",
+          title: "Predaj a montáž kobercov",
           description:
-            "Kompletná starostlivosť o koberce – od výberu až po profesionálnu pokládku.\nPonúkame bytové, komerčné, kusové koberce aj behúne s precíznym obšívaním a možnosťou výroby na mieru.",
+            "Bytové aj komerčné koberce, kusové riešenia, behúne a profesionálna pokládka od zamerania po finálne detaily.",
           categories: ["Montáž", "Koberce"],
           to: "/produkty/5/koberce",
         },
         {
           id: 2,
-          title: "Koberce na Mieru",
+          title: "Koberce na mieru",
           description:
-            "Výroba koberca presne podľa vašich potrieb.\nLuxusné, dizajnové aj praktické riešenia so slobodou vo výbere farby, rozmeru, vzoru a typu vlákna.",
-          categories: ["Koberce", "Interiér"],
-          to: "/produkty/5/koberce",
+            "Výroba kobercov s vlastným dizajnom, výberom vlákna, farby a rozmeru vrátane obšívania.",
+          categories: ["Koberce", "Návrh"],
+          to: "/produkty/12/koberce-na-mieru",
         },
         {
           id: 3,
-          title: "PVC Podlahy (Bytové & Komerčné)",
+          title: "Vinyl, laminát a kompozity",
           description:
-            "Odolné riešenia pre domácnosti aj prevádzky s vysokou záťažou.\nMontáž, úprava podkladu a široký výber PVC v moderných dekoroch.",
-          categories: ["Podlahy", "Interiér"],
-          to: "/produkty/2/plavajuce-podlahy",
+            "Lepené aj plávajúce systémy pre domácnosti a firmy vrátane podložiek a kompletného príslušenstva.",
+          categories: ["Podlahy"],
+          to: "/produkty/7/vinylove-podlahy",
         },
         {
           id: 4,
-          title: "Vinyl, Laminát & Kompozitné Podlahy",
+          title: "PVC podlahy (bytové aj komerčné)",
           description:
-            "Moderné podlahy pre každý typ interiéru.\nLepený vinyl, klik systém, laminát a kompozity vrátane podložiek a kompletného príslušenstva.",
-          categories: ["Podlahy", "Interiér"],
-          to: "/produkty/2/plavajuce-podlahy",
+            "Odolné riešenie pre domácnosti, prevádzky aj priestory s vyššou záťažou.",
+          categories: ["Podlahy"],
+          to: "/produkty/13/pvc-podlahy",
         },
         {
           id: 5,
-          title: "Drevené a Terasové Podlahy",
+          title: "Drevené a terasové podlahy",
           description:
-            "Prírodná elegancia a dlhodobá odolnosť.\nMontáž interiérových drevených podláh aj exteriérových terás podľa najvyšších štandardov.",
-          categories: ["Podlahy", "Exteriér"],
+            "Masívne aj viacvrstvové drevené podlahy a realizácia terás s dôrazom na detail a životnosť.",
+          categories: ["Podlahy"],
           to: "/produkty/4/terasove-dosky",
         },
         {
           id: 6,
-          title: "Umelé Trávy & Športové Povrchy",
+          title: "Športové podlahy a záťažové priestory",
           description:
-            "Bezúdržbové riešenia pre záhrady aj športoviská.\nVýber a montáž umelých tráv, povrchov pre fitness, sklady, garáže a ďalšie prevádzky.",
-          categories: ["Exteriér", "Doplnky"],
-          to: "/produkty/4/terasove-dosky",
+            "Riešenia pre fitká, sklady, garáže a športové prevádzky s vysokou odolnosťou.",
+          categories: ["Podlahy", "Doplnky"],
+          to: "/produkty/19/podlahy-pre-fitka-a-sklady",
         },
         {
           id: 7,
-          title: "Rohože & Čistiace Zóny",
+          title: "Umelé trávy",
           description:
-            "Komerčné aj bytové rohože na mieru.\nInteriérové aj exteriérové rohože, presne vyrobené pre vstupné priestory.",
+            "Bezúdržbové riešenia pre záhrady, terasy aj oddychové zóny s prirodzeným vzhľadom.",
           categories: ["Doplnky"],
-          to: "/produkty/3/dlazby",
+          to: "/produkty/17/umele-travy",
         },
         {
           id: 8,
-          title: "Soklové, Prechodové a Kobercové Lišty",
+          title: "Rohože a vstupné čistiace zóny",
           description:
-            "Perfektné zakončenie každej podlahy.\nŠiroký výber líšt vrátane profesionálnej montáže.",
+            "Interiérové aj exteriérové rohože vrátane komerčných vstupných zón na mieru.",
           categories: ["Doplnky"],
-          to: "/produkty/5/koberce",
+          to: "/produkty/9/rohoze-vstupne-zony",
         },
         {
           id: 9,
-          title: "Montáž Schodov, Vinylu a Kobercov",
+          title: "Lišty, podložky a podlahárska chémia",
           description:
-            "Precízna montáž na akékoľvek schodisko alebo podklad.\nLepený vinyl, celoplošné lepenie kobercov aj zakrytie schodových hrán.",
-          categories: ["Montáž", "Podlahy"],
-          to: "/produkty/2/plavajuce-podlahy",
+            "Prechodové, soklové aj kobercové lišty, podložky pod podlahy a profesionálna chémia.",
+          categories: ["Doplnky"],
+          to: "/produkty/14/listy-a-podlozky",
         },
         {
           id: 10,
-          title: "Akustické & Obkladové Panely MEO / Modee",
+          title: "Montáž a realizácia",
           description:
-            "Moderný dizajn so zvukovou absorpciou.\nMontáž akustických panelov a dekoratívnych obkladov pre domy, kancelárie aj štúdiá.",
-          categories: ["Interiér", "Doplnky"],
-          to: "/produkty/2/plavajuce-podlahy",
+            "Montáž kobercov, lepeného vinylu, schodov aj kompletných podlahových systémov.",
+          categories: ["Montáž", "Podlahy"],
+          to: "/produkty/11/montaz-realizacia",
         },
         {
           id: 11,
-          title: "Interiérové & Vchodové Dvere",
+          title: "Akustické a obkladové panely",
           description:
-            "Dvere, ktoré dotvoria váš domov.\nInteriérové a bezpečnostné vchodové dvere, aj výroba na mieru + montáž vrátane dverových púzdier Eclisse.",
-          categories: ["Interiér"],
-          to: "/produkty/6/dvere",
+            "Panely značiek MEO a Modee pre lepšiu akustiku a moderný vzhľad interiéru.",
+          categories: ["Panely", "Doplnky"],
+          to: "/produkty/10/akusticke-panely",
         },
         {
           id: 12,
-          title: "Návrh Interiéru",
+          title: "Dvere, puzdrá a kľučky",
           description:
-            "Profesionálny návrh od architektov a dizajnérov.\nKompletné návrhy interiérov, ladenie farieb, materiálov a optimálneho riešenia priestoru.",
-          categories: ["Interiér"],
-          to: "/produkty/6/dvere",
+            "Interiérové, vchodové aj exteriérové dvere, dverové puzdrá (Eclisse) a doplnky s montážou.",
+          categories: ["Dvere"],
+          to: "/produkty/20/dverove-systemy-a-klucky",
+        },
+        {
+          id: 13,
+          title: "Príprava podkladu a návrh interiéru",
+          description:
+            "Nivelizácia, brúsenie, penetrovanie a konzultácie s architektmi a dizajnérmi.",
+          categories: ["Montáž", "Návrh"],
+          to: "/produkty/21/priprava-podkladu",
         },
       ],
     };

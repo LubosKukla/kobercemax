@@ -154,7 +154,12 @@ export default {
   },
   computed: {
     isLightHeader() {
-      return this.$route.path === "/realizacie" || this.$route.path === "/kontakt";
+      return (
+        this.$route.path.startsWith("/realizacie") ||
+        this.$route.path.startsWith("/produkty") ||
+        this.$route.path === "/kontakt" ||
+        this.$route.name === "not-found"
+      );
     },
     navClass() {
       return this.isLightHeader

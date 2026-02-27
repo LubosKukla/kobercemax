@@ -32,10 +32,13 @@
     </form>
 
     <p class="mt-4 text-xs text-dark/60 text-center">
-      Tým, že nás kontaktujete, súhlasíte s našimi
-      <span class="text-dark underline underline-offset-2">Podmienkami používania</span>
-      a
-      <span class="text-dark underline underline-offset-2">Zásady ochrany osobných údajov</span>
+      Tým, že nás kontaktujete, súhlasíte so spracovaním osobných údajov podľa
+      <router-link
+        to="/zasady-ochrany-sukromia"
+        class="text-dark underline underline-offset-2"
+      >
+        Zásad ochrany osobných údajov
+      </router-link>
     </p>
   </div>
 </template>
@@ -65,4 +68,3 @@ export default {
   },
 };
 </script>
-

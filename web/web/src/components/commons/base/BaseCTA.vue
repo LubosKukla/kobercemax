@@ -28,7 +28,7 @@
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 
 export default {
-  name: "CTA",
+  name: "BaseCTA",
   components: {
     BaseButton,
   },

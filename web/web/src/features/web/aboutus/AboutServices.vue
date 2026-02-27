@@ -29,30 +29,59 @@ export default {
     return {
       services: [
         {
-          title: "Predaj a montáž podláh",
+          title: "Koberce na mieru aj sériové riešenia",
           description:
-            "Vinyl, laminát, kompozity, PVC, drevené podlahy, terasové dosky.",
+            "Bytové, komerčné, kusové, behúne aj výroba kobercov na mieru s vlastným dizajnom. Zabezpečujeme aj obšívanie kobercov.",
         },
         {
-          title: "Koberce bytové aj komerčné",
+          title: "Vinyl, PVC a laminátové podlahy",
           description:
-            "Kusové koberce, behúne, obšívanie a výroba kobercov na mieru.",
+            "Kompozitné, lepené aj plávajúce systémy pre domácnosti aj komerčné priestory. Dodanie aj odborná montáž.",
         },
         {
-          title: "Špeciálne rohože a čistiace zóny",
-          description: "Interiérové aj exteriérové, komerčné riešenia na mieru.",
+          title: "Drevené a terasové podlahy",
+          description:
+            "Masívne aj viacvrstvové drevené podlahy vrátane realizácie terás.",
+        },
+        {
+          title: "Športové a záťažové podlahy",
+          description:
+            "Podlahy pre fitká, sklady, garáže aj športové priestory s vysokou odolnosťou.",
+        },
+        {
+          title: "Rohože a vstupné čistiace zóny",
+          description:
+            "Exteriérové aj interiérové rohože vrátane výroby komerčných vstupných zón na mieru.",
         },
         {
           title: "Akustické a obkladové panely",
-          description: "Moderný dizajn pre domácnosti, kancelárie aj prevádzky.",
+          description:
+            "Panely značiek MEO a Modee pre zlepšenie akustiky a moderný dizajn interiéru.",
         },
         {
-          title: "Interiérové a vchodové dvere",
-          description: "Dodávka, montáž, dverové púzdra a atypické riešenia.",
+          title: "Dvere a dverové systémy",
+          description:
+            "Interiérové, vchodové aj exteriérové dvere, dverové puzdrá (napr. Eclisse), kľučky a montáž.",
+        },
+        {
+          title: "Lišty, podložky a podlahárska chémia",
+          description:
+            "Prechodové, soklové a kobercové lišty, podložky pod podlahy a profesionálna podlahárska chémia.",
         },
         {
           title: "Príprava podkladu",
-          description: "Nivelizácia, brúsenie, penetrácia a podlahárska chémia.",
+          description:
+            "Nivelizácia, brúsenie, penetrovanie a kompletná príprava povrchu pre kvalitnú montáž.",
+        },
+        {
+          title: "Montáž a realizácia",
+          description:
+            "Montáž kobercov, lepeného vinylu, schodov aj kompletných podlahových systémov.",
+        },
+        {
+          title: "Návrh interiéru",
+          description:
+            "Spolupracujeme s architektmi a dizajnérmi na návrhu funkčných a estetických riešení.",
         },
       ],
     };
