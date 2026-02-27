@@ -2,24 +2,12 @@
   <section class="bg-white pb-16">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 grid gap-10 lg:grid-cols-[1fr_1.05fr] items-center">
       <div>
-        <BaseSectionTitle title="NAŠA FILOZOFIA" align="left" />
+        <BaseSectionTitle title="PREČO KOBERCE MAX?" align="left" />
         <div class="mt-6 rounded-3xl bg-light p-6 sm:p-8 text-dark border border-black/5">
           <div class="space-y-5 text-sm sm:text-base text-dark/80">
-            <div>
-              <p class="font-semibold text-heading">Kvalita bez kompromisov</p>
-              <p>Vyberáme len overené materiály a dodávateľov.</p>
-            </div>
-            <div>
-              <p class="font-semibold text-heading">Montáž na profesionálnej úrovni</p>
-              <p>Naši podlahári pracujú čisto, precízne a spoľahlivo.</p>
-            </div>
-            <div>
-              <p class="font-semibold text-heading">Individuálny prístup</p>
-              <p>Každý priestor je iný, preto navrhujeme riešenia na mieru.</p>
-            </div>
-            <div>
-              <p class="font-semibold text-heading">Dlhodobá spokojnosť</p>
-              <p>Záleží nám na tom, aby vám podlaha slúžila roky, nie mesiace.</p>
+            <div v-for="item in items" :key="item.title">
+              <p class="font-semibold text-heading">{{ item.title }}</p>
+              <p>{{ item.description }}</p>
             </div>
           </div>
         </div>
@@ -46,6 +34,32 @@ export default {
   data() {
     return {
       images,
+      items: [
+        {
+          title: "25+ rokov skúseností",
+          description:
+            "Každý priestor má svoje špecifiká. Vieme odporučiť riešenie podľa typu miestnosti aj záťaže.",
+        },
+        {
+          title: "Kompletný servis",
+          description:
+            "Od výberu materiálu až po finálnu montáž. Nemusíte riešiť viacerých dodávateľov.",
+        },
+        {
+          title: "Odborné poradenstvo",
+          description:
+            "Pomôžeme vám vybrať podlahu podľa rozpočtu, dizajnu aj praktických požiadaviek.",
+        },
+        {
+          title: "Precízna montáž",
+          description: "Naši podlahári pracujú čisto, presne a spoľahlivo.",
+        },
+        {
+          title: "Overené materiály",
+          description:
+            "Spolupracujeme s overenými dodávateľmi a používame materiály vhodné pre domácnosti aj komerčné priestory.",
+        },
+      ],
     };
   },
 };

@@ -1,5 +1,10 @@
 <template>
-  <BaseHeader :title="hero.title" :description="hero.description" :image="hero.image" />
+  <BaseHeader
+    :title="hero.title"
+    :description="hero.description"
+    :image="hero.image"
+    :actions="hero.actions"
+  />
 </template>
 
 <script>
@@ -19,10 +24,15 @@ export default {
       hero: {
         title: "O NÁS",
         description:
-          "Koberce Max – kvalitné podlahy, koberce a odborná montáž na jednom mieste.",
+          "Predaj, odborné poradenstvo a profesionálna montáž. Pomáhame domácnostiam aj firmám vybrať riešenie, ktoré je praktické, odolné a esteticky nadčasové.",
         image: images.hero,
+        actions: [
+          { label: "Kontaktujte nás", variant: "primary", href: "/kontakt" },
+          { label: "Zavolajte nám", variant: "glass", href: "tel:0444323884" },
+        ],
       },
     };
   },
 };
 </script>
+

@@ -9,7 +9,7 @@
         class="relative overflow-hidden rounded-3xl border border-black/10 shadow-[0_16px_36px_rgba(0,0,0,0.1)]"
       >
         <iframe
-          class="h-[360px] w-full md:h-[520px]"
+          class="h-[360px] w-full md:h-[650px]"
           :src="mapSrc"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
