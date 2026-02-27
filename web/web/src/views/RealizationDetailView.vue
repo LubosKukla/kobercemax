@@ -1,14 +1,15 @@
 <template>
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h1 class="text-3xl mb-4">Detail realizácie</h1>
-    <p>ID: {{ id }}</p>
-    <p>Názov: {{ slug }}</p>
-  </section>
+  <RealizationDetailPage :id="id" :slug="slug" />
 </template>
 
 <script>
+import RealizationDetailPage from "@/features/web/realizations/RealizationDetailPage.vue";
+
 export default {
   name: "RealizationDetailView",
+  components: {
+    RealizationDetailPage,
+  },
   props: {
     id: {
       type: String,

@@ -13,7 +13,7 @@
         class="mx-auto max-w-6xl px-4 sm:px-6 h-max flex items-center justify-center text-center"
       >
         <div class="max-w-3xl">
-          <h1 class="font-display font-bold text-4xl sm:text-8xl lg:text-9xl text-white!">
+          <h1 class="font-display font-bold text-white!" :class="titleClass">
             {{ title }}
           </h1>
           <p v-if="description" class="mt-4 text-base sm:text-lg text-white">
@@ -60,6 +60,18 @@ export default {
     actions: {
       type: Array,
       default: () => [],
+    },
+    titleSize: {
+      type: String,
+      default: "hero",
+      validator: (value) => ["hero", "compact"].includes(value),
+    },
+  },
+  computed: {
+    titleClass() {
+      return this.titleSize === "compact"
+        ? "text-4xl sm:text-5xl lg:text-6xl"
+        : "text-4xl sm:text-8xl lg:text-9xl";
     },
   },
 };
