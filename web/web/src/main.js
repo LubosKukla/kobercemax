@@ -11,8 +11,16 @@ import store from "./store";
 
 library.add(fas, far, fab);
 
-createApp(App)
+const app = createApp(App)
   .component("FontAwesomeIcon", FontAwesomeIcon)
   .use(store)
-  .use(router)
-  .mount("#app");
+  .use(router);
+
+router.isReady().then(() => {
+  app.mount("#app");
+
+  // Used by prerender plugin to know when route is fully rendered.
+  if (typeof document !== "undefined") {
+    document.dispatchEvent(new Event("render-event"));
+  }
+});

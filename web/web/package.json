@@ -24,6 +24,8 @@
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@tailwindcss/postcss": "^4.1.18",
+    "@prerenderer/renderer-puppeteer": "^1.2.4",
+    "@prerenderer/webpack-plugin": "^5.3.10",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-pwa": "~5.0.0",
