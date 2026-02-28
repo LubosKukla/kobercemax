@@ -54,6 +54,11 @@ const prerenderPlugin = createPrerenderPlugin();
 module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: "/",
+  devServer: {
+    // Prevent full-page reload when backend writes uploaded images into /public.
+    // HMR for source code stays active.
+    liveReload: false,
+  },
   configureWebpack: {
     plugins: prerenderPlugin ? [prerenderPlugin] : [],
   },

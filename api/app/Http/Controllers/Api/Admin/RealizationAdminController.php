@@ -13,6 +13,7 @@ use Illuminate\Validation\Rule;
 class RealizationAdminController extends Controller
 {
     private const MIN_BYTES_TO_OPTIMIZE = 40 * 1024;
+    private const MAX_LONG_EDGE = 2400;
 
     public function index(Request $request): JsonResponse
     {
@@ -300,6 +301,9 @@ class RealizationAdminController extends Controller
         }
 
         $ext = strtolower(trim($extension));
+        $size = @getimagesize($fullPath);
+        $origWidth = is_array($size) ? (int) ($size[0] ?? 0) : 0;
+        $origHeight = is_array($size) ? (int) ($size[1] ?? 0) : 0;
         $image = null;
 
         if (in_array($ext, ['jpg', 'jpeg'], true)) {
@@ -313,9 +317,15 @@ class RealizationAdminController extends Controller
             }
 
             $image = $this->applyJpegExifOrientation($image, $fullPath);
+            $resized = $this->resizeImageResourceIfNeeded($image, false);
+            $wasResized = $resized['resized'];
+            $image = $resized['image'];
+
+            $tmpPath = $fullPath.'.tmp';
             imageinterlace($image, true);
-            @imagejpeg($image, $fullPath, 82);
+            @imagejpeg($image, $tmpPath, 80);
             imagedestroy($image);
+            $this->replaceFileWhenOptimized($fullPath, $tmpPath, $beforeSize, $wasResized);
             return;
         }
 
@@ -329,10 +339,16 @@ class RealizationAdminController extends Controller
                 return;
             }
 
+            $resized = $this->resizeImageResourceIfNeeded($image, true);
+            $wasResized = $resized['resized'];
+            $image = $resized['image'];
+
+            $tmpPath = $fullPath.'.tmp';
             imagealphablending($image, false);
             imagesavealpha($image, true);
-            @imagepng($image, $fullPath, 8);
+            @imagepng($image, $tmpPath, 8);
             imagedestroy($image);
+            $this->replaceFileWhenOptimized($fullPath, $tmpPath, $beforeSize, $wasResized);
             return;
         }
 
@@ -346,8 +362,14 @@ class RealizationAdminController extends Controller
                 return;
             }
 
-            @imagewebp($image, $fullPath, 82);
+            $resized = $this->resizeImageResourceIfNeeded($image, true);
+            $wasResized = $resized['resized'];
+            $image = $resized['image'];
+
+            $tmpPath = $fullPath.'.tmp';
+            @imagewebp($image, $tmpPath, 80);
             imagedestroy($image);
+            $this->replaceFileWhenOptimized($fullPath, $tmpPath, $beforeSize, $wasResized);
             return;
         }
 
@@ -361,8 +383,24 @@ class RealizationAdminController extends Controller
                 return;
             }
 
-            @imageavif($image, $fullPath, 52);
+            $resized = $this->resizeImageResourceIfNeeded($image, true);
+            $wasResized = $resized['resized'];
+            $image = $resized['image'];
+
+            $tmpPath = $fullPath.'.tmp';
+            @imageavif($image, $tmpPath, 50);
             imagedestroy($image);
+            $this->replaceFileWhenOptimized($fullPath, $tmpPath, $beforeSize, $wasResized);
+            return;
+        }
+
+        if (
+            $origWidth > 0
+            && $origHeight > 0
+            && max($origWidth, $origHeight) > self::MAX_LONG_EDGE
+        ) {
+            // Unsupported format with large dimensions; keep original to avoid corruption.
+            return;
         }
     }
 
@@ -397,5 +435,77 @@ class RealizationAdminController extends Controller
         imagedestroy($image);
 
         return $rotated;
+    }
+
+    /**
+     * @param  \GdImage|resource  $image
+     * @return array{image:mixed,resized:bool}
+     */
+    private function resizeImageResourceIfNeeded(mixed $image, bool $preserveAlpha): array
+    {
+        $srcWidth = imagesx($image);
+        $srcHeight = imagesy($image);
+        $longEdge = max($srcWidth, $srcHeight);
+
+        if ($longEdge <= self::MAX_LONG_EDGE) {
+            return ['image' => $image, 'resized' => false];
+        }
+
+        $scale = self::MAX_LONG_EDGE / $longEdge;
+        $targetWidth = max(1, (int) round($srcWidth * $scale));
+        $targetHeight = max(1, (int) round($srcHeight * $scale));
+
+        $canvas = imagecreatetruecolor($targetWidth, $targetHeight);
+        if (! $canvas) {
+            return ['image' => $image, 'resized' => false];
+        }
+
+        if ($preserveAlpha) {
+            imagealphablending($canvas, false);
+            imagesavealpha($canvas, true);
+            $transparent = imagecolorallocatealpha($canvas, 0, 0, 0, 127);
+            imagefilledrectangle($canvas, 0, 0, $targetWidth, $targetHeight, $transparent);
+        }
+
+        imagecopyresampled(
+            $canvas,
+            $image,
+            0,
+            0,
+            0,
+            0,
+            $targetWidth,
+            $targetHeight,
+            $srcWidth,
+            $srcHeight
+        );
+
+        imagedestroy($image);
+
+        return ['image' => $canvas, 'resized' => true];
+    }
+
+    private function replaceFileWhenOptimized(
+        string $fullPath,
+        string $tmpPath,
+        int $beforeSize,
+        bool $wasResized
+    ): void {
+        if (! is_file($tmpPath)) {
+            return;
+        }
+
+        $afterSize = @filesize($tmpPath);
+        if (! is_int($afterSize)) {
+            @unlink($tmpPath);
+            return;
+        }
+
+        if ($wasResized || $afterSize < ($beforeSize - 1024)) {
+            @rename($tmpPath, $fullPath);
+            return;
+        }
+
+        @unlink($tmpPath);
     }
 }
