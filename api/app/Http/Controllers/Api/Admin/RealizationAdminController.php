@@ -12,6 +12,8 @@ use Illuminate\Validation\Rule;
 
 class RealizationAdminController extends Controller
 {
+    private const MIN_BYTES_TO_OPTIMIZE = 40 * 1024;
+
     public function index(Request $request): JsonResponse
     {
         $search = trim((string) $request->query('q', ''));
@@ -95,6 +97,8 @@ class RealizationAdminController extends Controller
 
         $fileName = Str::uuid()->toString().'.'.$extension;
         $file->move($targetDir, $fileName);
+        $storedFilePath = $targetDir.DIRECTORY_SEPARATOR.$fileName;
+        $this->optimizeUploadedImage($storedFilePath, $extension);
 
         $path = '/'.$relativeDir.'/'.$fileName;
         $gallery = null;
@@ -282,5 +286,116 @@ class RealizationAdminController extends Controller
         if (is_file($fullPath)) {
             @unlink($fullPath);
         }
+    }
+
+    private function optimizeUploadedImage(string $fullPath, string $extension): void
+    {
+        if (! is_file($fullPath)) {
+            return;
+        }
+
+        $beforeSize = @filesize($fullPath);
+        if (! is_int($beforeSize) || $beforeSize < self::MIN_BYTES_TO_OPTIMIZE) {
+            return;
+        }
+
+        $ext = strtolower(trim($extension));
+        $image = null;
+
+        if (in_array($ext, ['jpg', 'jpeg'], true)) {
+            if (! function_exists('imagecreatefromjpeg')) {
+                return;
+            }
+
+            $image = @imagecreatefromjpeg($fullPath);
+            if (! $image) {
+                return;
+            }
+
+            $image = $this->applyJpegExifOrientation($image, $fullPath);
+            imageinterlace($image, true);
+            @imagejpeg($image, $fullPath, 82);
+            imagedestroy($image);
+            return;
+        }
+
+        if ($ext === 'png') {
+            if (! function_exists('imagecreatefrompng')) {
+                return;
+            }
+
+            $image = @imagecreatefrompng($fullPath);
+            if (! $image) {
+                return;
+            }
+
+            imagealphablending($image, false);
+            imagesavealpha($image, true);
+            @imagepng($image, $fullPath, 8);
+            imagedestroy($image);
+            return;
+        }
+
+        if ($ext === 'webp') {
+            if (! function_exists('imagecreatefromwebp') || ! function_exists('imagewebp')) {
+                return;
+            }
+
+            $image = @imagecreatefromwebp($fullPath);
+            if (! $image) {
+                return;
+            }
+
+            @imagewebp($image, $fullPath, 82);
+            imagedestroy($image);
+            return;
+        }
+
+        if ($ext === 'avif') {
+            if (! function_exists('imagecreatefromavif') || ! function_exists('imageavif')) {
+                return;
+            }
+
+            $image = @imagecreatefromavif($fullPath);
+            if (! $image) {
+                return;
+            }
+
+            @imageavif($image, $fullPath, 52);
+            imagedestroy($image);
+        }
+    }
+
+    /**
+     * @param  \GdImage|resource  $image
+     * @return \GdImage|resource
+     */
+    private function applyJpegExifOrientation(mixed $image, string $fullPath): mixed
+    {
+        if (! function_exists('exif_read_data')) {
+            return $image;
+        }
+
+        $exif = @exif_read_data($fullPath);
+        $orientation = (int) ($exif['Orientation'] ?? 1);
+        $angle = match ($orientation) {
+            3 => 180,
+            6 => -90,
+            8 => 90,
+            default => null,
+        };
+
+        if ($angle === null) {
+            return $image;
+        }
+
+        $rotated = imagerotate($image, $angle, 0);
+        if (! $rotated) {
+            return $image;
+        }
+
+        imagedestroy($image);
+
+        return $rotated;
     }
 }
