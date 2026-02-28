@@ -26,7 +26,7 @@
         ]
       },
       "intro": {
-        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
+        "image": "/img/products/parkety/intro.jpg",
         "paragraphs": [
           "Pri parketách je rozhodujúci detail. Sledujeme stav podkladu, vlhkosť aj orientáciu miestnosti, aby podlaha pôsobila prirodzene a zároveň bola stabilná.",
           "Klienti sa na nás obracajú najmä vtedy, keď chcú kombinovať dizajn s istotou kvalitnej montáže. Presne to je náš štandard v bytoch, domoch aj v reprezentatívnych priestoroch."
@@ -60,14 +60,14 @@
       "gallery": {
         "title": "UKÁŽKY Z REALIZÁCIÍ",
         "images": [
-          "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
-          "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
-          "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg"
+          "/img/products/parkety/gallery-1.jpg",
+          "/img/products/parkety/gallery-2.jpg",
+          "/img/products/parkety/gallery-3.jpg"
         ]
       },
       "installation": {
         "title": "AKO PREBIEHA REALIZÁCIA PARKIET",
-        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
+        "image": "/img/products/parkety/installation2.png",
         "steps": [
           {
             "title": "Obhliadka a návrh",
@@ -98,7 +98,7 @@
       "cta": {
         "title": "PARKETY, KTORÉ MAJÚ ŠTÝL AJ VÝDRŽ",
         "text": "Ozvite sa nám a pripravíme vám riešenie, ktoré bude fungovať vizuálne aj technicky dlhé roky.",
-        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg",
+        "image": "/img/products/parkety/gallery-3.jpg",
         "actions": [
           {
             "label": "Dohodnite si meranie",
@@ -153,7 +153,7 @@
         ]
       },
       "intro": {
-        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
+        "image": "/img/realizations/instagram/ChJctSOKTAc/cover/cover.jpg",
         "paragraphs": [
           "Pri plávajúcej podlahe je dôležité správne zvoliť kombináciu podložky, zámkového systému a triedy odolnosti. To výrazne ovplyvní komfort pri chôdzi aj hlučnosť.",
           "Na projekte riešime všetko naraz: výber dekoru, technický návrh skladby, montáž aj ukončovacie prvky. Vďaka tomu máte jeden zodpovedný tím a jasný výsledok."
@@ -187,14 +187,14 @@
       "gallery": {
         "title": "UKÁŽKY Z REALIZÁCIÍ",
         "images": [
-          "/img/realizations/instagram/Css1iDpLDP3/gallery/01.jpg",
-          "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
-          "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg"
+          "/img/realizations/instagram/CZMh9ARqBVt/gallery/01.jpg",
+          "/img/realizations/instagram/ChJctSOKTAc/gallery/01.jpg",
+          "/img/realizations/instagram/ChJctSOKTAc/gallery/03.jpg"
         ]
       },
       "installation": {
         "title": "AKO PREBIEHA MONTÁŽ PLÁVAJÚCEJ PODLAHY",
-        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/02.jpg",
+        "image": "/img/realizations/instagram/ChJctSOKTAc/gallery/02.jpg",
         "steps": [
           {
             "title": "Konzultácia a výber dekoru",
@@ -217,7 +217,7 @@
       "cta": {
         "title": "PLÁVAJÚCA PODLAHA BEZ KOMPROMISOV",
         "text": "Radi vám pripravíme návrh, dodanie aj profesionálnu montáž v jednom balíku.",
-        "image": "/img/realizations/instagram/Css1iDpLDP3/gallery/03.jpg",
+        "image": "/img/realizations/instagram/CZMh9ARqBVt/cover/cover.jpg",
         "actions": [
           {
             "label": "Dohodnite si meranie",
@@ -412,7 +412,7 @@
       "hero": {
         "title": "KOBERCE",
         "description": "Koberce riešime od výberu materiálu po presnú pokládku. Navrhujeme riešenia, ktoré zlepšia komfort, akustiku aj celkovú atmosféru priestoru.",
-        "image": "/img/products/base/koberce.jpg",
+        "image": "/img/products/base/koberceNaMieru.jpg",
         "actions": [
           {
             "label": "Dohodnite si meranie",
@@ -489,7 +489,7 @@
         ]
       },
       "cta": {
-        "title": "KOBERCE, KTORÉ VYZERAJÚ A FUNGUJÚ",
+        "title": "KOBERCE, KTORÉ VYZERAJÚ AJ SÚ POHODLNÉ",
         "text": "Pomôžeme vám vybrať koberec, ktorý bude sedieť priestoru aj reálnemu používaniu.",
         "image": "/img/realizations/instagram/DJqoxRxKG5f/gallery/03.jpg",
         "actions": [
@@ -553,7 +553,7 @@
           },
           {
             "title": "Funkčné kovanie",
-            "description": "Kľučky a kovanie volíme podľa intenzity používania."
+            "description": "Kľučky a kovanie volíme podľa diazjnu interiéru/exteriéru."
           },
           {
             "title": "Presné osadenie",
@@ -621,7 +621,7 @@
         ]
       },
       "intro": {
-        "image": "/img/realizations/instagram/C8Yxg5jqSnG/gallery/01.jpg",
+        "image": "/img/realizations/instagram/ChJctSOKTAc/cover/cover.jpg",
         "paragraphs": [
           "Pri vinylových podlahách riešime najmä správnu skladbu a prípravu podkladu. Práve tu sa rozhoduje o tom, či bude výsledok stabilný a dlhodobo bez problémov.",
           "Vyberieme s vami vhodný systém (lepený alebo click), nastavíme detaily napojenia a postaráme sa o profesionálnu realizáciu od začiatku do konca."
@@ -655,14 +655,14 @@
       "gallery": {
         "title": "UKÁŽKY Z REALIZÁCIÍ",
         "images": [
-          "/img/realizations/instagram/C8Yxg5jqSnG/gallery/01.jpg",
-          "/img/realizations/instagram/C8Yxg5jqSnG/gallery/02.jpg",
-          "/img/realizations/instagram/C8Yxg5jqSnG/gallery/03.jpg"
+          "/img/realizations/instagram/CZMh9ARqBVt/gallery/01.jpg",
+          "/img/realizations/instagram/ChJctSOKTAc/gallery/01.jpg",
+          "/img/realizations/schody-z-vinylu-objectflor/gallery/01.jpg"
         ]
       },
       "installation": {
         "title": "AKO PREBIEHA REALIZÁCIA VINYLU",
-        "image": "/img/realizations/instagram/C8Yxg5jqSnG/gallery/02.jpg",
+        "image": "/img/realizations/schody-z-vinylu-objectflor/gallery/02.jpg",
         "steps": [
           {
             "title": "Konzultácia a výber systému",
@@ -693,7 +693,7 @@
       "cta": {
         "title": "VINYL, KTORÝ VYDRŽÍ AJ V PREVÁDZKE",
         "text": "Ozvite sa nám a pripravíme vám vinylové riešenie presne podľa priestoru.",
-        "image": "/img/realizations/instagram/C8Yxg5jqSnG/gallery/03.jpg",
+        "image": "/img/realizations/instagram/CZMh9ARqBVt/cover/cover.jpg",
         "actions": [
           {
             "label": "Dohodnite si meranie",
@@ -867,33 +867,8 @@
           "Od menších vstupov až po komerčné zóny na mieru pripravíme systém, ktorý je funkčný, estetický a jednoducho servisovateľný."
         ]
       },
-      "benefits": {
-        "title": "PREČO SI VYBRAŤ ROHOŽE A VSTUPNÉ ZÓNY?",
-        "items": [
-          {
-            "title": "Menej nečistôt v interiéri",
-            "description": "Vstupná zóna zachytí vlhkosť aj hrubé nečistoty ešte pred vstupom."
-          },
-          {
-            "title": "Vyššia bezpečnosť",
-            "description": "Znižuje riziko pošmyknutia vo frekventovaných priestoroch."
-          },
-          {
-            "title": "Ochrana podláh",
-            "description": "Predlžuje životnosť povrchov za vstupom do budovy."
-          },
-          {
-            "title": "Riešenie na mieru",
-            "description": "Prispôsobíme rozmery aj typ rohože konkrétnemu vstupu."
-          },
-          {
-            "title": "Čistý dizajn vstupu",
-            "description": "Funkčný prvok vie byť zároveň vizuálne reprezentatívny."
-          }
-        ]
-      },
       "cta": {
-        "title": "VSTUPNÁ ZÓNA, KTORÁ NAOZAJ FUNGUJE",
+        "title": "VSTUPNÁ ZÓNA, KTORÁ ZAUJME",
         "text": "Kontaktujte nás a navrhneme vám riešenie podľa typu objektu a prevádzky.",
         "image": "/img/products/base/rohozeVstupneZony.jpg",
         "actions": [
@@ -1035,7 +1010,7 @@
         ]
       },
       "benefits": {
-        "title": "PREČO SI VYBRAŤ MONTÁŽ A REALIZÁCIA?",
+        "title": "PREČO SI VYBRAŤ MONTÁŽ A REALIZÁCIA OD NÁS?",
         "items": [
           {
             "title": "Jedna zodpovedná firma",
@@ -1420,34 +1395,9 @@
           "V praxi to znamená stabilnejší výsledok, menej reklamácií a podlahu, ktorá si drží parametre aj pri vyššej záťaži."
         ]
       },
-      "benefits": {
-        "title": "PREČO SI VYBRAŤ PODLAHÁRSKA CHÉMIA?",
-        "items": [
-          {
-            "title": "Správna priľnavosť",
-            "description": "Kvalitná chémia zabezpečí pevné spojenie podlahy s podkladom."
-          },
-          {
-            "title": "Dlhšia životnosť realizácie",
-            "description": "Systémové riešenie znižuje riziko porúch a odlepovania."
-          },
-          {
-            "title": "Kompatibilné produkty",
-            "description": "Používame kombinácie odporúčané pre konkrétne materiály."
-          },
-          {
-            "title": "Bezpečný postup aplikácie",
-            "description": "Dodržiavame technologické časy aj podmienky montáže."
-          },
-          {
-            "title": "Stabilný výsledok v prevádzke",
-            "description": "Podlaha si drží parametre aj pri bežnom zaťažení."
-          }
-        ]
-      },
       "cta": {
-        "title": "SPRÁVNA CHÉMIA = SPOĽAHLIVÁ PODLAHA",
-        "text": "Ozvite sa nám, nastavíme vám správny systém prípravy a montáže podlahy.",
+        "title": "SPRÁVNA CHÉMIA = SPOĽAHLIVÁ A ČISTÁ PODLAHA",
+        "text": "Ozvite sa nám, nastavíme vám správny systém prípravy a čistenia podlahy.",
         "image": "/img/products/base/podlaharskaChemia.jpg",
         "actions": [
           {
