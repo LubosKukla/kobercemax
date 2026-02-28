@@ -53,9 +53,24 @@ export default {
       const targetY = Number(parsed.y || 0);
       this.$refs.realizationsPageRef?.restoreVisibleCount?.(parsed.visibleCount);
       sessionStorage.removeItem(REALIZATIONS_SCROLL_KEY);
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: targetY, left: 0, behavior: "auto" });
-      });
+
+      const maxAttempts = 24;
+      let attempts = 0;
+
+      const restoreStep = () => {
+        const doc = document.documentElement;
+        const maxScrollableY = Math.max(0, (doc?.scrollHeight || 0) - window.innerHeight);
+        const safeTargetY = Math.min(targetY, maxScrollableY);
+        window.scrollTo({ top: safeTargetY, left: 0, behavior: "auto" });
+        attempts += 1;
+
+        if (attempts >= maxAttempts) return;
+        if (safeTargetY >= targetY) return;
+
+        requestAnimationFrame(restoreStep);
+      };
+
+      requestAnimationFrame(restoreStep);
     },
   },
 };

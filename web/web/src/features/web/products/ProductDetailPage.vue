@@ -230,8 +230,8 @@ import BaseSectionTitle from "@/components/commons/section/BaseSectionTitle.vue"
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import RealizationCard from "@/features/web/home/RealizationCard.vue";
 import productsData from "@/data/products.json";
-import realizationsData from "@/data/realizations.json";
 import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
+import { fetchPublicRealizations } from "@/services/realizationsApi";
 
 export default {
   name: "ProductDetailPage",
@@ -251,6 +251,14 @@ export default {
       type: String,
       required: true,
     },
+  },
+  data() {
+    return {
+      realizationsRows: [],
+    };
+  },
+  async created() {
+    await this.loadRealizations();
   },
   computed: {
     product() {
@@ -288,15 +296,11 @@ export default {
       );
       if (!normalizedTags.length) return [];
 
-      return (realizationsData.realizations || [])
+      return this.realizationsRows
         .filter((item) => {
           const itemTags = (item.tags || []).map((tag) => this.normalizeText(tag));
           return normalizedTags.some((tag) => itemTags.includes(tag));
         })
-        .map((item) => ({
-          ...item,
-          coverImage: resolvePublicAssetPath(item.coverImage),
-        }))
         .slice(0, 6);
     },
     relatedRealizationLinks() {
@@ -318,6 +322,17 @@ export default {
     },
   },
   methods: {
+    async loadRealizations() {
+      try {
+        const items = await fetchPublicRealizations();
+        this.realizationsRows = items.map((item) => ({
+          ...item,
+          coverImage: resolvePublicAssetPath(item.coverImage),
+        }));
+      } catch (_error) {
+        this.realizationsRows = [];
+      }
+    },
     normalizeText(value) {
       return (value || "")
         .toString()

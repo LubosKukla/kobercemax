@@ -25,13 +25,8 @@
 import BaseSectionTitle from "@/components/commons/section/BaseSectionTitle.vue";
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import RealizationCard from "./RealizationCard.vue";
-
-const images = {
-  podlahy: require("@/assets/img/realization/podlahy.png"),
-  koberec: require("@/assets/img/realization/koberec.jpg"),
-  schody: require("@/assets/img/realization/schody.jpg"),
-  lepeny: require("@/assets/img/realization/lepeny vinyl.png"),
-};
+import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
+import { fetchPublicRealizations } from "@/services/realizationsApi";
 
 export default {
   name: "HomeRealizations",
@@ -42,37 +37,33 @@ export default {
   },
   data() {
     return {
-      items: [
-        {
-          id: 1,
-          slug: "malino-brdo-pokladka-podlahy",
-          title: "Malino Brdo – pokládka podlahy",
-          date: "2. februára 2025",
-          image: images.podlahy,
-        },
-        {
-          id: 2,
-          slug: "realizacia-vinyl-tarkett-koberec-lano",
-          title: "Realizácia vinyl Tarkett & koberec Lano",
-          date: "24. februára 2025",
-          image: images.koberec,
-        },
-        {
-          id: 3,
-          slug: "schody-z-vinylu-objectflor",
-          title: "Schody z vinylu Objectflor",
-          date: "2. februára 2025",
-          image: images.schody,
-        },
-        {
-          id: 4,
-          slug: "lepeny-vinyl-expona-design",
-          title: "Lepený vinyl Expona design",
-          date: "24. februára 2025",
-          image: images.lepeny,
-        },
-      ],
+      items: [],
     };
+  },
+  async created() {
+    try {
+      const rows = await fetchPublicRealizations();
+      this.items = rows.slice(0, 4).map((item) => ({
+        id: item.id,
+        title: item.title,
+        date: this.formatDate(item.date),
+        image: resolvePublicAssetPath(item.coverImage),
+      }));
+    } catch (_error) {
+      this.items = [];
+    }
+  },
+  methods: {
+    formatDate(dateValue) {
+      if (!dateValue) return "";
+      const parsed = new Date(dateValue);
+      if (Number.isNaN(parsed.getTime())) return dateValue;
+      return new Intl.DateTimeFormat("sk-SK", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }).format(parsed);
+    },
   },
 };
 </script>

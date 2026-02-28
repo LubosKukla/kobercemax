@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import productsData from "../data/products.json";
-import realizationsData from "../data/realizations.json";
 import { fetchAdminMe } from "@/services/adminApi";
 import { trackPageView } from "@/services/analytics";
+import {
+  fetchPublicRealizations,
+  fetchPublicRealizationById,
+  getCachedPublicRealizationById,
+} from "@/services/realizationsApi";
 import defaultShareImage from "@/assets/img/logo.png";
 
 const MainLayout = () => import(/* webpackChunkName: "layout-main" */ "../layouts/MainLayout.vue");
@@ -165,6 +169,26 @@ router.beforeEach(async (to) => {
   }
 });
 
+router.beforeResolve(async (to) => {
+  try {
+    if (to.name === "home" || to.name === "realizations" || to.name === "product-detail") {
+      await fetchPublicRealizations();
+      return true;
+    }
+
+    if (to.name === "realization-detail") {
+      const realizationId = String(to.params?.id || "").trim();
+      if (realizationId) {
+        await fetchPublicRealizationById(realizationId);
+      }
+    }
+  } catch (_error) {
+    // Public pages should still render even when API is temporarily unavailable.
+  }
+
+  return true;
+});
+
 const SITE_NAME = "Koberce MAX";
 const DEFAULT_SITE_URL = "https://www.kobercemax.sk";
 const ENV_SITE_URL = cleanText(process.env.VUE_APP_SITE_URL || "").replace(/\/+$/, "");
@@ -191,8 +215,8 @@ function getProductFromRoute(to) {
 }
 
 function getRealizationFromRoute(to) {
-  const items = realizationsData.realizations || [];
-  return items.find((item) => String(item.id) === String(to.params.id)) || null;
+  if (to.name !== "realization-detail") return null;
+  return getCachedPublicRealizationById(to.params.id);
 }
 
 function buildSeoMeta(to) {
@@ -561,11 +585,11 @@ function resolveSeoImage(to, product, realization) {
   return toAbsoluteUrl(defaultShareImage);
 }
 
-function applySeoMeta(to) {
+function applySeoMeta(to, options = {}) {
   if (typeof document === "undefined") return;
 
   const product = getProductFromRoute(to);
-  const realization = getRealizationFromRoute(to);
+  const realization = options.realization || getRealizationFromRoute(to);
   const seo = buildSeoMeta(to);
   const title = cleanText(seo.title || "Web");
   const description = cleanText(seo.description || DEFAULT_DESCRIPTION);
@@ -606,8 +630,27 @@ function applySeoMeta(to) {
   ]);
 }
 
+async function hydrateRealizationSeo(to) {
+  if (to.name !== "realization-detail") return;
+
+  const realizationId = String(to.params?.id || "").trim();
+  if (!realizationId) return;
+
+  try {
+    const realization = await fetchPublicRealizationById(realizationId);
+
+    // Route might have changed while request was in-flight.
+    if (router.currentRoute.value.fullPath !== to.fullPath) return;
+
+    applySeoMeta(to, { realization });
+  } catch (_error) {
+    // Keep the generic fallback SEO if API detail cannot be loaded.
+  }
+}
+
 router.afterEach((to) => {
   applySeoMeta(to);
+  hydrateRealizationSeo(to);
   trackPageView({
     path: to.fullPath,
     title: typeof document !== "undefined" ? document.title : "",

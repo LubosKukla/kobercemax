@@ -11,7 +11,14 @@
     <section class="bg-white py-16">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div
-          v-if="realization"
+          v-if="isLoadingDetail"
+          class="rounded-2xl border border-black/10 bg-light p-8 text-center text-dark/70"
+        >
+          Načítavam detail realizácie...
+        </div>
+
+        <div
+          v-else-if="realization"
           class="grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-8 lg:gap-10 items-start"
         >
           <article
@@ -165,9 +172,9 @@ import BaseSectionTitle from "@/components/commons/section/BaseSectionTitle.vue"
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import BaseCTA from "@/components/commons/base/BaseCTA.vue";
 import productsData from "@/data/products.json";
-import realizationsData from "@/data/realizations.json";
 import fallbackCover from "@/assets/img/realization/podlahy.png";
 import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
+import { fetchPublicRealizationById } from "@/services/realizationsApi";
 
 const ImageOverlay = defineAsyncComponent(() =>
   import("@/components/commons/overlay/ImageOverlay.vue"),
@@ -191,14 +198,23 @@ export default {
   },
   data() {
     return {
+      realizationItem: null,
+      isLoadingDetail: false,
       isOpen: false,
       currentIndex: 0,
     };
   },
+  watch: {
+    id: {
+      immediate: true,
+      handler() {
+        this.loadRealization();
+      },
+    },
+  },
   computed: {
     realization() {
-      const items = realizationsData.realizations || [];
-      return items.find((item) => String(item.id) === String(this.id)) || null;
+      return this.realizationItem;
     },
     headerTitle() {
       return this.realization?.title || "REALIZACIA";
@@ -234,7 +250,6 @@ export default {
     },
     formattedDate() {
       if (!this.realization) return "";
-      if (this.realization.dateLabel) return this.realization.dateLabel;
       return this.formatDate(this.realization.date);
     },
     detailText() {
@@ -298,6 +313,25 @@ export default {
     },
   },
   methods: {
+    async loadRealization() {
+      const realizationId = String(this.id || "").trim();
+      if (!realizationId) {
+        this.realizationItem = null;
+        return;
+      }
+
+      this.isLoadingDetail = true;
+      this.isOpen = false;
+      this.currentIndex = 0;
+
+      try {
+        this.realizationItem = await fetchPublicRealizationById(realizationId);
+      } catch (_error) {
+        this.realizationItem = null;
+      } finally {
+        this.isLoadingDetail = false;
+      }
+    },
     normalizeText(value) {
       return (value || "")
         .toString()

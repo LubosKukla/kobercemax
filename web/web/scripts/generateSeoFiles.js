@@ -4,12 +4,17 @@ const path = require("path");
 const ROOT_DIR = path.resolve(__dirname, "..");
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
 const PRODUCTS_DATA_PATH = path.join(ROOT_DIR, "src", "data", "products.json");
-const REALIZATIONS_DATA_PATH = path.join(ROOT_DIR, "src", "data", "realizations.json");
+const PRERENDER_ROUTES_PATH = path.join(PUBLIC_DIR, "prerender-routes.json");
 
 const SITE_URL = (
   process.env.SITE_URL ||
   process.env.VUE_APP_SITE_URL ||
   "https://www.kobercemax.sk"
+).replace(/\/+$/, "");
+const API_BASE_URL = (
+  process.env.API_BASE_URL ||
+  process.env.VUE_APP_API_BASE_URL ||
+  "http://127.0.0.1:8000"
 ).replace(/\/+$/, "");
 
 function readJson(filePath) {
@@ -32,7 +37,38 @@ function formatDate(dateValue) {
   return parsed.toISOString().split("T")[0];
 }
 
-function buildRoutes() {
+async function fetchRealizationsForSeo() {
+  if (typeof fetch !== "function") {
+    return [];
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/realizations`, {
+      headers: {
+        Accept: "application/json",
+      },
+      signal: controller.signal,
+    });
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) return [];
+
+    const items = Array.isArray(payload?.realizations) ? payload.realizations : [];
+    return items.map((item) => ({
+      id: item.id,
+      date: item.updated_at || item.date || null,
+    }));
+  } catch (_error) {
+    return [];
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function buildRoutes() {
   const staticRoutes = [
     { path: "/", changefreq: "weekly", priority: "1.0" },
     { path: "/o-nas", changefreq: "monthly", priority: "0.8" },
@@ -51,12 +87,12 @@ function buildRoutes() {
     priority: "0.8",
   }));
 
-  const realizations = readJson(REALIZATIONS_DATA_PATH).realizations || [];
+  const realizations = await fetchRealizationsForSeo();
   const realizationRoutes = realizations.map((item) => ({
     path: `/realizacie/${item.id}`,
     changefreq: "monthly",
     priority: "0.7",
-    lastmod: formatDate(item.date),
+    lastmod: formatDate(item.date || null),
   }));
 
   const allRoutes = [...staticRoutes, ...productRoutes, ...realizationRoutes];
@@ -102,15 +138,25 @@ function writeOutput(fileName, contents) {
   fs.writeFileSync(path.join(PUBLIC_DIR, fileName), contents, "utf8");
 }
 
-function main() {
-  const routes = buildRoutes();
+function writePrerenderRoutes(routes) {
+  const onlyPaths = routes.map((route) => route.path);
+  fs.writeFileSync(PRERENDER_ROUTES_PATH, JSON.stringify(onlyPaths, null, 2), "utf8");
+}
+
+async function main() {
+  const routes = await buildRoutes();
   writeOutput("sitemap.xml", generateSitemapXml(routes));
   writeOutput("robots.txt", generateRobotsTxt());
+  writePrerenderRoutes(routes);
 
   // eslint-disable-next-line no-console
   console.log(
-    `[seo] Generated sitemap.xml (${routes.length} URLs) and robots.txt for ${SITE_URL}`
+    `[seo] Generated sitemap.xml (${routes.length} URLs), robots.txt and prerender-routes.json for ${SITE_URL}`
   );
 }
 
-main();
+main().catch((error) => {
+  // eslint-disable-next-line no-console
+  console.error("[seo] Generation failed:", error);
+  process.exit(1);
+});

@@ -15,6 +15,22 @@
       />
     </div>
 
+    <div v-if="isLoading" class="mx-auto max-w-6xl px-4 sm:px-6 mt-6 text-center text-dark/70">
+      Načítavam realizácie...
+    </div>
+    <div
+      v-if="errorMessage"
+      class="mx-auto max-w-6xl px-4 sm:px-6 mt-6 rounded-xl border border-brand/30 bg-brand/10 px-4 py-3 text-sm text-dark"
+    >
+      {{ errorMessage }}
+    </div>
+    <div
+      v-if="!isLoading && !errorMessage && !allItems.length"
+      class="mx-auto max-w-6xl px-4 sm:px-6 mt-6 text-center text-dark/70"
+    >
+      Zatiaľ neboli zverejnené žiadne realizácie.
+    </div>
+
     <div class="mx-auto max-w-6xl px-4 sm:px-6 mt-8 flex justify-center">
       <BaseButton v-if="hasMore" variant="darkSolid" @click="loadMore">Načítať ďalšie realizácie</BaseButton>
     </div>
@@ -27,8 +43,8 @@
 import BaseHeaderOnlyTitle from "@/components/commons/section/BaseHeaderOnlyTitle.vue";
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import RealizationCard from "@/features/web/home/RealizationCard.vue";
-import realizationsData from "@/data/realizations.json";
 import { resolvePublicAssetPath } from "@/utils/publicAssetPath";
+import { fetchPublicRealizations } from "@/services/realizationsApi";
 
 const INITIAL_VISIBLE_COUNT = 12;
 const BATCH_SIZE = 12;
@@ -43,15 +59,21 @@ export default {
   data() {
     return {
       visibleCount: INITIAL_VISIBLE_COUNT,
+      allItemsData: [],
+      isLoading: false,
+      errorMessage: "",
       observer: null,
     };
   },
+  created() {
+    this.loadRealizations();
+  },
   computed: {
     allItems() {
-      return (realizationsData.realizations || []).map((item) => ({
+      return this.allItemsData.map((item) => ({
         id: item.id,
         title: item.title,
-        date: item.dateLabel || this.formatDate(item.date),
+        date: this.formatDate(item.date),
         image: resolvePublicAssetPath(item.coverImage),
       }));
     },
@@ -74,13 +96,29 @@ export default {
     window.removeEventListener("resize", this.onScroll);
   },
   methods: {
+    async loadRealizations() {
+      this.isLoading = true;
+      this.errorMessage = "";
+      try {
+        this.allItemsData = await fetchPublicRealizations();
+      } catch (error) {
+        this.errorMessage = error?.message || "Nepodarilo sa načítať realizácie.";
+        this.allItemsData = [];
+      } finally {
+        this.isLoading = false;
+        this.$nextTick(() => {
+          this.setupObserver();
+          this.ensureViewportFilled();
+        });
+      }
+    },
     getVisibleCount() {
       return this.visibleCount;
     },
     restoreVisibleCount(count) {
       const parsed = Number(count);
       if (!Number.isFinite(parsed) || parsed <= 0) return;
-      this.visibleCount = Math.min(this.allItems.length, Math.max(INITIAL_VISIBLE_COUNT, parsed));
+      this.visibleCount = Math.max(INITIAL_VISIBLE_COUNT, parsed);
       this.$nextTick(() => {
         this.setupObserver();
         this.ensureViewportFilled();
