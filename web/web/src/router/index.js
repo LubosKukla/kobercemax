@@ -1,10 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import productsData from "../data/products.json";
 import realizationsData from "../data/realizations.json";
+import { fetchAdminMe } from "@/services/adminApi";
 import { trackPageView } from "@/services/analytics";
 import defaultShareImage from "@/assets/img/logo.png";
 
 const MainLayout = () => import(/* webpackChunkName: "layout-main" */ "../layouts/MainLayout.vue");
+const AdminLayout = () =>
+  import(/* webpackChunkName: "layout-admin" */ "../layouts/AdminLayout.vue");
 const HomeView = () => import(/* webpackChunkName: "page-home" */ "../views/HomeView.vue");
 const AboutView = () => import(/* webpackChunkName: "page-about" */ "../views/AboutView.vue");
 const ProductsView = () => import(/* webpackChunkName: "page-products" */ "../views/ProductsView.vue");
@@ -21,8 +24,45 @@ const RealizationDetailView = () =>
   import(/* webpackChunkName: "page-realization-detail" */ "../views/RealizationDetailView.vue");
 const PrivacyView = () => import(/* webpackChunkName: "page-privacy" */ "../views/PrivacyView.vue");
 const CookiesView = () => import(/* webpackChunkName: "page-cookies" */ "../views/CookiesView.vue");
+const AdminLoginView = () =>
+  import(/* webpackChunkName: "page-admin-login" */ "../views/AdminLoginView.vue");
+const AdminRealizationsView = () =>
+  import(/* webpackChunkName: "page-admin-realizations" */ "../views/AdminRealizationsView.vue");
+const AdminRealizationFormView = () =>
+  import(/* webpackChunkName: "page-admin-realization-form" */ "../views/AdminRealizationFormView.vue");
 
 const routes = [
+  {
+    path: "/admin/login",
+    name: "admin-login",
+    component: AdminLoginView,
+  },
+  {
+    path: "/admin",
+    component: AdminLayout,
+    children: [
+      {
+        path: "",
+        redirect: "/admin/realizations",
+      },
+      {
+        path: "realizations",
+        name: "admin-realizations",
+        component: AdminRealizationsView,
+      },
+      {
+        path: "realizations/new",
+        name: "admin-realization-create",
+        component: AdminRealizationFormView,
+      },
+      {
+        path: "realizations/:id/edit",
+        name: "admin-realization-edit",
+        component: AdminRealizationFormView,
+        props: true,
+      },
+    ],
+  },
   {
     path: "/",
     component: MainLayout,
@@ -54,10 +94,12 @@ const routes = [
         component: RealizationsView,
       },
       {
-        path: "realizacie/:id/:slug",
+        path: "realizacie/:id/:slug?",
         name: "realization-detail",
         component: RealizationDetailView,
-        props: true,
+        props: (route) => ({
+          id: String(route.params.id || ""),
+        }),
       },
       {
         path: "showroom",
@@ -99,6 +141,30 @@ const router = createRouter({
   },
 });
 
+function isAdminRouteName(name) {
+  return typeof name === "string" && name.startsWith("admin-");
+}
+
+router.beforeEach(async (to) => {
+  if (!isAdminRouteName(to.name)) {
+    return true;
+  }
+
+  if (to.name === "admin-login") {
+    return true;
+  }
+
+  try {
+    await fetchAdminMe();
+    return true;
+  } catch (_error) {
+    return {
+      name: "admin-login",
+      query: { redirect: to.fullPath },
+    };
+  }
+});
+
 const SITE_NAME = "Koberce MAX";
 const DEFAULT_SITE_URL = "https://www.kobercemax.sk";
 const ENV_SITE_URL = cleanText(process.env.VUE_APP_SITE_URL || "").replace(/\/+$/, "");
@@ -126,8 +192,6 @@ function getProductFromRoute(to) {
 
 function getRealizationFromRoute(to) {
   const items = realizationsData.realizations || [];
-  const bySlug = items.find((item) => item.slug === to.params.slug);
-  if (bySlug) return bySlug;
   return items.find((item) => String(item.id) === String(to.params.id)) || null;
 }
 
@@ -209,6 +273,26 @@ function buildSeoMeta(to) {
         title: "Cookies - nastavenia a pravidlá používania",
         description:
           "Prečítajte si, aké cookies používame, na aké účely ich spracúvame a ako môžete spravovať svoj súhlas.",
+      };
+    case "admin-login":
+      return {
+        title: "Admin prihlasenie",
+        description: "Prihlasenie do administracie Koberce MAX.",
+      };
+    case "admin-realizations":
+      return {
+        title: "Admin realizacie",
+        description: "Administracia realizacii Koberce MAX.",
+      };
+    case "admin-realization-create":
+      return {
+        title: "Admin nova realizacia",
+        description: "Vytvorenie novej realizacie v administracii.",
+      };
+    case "admin-realization-edit":
+      return {
+        title: "Admin uprava realizacie",
+        description: "Uprava realizacie v administracii.",
       };
     case "not-found":
       return {
@@ -486,7 +570,8 @@ function applySeoMeta(to) {
   const title = cleanText(seo.title || "Web");
   const description = cleanText(seo.description || DEFAULT_DESCRIPTION);
   const fullTitle = `${title} | ${SITE_NAME}`;
-  const robotsValue = to.name === "not-found" ? "noindex, nofollow" : "index, follow";
+  const robotsValue =
+    to.name === "not-found" || isAdminRouteName(to.name) ? "noindex, nofollow" : "index, follow";
   const canonicalUrl = getCanonicalUrl(to);
   const seoImage = resolveSeoImage(to, product, realization);
   const ogType =

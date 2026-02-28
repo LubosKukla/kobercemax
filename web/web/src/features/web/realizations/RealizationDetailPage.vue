@@ -188,10 +188,6 @@ export default {
       type: String,
       required: true,
     },
-    slug: {
-      type: String,
-      required: true,
-    },
   },
   data() {
     return {
@@ -202,8 +198,6 @@ export default {
   computed: {
     realization() {
       const items = realizationsData.realizations || [];
-      const bySlug = items.find((item) => item.slug === this.slug);
-      if (bySlug) return bySlug;
       return items.find((item) => String(item.id) === String(this.id)) || null;
     },
     headerTitle() {

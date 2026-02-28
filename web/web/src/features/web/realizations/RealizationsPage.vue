@@ -9,7 +9,6 @@
         v-for="item in visibleItems"
         :key="item.id"
         :id="item.id"
-        :slug="item.slug"
         :title="item.title"
         :date="item.date"
         :image="item.image"
@@ -51,7 +50,6 @@ export default {
     allItems() {
       return (realizationsData.realizations || []).map((item) => ({
         id: item.id,
-        slug: item.slug,
         title: item.title,
         date: item.dateLabel || this.formatDate(item.date),
         image: resolvePublicAssetPath(item.coverImage),

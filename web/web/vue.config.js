@@ -27,7 +27,7 @@ function getPrerenderRoutes() {
   );
 
   const realizationRoutes = (realizationsData.realizations || []).map(
-    (item) => `/realizacie/${item.id}/${item.slug}`
+    (item) => `/realizacie/${item.id}`
   );
 
   return Array.from(new Set([...staticRoutes, ...productRoutes, ...realizationRoutes]));

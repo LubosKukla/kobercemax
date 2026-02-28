@@ -28,7 +28,7 @@ export default {
     },
     slug: {
       type: String,
-      required: true,
+      default: "",
     },
     title: {
       type: String,
@@ -45,7 +45,7 @@ export default {
   },
   computed: {
     cardLink() {
-      return `/realizacie/${this.id}/${this.slug}`;
+      return `/realizacie/${this.id}`;
     },
   },
 };

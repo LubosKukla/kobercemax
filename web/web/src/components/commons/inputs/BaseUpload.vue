@@ -10,6 +10,7 @@
         type="file"
         class="sr-only"
         :accept="accept"
+        :multiple="multiple"
         :disabled="disabled"
         @change="onFileChange"
       />
@@ -40,7 +41,7 @@ export default {
   components: { FontAwesomeIcon },
   props: {
     modelValue: {
-      type: [File, Object, String, null],
+      type: [File, Array, Object, String, null],
       default: null,
     },
     label: {
@@ -59,6 +60,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    multiple: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -69,6 +74,12 @@ export default {
   computed: {
     fileName() {
       if (!this.modelValue) return '';
+      if (Array.isArray(this.modelValue)) {
+        const count = this.modelValue.length;
+        if (!count) return '';
+        if (count === 1) return this.modelValue[0]?.name || '';
+        return `Vybrate subory: ${count}`;
+      }
       if (typeof this.modelValue === 'string') return this.modelValue;
       if (this.modelValue.name) return this.modelValue.name;
       return '';
@@ -80,9 +91,11 @@ export default {
       this.$refs.fileInput?.click();
     },
     onFileChange(event) {
-      const file = event.target.files?.[0] || null;
-      this.$emit('update:modelValue', file);
-      this.$emit('change', file);
+      const files = Array.from(event.target.files || []);
+      const value = this.multiple ? files : files[0] || null;
+      this.$emit('update:modelValue', value);
+      this.$emit('change', value);
+      event.target.value = '';
     },
   },
 };

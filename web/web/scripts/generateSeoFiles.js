@@ -53,7 +53,7 @@ function buildRoutes() {
 
   const realizations = readJson(REALIZATIONS_DATA_PATH).realizations || [];
   const realizationRoutes = realizations.map((item) => ({
-    path: `/realizacie/${item.id}/${item.slug}`,
+    path: `/realizacie/${item.id}`,
     changefreq: "monthly",
     priority: "0.7",
     lastmod: formatDate(item.date),

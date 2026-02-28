@@ -206,7 +206,6 @@
               v-for="item in relatedRealizations"
               :key="item.id"
               :id="item.id"
-              :slug="item.slug"
               :title="item.title"
               :date="item.dateLabel || formatDate(item.date)"
               :image="item.coverImage"
@@ -304,7 +303,7 @@ export default {
       return this.relatedRealizations.slice(0, 4).map((item) => ({
         id: item.id,
         title: item.title,
-        to: `/realizacie/${item.id}/${item.slug}`,
+        to: `/realizacie/${item.id}`,
       }));
     },
     hasDetailContent() {

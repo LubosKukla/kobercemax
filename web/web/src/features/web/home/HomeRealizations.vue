@@ -9,7 +9,6 @@
         v-for="item in items"
         :key="item.id"
         :id="item.id"
-        :slug="item.slug"
         :title="item.title"
         :date="item.date"
         :image="item.image"

@@ -1,5 +1,5 @@
 <template>
-  <RealizationDetailPage :id="id" :slug="slug" />
+  <RealizationDetailPage :id="id" />
 </template>
 
 <script>
@@ -12,10 +12,6 @@ export default {
   },
   props: {
     id: {
-      type: String,
-      required: true,
-    },
-    slug: {
       type: String,
       required: true,
     },
