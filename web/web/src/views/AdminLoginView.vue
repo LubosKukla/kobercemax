@@ -10,18 +10,6 @@
         Prihlasenie do administracie realizacii.
       </p>
 
-      <p
-        v-if="alertMessage"
-        :class="[
-          'mt-5 rounded-xl border px-4 py-3 text-sm',
-          alertType === 'success'
-            ? 'border-green-200 bg-green-50 text-green-700'
-            : 'border-brand/40 bg-brand/10 text-dark',
-        ]"
-      >
-        {{ alertMessage }}
-      </p>
-
       <form class="mt-5 space-y-2" @submit.prevent="submit">
         <BaseInput
           v-model="form.email"
@@ -66,6 +54,7 @@ import BaseButton from "@/components/commons/button/BaseButton.vue";
 import BaseCheckbox from "@/components/commons/inputs/BaseCheckbox.vue";
 import BaseInput from "@/components/commons/inputs/BaseInput.vue";
 import { fetchAdminMe, loginAdmin } from "@/services/adminApi";
+import useSnackbar from "@/composables/useSnackbar";
 
 export default {
   name: "AdminLoginView",
@@ -73,6 +62,12 @@ export default {
     BaseButton,
     BaseCheckbox,
     BaseInput,
+  },
+  setup() {
+    const snackbar = useSnackbar();
+    return {
+      snackbar,
+    };
   },
   data() {
     return {
@@ -85,8 +80,6 @@ export default {
         email: "",
         password: "",
       },
-      alertMessage: "",
-      alertType: "error",
       isSubmitting: false,
     };
   },
@@ -102,7 +95,6 @@ export default {
     resetState() {
       this.errors.email = "";
       this.errors.password = "";
-      this.alertMessage = "";
     },
     validate() {
       let isValid = true;
@@ -130,6 +122,7 @@ export default {
       this.resetState();
 
       if (!this.validate()) {
+        this.snackbar.warning("Prosim, doplnte email a heslo.");
         return;
       }
 
@@ -137,8 +130,7 @@ export default {
 
       try {
         await loginAdmin(this.form);
-        this.alertType = "success";
-        this.alertMessage = "Prihlasenie prebehlo uspesne.";
+        this.snackbar.success("Prihlasenie prebehlo uspesne.");
 
         const target =
           typeof this.$route.query.redirect === "string" && this.$route.query.redirect.startsWith("/admin")
@@ -148,8 +140,7 @@ export default {
         this.$router.replace(target);
       } catch (error) {
         this.applyServerErrors(error.errors);
-        this.alertType = "error";
-        this.alertMessage = error.message || "Prihlasenie zlyhalo.";
+        this.snackbar.error(error.message || "Prihlasenie zlyhalo.");
       } finally {
         this.isSubmitting = false;
       }
@@ -157,4 +148,3 @@ export default {
   },
 };
 </script>
-

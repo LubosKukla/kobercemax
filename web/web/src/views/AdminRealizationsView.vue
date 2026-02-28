@@ -21,18 +21,6 @@
         <BaseButton type="submit" variant="darkSolid">Hladaj</BaseButton>
       </form>
 
-      <p
-        v-if="statusMessage"
-        class="mt-4 rounded-xl border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-700"
-      >
-        {{ statusMessage }}
-      </p>
-      <p
-        v-if="errorMessage"
-        class="mt-4 rounded-xl border border-brand/30 bg-brand/10 px-4 py-2 text-sm text-dark"
-      >
-        {{ errorMessage }}
-      </p>
     </div>
 
     <div class="rounded-2xl border border-black/10 bg-white p-4 sm:p-5">
@@ -135,6 +123,7 @@
 <script>
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import BaseInput from "@/components/commons/inputs/BaseInput.vue";
+import useSnackbar from "@/composables/useSnackbar";
 import {
   deleteAdminRealization,
   fetchAdminRealizations,
@@ -147,6 +136,12 @@ export default {
     BaseButton,
     BaseInput,
   },
+  setup() {
+    const snackbar = useSnackbar();
+    return {
+      snackbar,
+    };
+  },
   data() {
     return {
       rows: [],
@@ -154,8 +149,6 @@ export default {
       isLoading: false,
       isDeletingId: null,
       isTogglingId: null,
-      errorMessage: "",
-      statusMessage: "",
       searchDebounceTimer: null,
       lastAppliedSearch: "",
       pagination: {
@@ -168,7 +161,7 @@ export default {
   created() {
     this.searchInput = String(this.$route.query.q || "");
     this.lastAppliedSearch = this.searchInput.trim();
-    this.statusMessage = this.resolveStatusMessage();
+    this.showRouteStatus();
     const initialPage = Number(this.$route.query.page || 1);
     this.loadPage(initialPage > 0 ? initialPage : 1);
   },
@@ -189,11 +182,19 @@ export default {
     },
   },
   methods: {
-    resolveStatusMessage() {
+    showRouteStatus() {
       const status = this.$route.query.status;
-      if (status === "created") return "Realizacia bola vytvorena.";
-      if (status === "updated") return "Realizacia bola upravena.";
-      return "";
+      if (status === "created") {
+        this.snackbar.success("Realizacia bola vytvorena.");
+      } else if (status === "updated") {
+        this.snackbar.success("Realizacia bola upravena.");
+      } else {
+        return;
+      }
+
+      const query = { ...this.$route.query };
+      delete query.status;
+      this.$router.replace({ name: "admin-realizations", query });
     },
     formatDate(value) {
       if (!value) return "-";
@@ -207,7 +208,6 @@ export default {
     },
     async loadPage(page = 1) {
       this.isLoading = true;
-      this.errorMessage = "";
       const searchTerm = this.searchInput.trim();
 
       try {
@@ -230,7 +230,7 @@ export default {
 
         this.$router.replace({ name: "admin-realizations", query });
       } catch (error) {
-        this.errorMessage = error.message || "Nepodarilo sa nacitat realizacie.";
+        this.snackbar.error(error.message || "Nepodarilo sa nacitat realizacie.");
       } finally {
         this.isLoading = false;
       }
@@ -248,7 +248,6 @@ export default {
       if (!item?.id || this.isTogglingId === item.id) return;
 
       this.isTogglingId = item.id;
-      this.errorMessage = "";
 
       try {
         const updated = await toggleAdminRealizationPublished(item.id);
@@ -256,8 +255,14 @@ export default {
         if (index !== -1) {
           this.rows[index] = updated;
         }
+        const title = updated?.title || item.title || "Realizacia";
+        this.snackbar.info(
+          updated?.is_published
+            ? `Realizacia "${title}" je publikovana.`
+            : `Realizacia "${title}" je skryta.`,
+        );
       } catch (error) {
-        this.errorMessage = error.message || "Nepodarilo sa prepnut stav publikovania.";
+        this.snackbar.error(error.message || "Nepodarilo sa prepnut stav publikovania.");
       } finally {
         this.isTogglingId = null;
       }
@@ -268,7 +273,6 @@ export default {
       if (!confirmed) return;
 
       this.isDeletingId = item.id;
-      this.errorMessage = "";
 
       try {
         await deleteAdminRealization(item.id);
@@ -277,8 +281,9 @@ export default {
             ? this.pagination.currentPage - 1
             : this.pagination.currentPage;
         await this.loadPage(targetPage);
+        this.snackbar.success(`Realizacia "${item.title}" bola vymazana.`);
       } catch (error) {
-        this.errorMessage = error.message || "Vymazanie sa nepodarilo.";
+        this.snackbar.error(error.message || "Vymazanie sa nepodarilo.");
       } finally {
         this.isDeletingId = null;
       }

@@ -15,12 +15,6 @@
         >
       </div>
 
-      <p
-        v-if="globalMessage"
-        class="mt-4 rounded-xl border border-brand/30 bg-brand/10 px-4 py-2 text-sm text-dark"
-      >
-        {{ globalMessage }}
-      </p>
     </div>
 
     <form
@@ -155,9 +149,6 @@
           />
         </div>
 
-        <p v-if="uploadMessage" class="mt-2 text-sm text-dark/80">
-          {{ uploadMessage }}
-        </p>
         <p v-if="errors.gallery" class="mt-2 text-sm text-brand">
           {{ errors.gallery }}
         </p>
@@ -246,6 +237,7 @@ import BaseCheckbox from "@/components/commons/inputs/BaseCheckbox.vue";
 import BaseInput from "@/components/commons/inputs/BaseInput.vue";
 import BaseTextarea from "@/components/commons/inputs/BaseTextarea.vue";
 import BaseUpload from "@/components/commons/inputs/BaseUpload.vue";
+import useSnackbar from "@/composables/useSnackbar";
 import {
   createAdminRealization,
   fetchAdminRealization,
@@ -277,13 +269,17 @@ export default {
     BaseTextarea,
     BaseUpload,
   },
+  setup() {
+    const snackbar = useSnackbar();
+    return {
+      snackbar,
+    };
+  },
   data() {
     return {
       isLoading: false,
       isSaving: false,
       isUploading: false,
-      globalMessage: "",
-      uploadMessage: "",
       pendingUpload: [],
       removingImage: "",
       form: makeEmptyForm(),
@@ -418,8 +414,6 @@ export default {
     },
     resetErrors() {
       this.errors = {};
-      this.globalMessage = "";
-      this.uploadMessage = "";
     },
     applyFieldErrors(serverErrors = {}) {
       this.errors = {};
@@ -476,7 +470,6 @@ export default {
         : [];
       if (!files.length) return;
 
-      this.uploadMessage = "";
       this.isUploading = true;
 
       try {
@@ -506,12 +499,13 @@ export default {
 
         this.normalizeCoverAndGallery();
 
-        this.uploadMessage =
+        this.snackbar.success(
           uploadedCount === 1
             ? "Fotka bola uspesne nahrata."
-            : `Fotky boli uspesne nahrate (${uploadedCount}).`;
+            : `Fotky boli uspesne nahrate (${uploadedCount}).`,
+        );
       } catch (error) {
-        this.globalMessage = error.message || "Nahratie obrazka zlyhalo.";
+        this.snackbar.error(error.message || "Nahratie obrazka zlyhalo.");
       } finally {
         this.pendingUpload = [];
         this.isUploading = false;
@@ -521,7 +515,6 @@ export default {
       if (!imagePath) return;
 
       this.removingImage = imagePath;
-      this.uploadMessage = "";
 
       try {
         if (this.isEdit) {
@@ -544,9 +537,9 @@ export default {
         }
 
         this.normalizeCoverAndGallery();
+        this.snackbar.success("Obrazok bol odstraneny.");
       } catch (error) {
-        this.globalMessage =
-          error.message || "Odstranenie obrazka sa nepodarilo.";
+        this.snackbar.error(error.message || "Odstranenie obrazka sa nepodarilo.");
       } finally {
         this.removingImage = "";
       }
@@ -559,8 +552,7 @@ export default {
         const item = await fetchAdminRealization(this.realizationId);
         this.hydrateForm(item);
       } catch (error) {
-        this.globalMessage =
-          error.message || "Nepodarilo sa nacitat realizaciu.";
+        this.snackbar.error(error.message || "Nepodarilo sa nacitat realizaciu.");
       } finally {
         this.isLoading = false;
       }
@@ -571,6 +563,7 @@ export default {
 
       if (!String(this.form.title || "").trim()) {
         this.errors.title = "Nazov je povinny.";
+        this.snackbar.warning("Nazov realizacie je povinny.");
         ok = false;
       }
 
@@ -607,7 +600,7 @@ export default {
         });
       } catch (error) {
         this.applyFieldErrors(error.errors);
-        this.globalMessage = error.message || "Ulozenie sa nepodarilo.";
+        this.snackbar.error(error.message || "Ulozenie sa nepodarilo.");
       } finally {
         this.isSaving = false;
       }

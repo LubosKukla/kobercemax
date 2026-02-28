@@ -65,13 +65,6 @@
         </p>
       </div>
 
-      <p v-if="submitError" class="px-2 text-sm font-semibold text-brand">
-        {{ submitError }}
-      </p>
-      <p v-if="submitSuccess" class="px-2 text-sm font-semibold text-dark">
-        {{ submitSuccess }}
-      </p>
-
       <div class="pt-2">
         <BaseButton
           variant="darkSolid"
@@ -93,6 +86,7 @@ import BaseCheckbox from "@/components/commons/inputs/BaseCheckbox.vue";
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import { sendContactForm } from "@/services/contactApi";
 import { trackContactFormError, trackContactLead } from "@/services/analytics";
+import useSnackbar from "@/composables/useSnackbar";
 
 export default {
   name: "ContactForm",
@@ -101,6 +95,12 @@ export default {
     BaseTextarea,
     BaseCheckbox,
     BaseButton,
+  },
+  setup() {
+    const snackbar = useSnackbar();
+    return {
+      snackbar,
+    };
   },
   data() {
     return {
@@ -121,8 +121,6 @@ export default {
         privacy_consent: "",
       },
       isSubmitting: false,
-      submitError: "",
-      submitSuccess: "",
     };
   },
   methods: {
@@ -160,9 +158,6 @@ export default {
     onPrivacyConsentChange(checked) {
       if (checked) {
         this.errors.privacy_consent = "";
-        if (this.submitError === "Prosím, skontrolujte vyznačené polia vo formulári.") {
-          this.submitError = "";
-        }
       }
     },
     validateForm() {
@@ -225,11 +220,9 @@ export default {
     async handleSubmit() {
       if (this.isSubmitting) return;
 
-      this.submitError = "";
-      this.submitSuccess = "";
       const isValid = this.validateForm();
       if (!isValid) {
-        this.submitError = "Prosím, skontrolujte vyznačené polia vo formulári.";
+        this.snackbar.warning("Prosim, skontrolujte vyznacene polia vo formulari.");
         return;
       }
 
@@ -245,15 +238,17 @@ export default {
         };
 
         const response = await sendContactForm(payload);
-        this.submitSuccess =
-          response?.message || "Ďakujeme, správu sme prijali. Čoskoro sa vám ozveme.";
+        this.snackbar.success(
+          response?.message || "Dakujeme, spravu sme prijali. Coskoro sa vam ozveme.",
+        );
         trackContactLead();
         this.resetForm();
       } catch (error) {
         this.mapApiValidationErrors(error.errors);
         trackContactFormError();
-        this.submitError =
-          error.message || "Správu sa nepodarilo odoslať. Skúste to prosím neskôr.";
+        this.snackbar.error(
+          error.message || "Spravu sa nepodarilo odoslat. Skuste to prosim neskor.",
+        );
       } finally {
         this.isSubmitting = false;
       }

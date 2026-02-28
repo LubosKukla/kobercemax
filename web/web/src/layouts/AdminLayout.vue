@@ -55,11 +55,18 @@
 <script>
 import BaseButton from "@/components/commons/button/BaseButton.vue";
 import { fetchAdminMe, logoutAdmin } from "@/services/adminApi";
+import useSnackbar from "@/composables/useSnackbar";
 
 export default {
   name: "AdminLayout",
   components: {
     BaseButton,
+  },
+  setup() {
+    const snackbar = useSnackbar();
+    return {
+      snackbar,
+    };
   },
   data() {
     return {
@@ -81,7 +88,10 @@ export default {
       try {
         const payload = await fetchAdminMe();
         this.user = payload?.user || null;
-      } catch (_error) {
+      } catch (error) {
+        if (this.$route.name !== "admin-login") {
+          this.snackbar.info(error?.message || "Prihlasenie vyprsalo. Prihlaste sa znova.");
+        }
         this.$router.replace({
           name: "admin-login",
           query: { redirect: this.$route.fullPath },
@@ -92,8 +102,10 @@ export default {
       this.isLoggingOut = true;
       try {
         await logoutAdmin();
-      } catch (_error) {
-        // Continue and force logout in UI regardless of backend response
+        this.snackbar.success("Boli ste odhlaseny.");
+      } catch (error) {
+        // Continue and force logout in UI regardless of backend response.
+        this.snackbar.warning(error?.message || "Odhlasenie sa nepodarilo overit.");
       } finally {
         this.isLoggingOut = false;
         this.$router.replace({ name: "admin-login" });
@@ -102,4 +114,3 @@ export default {
   },
 };
 </script>
-
