@@ -1,4 +1,4 @@
-const API_BASE_URL = (process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:8000").replace(
+const API_BASE_URL = (process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:8000/api").replace(
   /\/$/,
   ""
 );
@@ -18,7 +18,7 @@ function parseErrorPayload(payload) {
 }
 
 export async function sendContactForm(form) {
-  const response = await fetch(`${API_BASE_URL}/api/contact`, {
+  const response = await fetch(`${API_BASE_URL}/contact`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

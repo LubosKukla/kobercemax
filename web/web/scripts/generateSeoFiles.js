@@ -5,17 +5,21 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const PUBLIC_DIR = path.join(ROOT_DIR, "public");
 const PRODUCTS_DATA_PATH = path.join(ROOT_DIR, "src", "data", "products.json");
 const PRERENDER_ROUTES_PATH = path.join(PUBLIC_DIR, "prerender-routes.json");
+const SITEMAP_PATH = path.join(PUBLIC_DIR, "sitemap.xml");
 
 const SITE_URL = (
   process.env.SITE_URL ||
   process.env.VUE_APP_SITE_URL ||
-  "https://www.kobercemax.sk"
+  "https://kobercemax.sk"
 ).replace(/\/+$/, "");
 const API_BASE_URL = (
   process.env.API_BASE_URL ||
   process.env.VUE_APP_API_BASE_URL ||
-  "http://127.0.0.1:8000"
+  "http://127.0.0.1:8000/api"
 ).replace(/\/+$/, "");
+const SEO_ALLOW_EMPTY_REALIZATIONS = /^(1|true|yes)$/i.test(
+  String(process.env.SEO_ALLOW_EMPTY_REALIZATIONS || "")
+);
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -39,14 +43,18 @@ function formatDate(dateValue) {
 
 async function fetchRealizationsForSeo() {
   if (typeof fetch !== "function") {
-    return [];
+    return {
+      ok: false,
+      items: [],
+      reason: "Fetch API nie je dostupne v tomto Node prostredi.",
+    };
   }
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 8000);
 
   try {
-    const response = await fetch(`${API_BASE_URL}/api/realizations`, {
+    const response = await fetch(`${API_BASE_URL}/realizations`, {
       headers: {
         Accept: "application/json",
       },
@@ -54,18 +62,123 @@ async function fetchRealizationsForSeo() {
     });
 
     const payload = await response.json().catch(() => ({}));
-    if (!response.ok) return [];
+    if (!response.ok) {
+      return {
+        ok: false,
+        items: [],
+        reason: `API vratilo HTTP ${response.status}.`,
+      };
+    }
 
     const items = Array.isArray(payload?.realizations) ? payload.realizations : [];
-    return items.map((item) => ({
-      id: item.id,
-      date: item.updated_at || item.date || null,
-    }));
-  } catch (_error) {
-    return [];
+    return {
+      ok: true,
+      items: items.map((item) => ({
+        id: item.id,
+        date: item.updated_at || item.date || null,
+      })),
+      reason: null,
+    };
+  } catch (error) {
+    return {
+      ok: false,
+      items: [],
+      reason: error?.name === "AbortError" ? "API request timeout." : "API request failed.",
+    };
   } finally {
     clearTimeout(timeout);
   }
+}
+
+function extractRealizationId(pathname = "") {
+  const match = String(pathname).trim().match(/^\/realizacie\/(\d+)(?:\/.*)?$/);
+  return match ? Number(match[1]) : null;
+}
+
+function normalizePath(value = "") {
+  let pathValue = String(value || "").trim();
+  if (!pathValue) return "";
+
+  try {
+    if (/^https?:\/\//i.test(pathValue)) {
+      const parsed = new URL(pathValue);
+      pathValue = parsed.pathname || "/";
+    }
+  } catch (_error) {
+    // Keep original value.
+  }
+
+  if (!pathValue.startsWith("/")) {
+    pathValue = `/${pathValue}`;
+  }
+
+  return pathValue;
+}
+
+function readFallbackRealizationsFromPrerender() {
+  if (!fs.existsSync(PRERENDER_ROUTES_PATH)) return [];
+
+  try {
+    const parsed = JSON.parse(fs.readFileSync(PRERENDER_ROUTES_PATH, "utf8"));
+    if (!Array.isArray(parsed)) return [];
+
+    return parsed
+      .map((rawPath) => normalizePath(rawPath))
+      .map((pathname) => ({ id: extractRealizationId(pathname), path: pathname }))
+      .filter((item) => Number.isInteger(item.id))
+      .map((item) => ({
+        id: item.id,
+        date: null,
+      }));
+  } catch (_error) {
+    return [];
+  }
+}
+
+function readFallbackRealizationsFromSitemap() {
+  if (!fs.existsSync(SITEMAP_PATH)) return [];
+
+  const xml = fs.readFileSync(SITEMAP_PATH, "utf8");
+  const blocks = xml.match(/<url>[\s\S]*?<\/url>/g) || [];
+
+  const parsed = [];
+  for (const block of blocks) {
+    const locMatch = block.match(/<loc>([^<]+)<\/loc>/);
+    if (!locMatch) continue;
+
+    const pathValue = normalizePath(locMatch[1]);
+    const id = extractRealizationId(pathValue);
+    if (!Number.isInteger(id)) continue;
+
+    const lastmodMatch = block.match(/<lastmod>([^<]+)<\/lastmod>/);
+    parsed.push({
+      id,
+      date: formatDate(lastmodMatch ? lastmodMatch[1] : null),
+    });
+  }
+
+  return parsed;
+}
+
+function readFallbackRealizations() {
+  const byId = new Map();
+  const push = (item) => {
+    if (!item || !Number.isInteger(item.id)) return;
+    const existing = byId.get(item.id);
+    if (!existing) {
+      byId.set(item.id, item);
+      return;
+    }
+
+    if (!existing.date && item.date) {
+      byId.set(item.id, item);
+    }
+  };
+
+  readFallbackRealizationsFromPrerender().forEach(push);
+  readFallbackRealizationsFromSitemap().forEach(push);
+
+  return Array.from(byId.values()).sort((a, b) => b.id - a.id);
 }
 
 async function buildRoutes() {
@@ -87,7 +200,23 @@ async function buildRoutes() {
     priority: "0.8",
   }));
 
-  const realizations = await fetchRealizationsForSeo();
+  const apiRealizations = await fetchRealizationsForSeo();
+  const fallbackRealizations = readFallbackRealizations();
+  let realizations = apiRealizations.items;
+
+  if (realizations.length === 0 && fallbackRealizations.length > 0) {
+    realizations = fallbackRealizations;
+    // eslint-disable-next-line no-console
+    console.warn(
+      `[seo] API realizacie nevratilo (${apiRealizations.reason || "empty list"}). Pouzivam fallback zo sitemap/prerender (${fallbackRealizations.length}).`
+    );
+  }
+
+  if (realizations.length === 0 && !SEO_ALLOW_EMPTY_REALIZATIONS) {
+    const hint = "Spustite build s dostupnym API alebo nastavte SEO_ALLOW_EMPTY_REALIZATIONS=true.";
+    throw new Error(`[seo] Nenasli sa ziadne realizacie. ${apiRealizations.reason || ""} ${hint}`.trim());
+  }
+
   const realizationRoutes = realizations.map((item) => ({
     path: `/realizacie/${item.id}`,
     changefreq: "monthly",

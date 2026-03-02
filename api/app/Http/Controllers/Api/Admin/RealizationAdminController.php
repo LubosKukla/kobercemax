@@ -86,8 +86,8 @@ class RealizationAdminController extends Controller
             $slug = 'realizacia';
         }
 
-        $relativeDir = 'img/realizations/uploads/'.now()->format('Y/m')."/{$slug}";
-        $targetDir = base_path("../web/web/public/{$relativeDir}");
+        $relativeDir = now()->format('Y/m')."/{$slug}";
+        $targetDir = $this->uploadsPublicRoot().DIRECTORY_SEPARATOR.$relativeDir;
         File::ensureDirectoryExists($targetDir);
 
         $file = $request->file('image');
@@ -101,7 +101,7 @@ class RealizationAdminController extends Controller
         $storedFilePath = $targetDir.DIRECTORY_SEPARATOR.$fileName;
         $this->optimizeUploadedImage($storedFilePath, $extension);
 
-        $path = '/'.$relativeDir.'/'.$fileName;
+        $path = '/uploads/'.$relativeDir.'/'.$fileName;
         $gallery = null;
         $coverImage = null;
 
@@ -279,14 +279,30 @@ class RealizationAdminController extends Controller
     private function deleteManagedGalleryFile(string $path): void
     {
         $normalized = trim($path);
-        if (! str_starts_with($normalized, '/img/realizations/uploads/')) {
+        $prefix = '/uploads/';
+        if (! str_starts_with($normalized, $prefix)) {
             return;
         }
 
-        $fullPath = base_path('../web/web/public'.$normalized);
+        $relativePath = trim(substr($normalized, strlen($prefix)), '/');
+        if ($relativePath === '' || str_contains($relativePath, '..')) {
+            return;
+        }
+
+        $fullPath = $this->uploadsPublicRoot().DIRECTORY_SEPARATOR.str_replace('/', DIRECTORY_SEPARATOR, $relativePath);
         if (is_file($fullPath)) {
             @unlink($fullPath);
         }
+    }
+
+    private function uploadsPublicRoot(): string
+    {
+        $fromEnv = trim((string) env('UPLOADS_PUBLIC_ROOT', ''));
+        if ($fromEnv !== '') {
+            return rtrim($fromEnv, DIRECTORY_SEPARATOR);
+        }
+
+        return base_path('../uploads');
     }
 
     private function optimizeUploadedImage(string $fullPath, string $extension): void

@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -18,8 +19,13 @@ class ContactCustomerConfirmation extends Mailable
 
     public function envelope(): Envelope
     {
+        $replyToAddress = (string) config('contact.admin_email');
+
         return new Envelope(
             subject: 'Potvrdenie prijatia správy | Koberce MAX',
+            replyTo: [
+                new Address($replyToAddress),
+            ],
         );
     }
 

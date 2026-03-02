@@ -190,7 +190,7 @@ router.beforeResolve(async (to) => {
 });
 
 const SITE_NAME = "Koberce MAX";
-const DEFAULT_SITE_URL = "https://www.kobercemax.sk";
+const DEFAULT_SITE_URL = "https://kobercemax.sk";
 const ENV_SITE_URL = cleanText(process.env.VUE_APP_SITE_URL || "").replace(/\/+$/, "");
 const COMPANY_EMAIL = "kobercemax@kobercemax.sk";
 const COMPANY_PHONE = "+421444323884";

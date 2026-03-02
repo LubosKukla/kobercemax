@@ -1,4 +1,4 @@
-const API_BASE_URL = (process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:8000").replace(
+const API_BASE_URL = (process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:8000/api").replace(
   /\/$/,
   ""
 );
@@ -54,7 +54,7 @@ export async function fetchPublicRealizations() {
   }
 
   realizationsListPromise = (async () => {
-  const response = await fetch(`${API_BASE_URL}/api/realizations`, {
+  const response = await fetch(`${API_BASE_URL}/realizations`, {
     headers: {
       Accept: "application/json",
     },
@@ -88,7 +88,7 @@ export async function fetchPublicRealizationById(id) {
   const cached = getCachedPublicRealizationById(id);
   if (cached) return cached;
 
-  const response = await fetch(`${API_BASE_URL}/api/realizations/${id}`, {
+  const response = await fetch(`${API_BASE_URL}/realizations/${id}`, {
     headers: {
       Accept: "application/json",
     },

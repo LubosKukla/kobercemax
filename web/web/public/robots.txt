@@ -3,4 +3,4 @@ Allow: /
 Disallow: /test
 Disallow: /test/
 
-Sitemap: https://www.kobercemax.sk/sitemap.xml
+Sitemap: https://kobercemax.sk/sitemap.xml

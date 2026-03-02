@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const API_BASE_URL = (process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:8000").replace(
+const API_BASE_URL = (process.env.VUE_APP_API_BASE_URL || "http://127.0.0.1:8000/api").replace(
   /\/$/,
   ""
 );
 
 const adminClient = axios.create({
-  baseURL: `${API_BASE_URL}/api/admin`,
+  baseURL: `${API_BASE_URL}/admin`,
   withCredentials: true,
   headers: {
     Accept: "application/json",
