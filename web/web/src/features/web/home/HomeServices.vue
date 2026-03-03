@@ -22,13 +22,19 @@
       class="mx-auto max-w-6xl px-4 sm:px-6 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
     >
       <BaseInfoBox
-        v-for="service in filteredServices"
+        v-for="service in visibleServices"
         :key="service.id"
         :title="service.title"
         :description="service.description"
         :to="service.to"
         tone="light"
       />
+    </div>
+
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 mt-8 flex justify-center">
+      <BaseButton v-if="hasMoreServices" variant="darkSolid" @click="loadMore">
+        Načítať viac
+      </BaseButton>
     </div>
   </section>
 </template>
@@ -37,6 +43,10 @@
 import BaseSectionTitle from "@/components/commons/section/BaseSectionTitle.vue";
 import CategoryChip from "@/components/commons/category/CategoryChip.vue";
 import BaseInfoBox from "@/components/commons/box/BaseInfoBox.vue";
+import BaseButton from "@/components/commons/button/BaseButton.vue";
+
+const INITIAL_VISIBLE_COUNT = 8;
+const LOAD_MORE_BATCH = 8;
 
 export default {
   name: "HomeServices",
@@ -44,11 +54,13 @@ export default {
     BaseSectionTitle,
     CategoryChip,
     BaseInfoBox,
+    BaseButton,
   },
   data() {
     return {
       chips: ["Všetko", "Podlahy", "Koberce", "Montáž", "Dvere", "Panely", "Doplnky", "Návrh"],
       activeChip: "Všetko",
+      visibleCount: INITIAL_VISIBLE_COUNT,
       services: [
         {
           id: 1,
@@ -234,10 +246,23 @@ export default {
       if (this.activeChip === "Všetko") return this.services;
       return this.services.filter((s) => s.categories.includes(this.activeChip));
     },
+    visibleServices() {
+      return this.filteredServices.slice(0, this.visibleCount);
+    },
+    hasMoreServices() {
+      return this.visibleCount < this.filteredServices.length;
+    },
   },
   methods: {
     setChip(chip) {
       this.activeChip = chip;
+      this.visibleCount = INITIAL_VISIBLE_COUNT;
+    },
+    loadMore() {
+      this.visibleCount = Math.min(
+        this.filteredServices.length,
+        this.visibleCount + LOAD_MORE_BATCH,
+      );
     },
   },
 };
